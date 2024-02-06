@@ -1,42 +1,62 @@
-#root {
-  max-width: 1280px;
-  /* margin: 0 auto; */
-  /* padding: 2rem; */
-  /* text-align: center; */
+/**** 全エリア共通 ****/
+
+/* #root {
+  font-size: 1.4em;
+} */
+
+body ul {
+  padding-left: initial;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+ul li {
+  list-style: none;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body a {
+  text-decoration: none;
+  color: inherit;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+
+/**** header ****/
+header {
+  padding: 1rem 55px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  font-size: 2.4em;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  color: #FFFFFF;
 }
 
-.card {
-  padding: 2em;
+header p,
+header ul {
+  margin-bottom: initial;
 }
 
-.read-the-docs {
-  color: #888;
+header .Header__nav ul {
+  display: flex;
+}
+
+header .Header__nav ul li {
+  font-size: 0.5em;
+}
+
+header .Header__nav ul li + li {
+  margin-left: 82px;
+}
+
+/**** main ****/
+
+/**** KV ****/
+.Kv_contents {
+  width: 100%;
+}
+
+.Kv_contents img {
+  width: 100%;
 }

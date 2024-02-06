@@ -1,12 +1,12 @@
+import Kv from "./Kv";
+import kvImg from "../images/KV_pc.jpeg";
+
 const Main = () => {
   return (
     <main>
-      <div className="Kv">
-        <p>KVです</p>
-      </div>
-
+      <Kv src={kvImg}/>
       <div className="mainArticles">
-        <p>コンテンツです</p>
+      <p>コンテンツです</p>
       </div>
     </main>
   );
