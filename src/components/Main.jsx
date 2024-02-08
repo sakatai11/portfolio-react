@@ -7,7 +7,7 @@ import Img03 from "../images/image03.jpeg";
 
 const photoList = [Img01,Img02,Img03];
 
-console.log(photoList);
+console.log(photoList.src);
 
 const Main = () => {
   return (
