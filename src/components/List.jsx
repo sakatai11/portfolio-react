@@ -1,24 +1,20 @@
 import Card from 'react-bootstrap/Card';
 
 const List = (props) => {
-  console.log(props.src);
+  console.log(props);
+  console.log(props.list.image);
 
   return (
-    <div className="mainArticles">
-      {
-        props.src.map((prop) => (
-          <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src={prop} />
-          <Card.Body>
-            <Card.Text>
-              テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-            </Card.Text>
-            <Card.Title>Card Title</Card.Title>
-          </Card.Body>
-        </Card>
-        ))
-      }
-    </div>
+      <Card>
+        <div className='imgDate'>
+          <Card.Img variant="top" src={props.list.image} />
+          <span>{props.list.date}</span>
+        </div>
+      <Card.Body>
+        <Card.Text style={{ fontSize: '1.8rem' }}>{props.list.contentId}</Card.Text>
+        <Card.Title style={{ fontSize: '3.2rem' }}>{props.list.title}</Card.Title>
+      </Card.Body>
+    </Card>
   );
 }
 

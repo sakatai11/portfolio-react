@@ -2,9 +2,9 @@ const Header = () => {
   return (
     <header>
       <div className="Header_text">
-        <p>
+        <h1>
           <a href="#" tabIndex={100}>TAICHI PHOTO</a>
-        </p>
+        </h1>
       </div>
       <div className="Header__nav">
         <ul>
