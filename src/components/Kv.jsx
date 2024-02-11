@@ -5,7 +5,10 @@ const Kv = (props) => {
   return (
     <>
       <div className="Kv_contents">
-        <img src={props.src} alt="KV" />
+      <picture>
+          <source srcSet={`${props.src[0]} 1x, ${props.src[1]} 2x`} alt="KV"  media="(max-width: 767px)"/>
+          <img src={props.src[0]} alt="KV" />
+        </picture>
       </div>
     </>
   );

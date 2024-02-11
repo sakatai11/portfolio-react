@@ -1,9 +1,12 @@
 import Kv from "./Kv";
-import kvImg from "../images/KV_pc.jpeg";
+import kvImgPc from "../images/KV_pc.jpeg";
+import kvImgSp from "../images/KV_sp.jpeg";
 import List from "./List";
 import Img01 from "../images/image01.jpg";
 import Img02 from "../images/image02.jpeg";
 import Img03 from "../images/image03.jpeg";
+
+const kvImages = [kvImgPc,kvImgSp]
 
 const photoList = [ 
   {
@@ -34,7 +37,7 @@ console.log(photoList);
 const Main = () => {
   return (
     <main>
-      <Kv src={kvImg}/>
+      <Kv src={kvImages}/>
       <div className="mainArticles">
         <div className="listArea">
           <div className="titleArea">
