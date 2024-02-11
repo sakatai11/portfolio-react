@@ -32,7 +32,7 @@ const photoList = [
   },
   ];
 
-console.log(photoList);
+// console.log(photoList);
 
 const Main = () => {
   return (
