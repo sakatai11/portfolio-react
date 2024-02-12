@@ -87,6 +87,22 @@ main {
   padding: 0 25px;
 }
 
+.photoContents .card .imgDate {
+  overflow:hidden;
+}
+
+.photoContents a .card-img-top {
+  transition:200ms all;
+}
+
+.photoContents a:hover .card-img-top {
+  transform: scale(1.1);
+}
+
+.photoContents a:hover {
+  opacity: 0.7;
+}
+
 /**** listArea ****/
 .listArea {
   padding: 25rem 0  12.5rem;
@@ -110,15 +126,12 @@ main {
   font-size: 2.3em;
 }
 
-.mainArticles .arrowLinkArea {
-  width: 300px;
-}
-
-.mainArticles .arrowLinkArea a {
+.mainArticles .arrowLink {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-right: 50px;
 }
 
 .mainArticles .titleArea a::after,

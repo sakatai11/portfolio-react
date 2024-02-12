@@ -22,6 +22,8 @@ const photoList = [
     contentId: "サブ1",
     title: "テキスト1",
     image: Img01,
+    url: "#",
+
   },
   {
     id: 2,
@@ -29,6 +31,7 @@ const photoList = [
     contentId: "サブ2",
     title: "テキスト2",
     image: Img02,
+    url: "#",
   },
   {
     id: 3,
@@ -36,6 +39,7 @@ const photoList = [
     contentId: "サブ3",
     title: "テキスト3",
     image: Img03,
+    url: "#",
   },
   ];
 
@@ -72,9 +76,7 @@ const Main = () => {
       <div className="listArea">
         <div className="titleArea">
           <h2>PHOTO LIST</h2>
-          <div className="arrowLinkArea">
-            <a href="#" tabIndex={500}>すべての写真を見る</a>
-          </div>
+          <a href="#" tabIndex={500} className="arrowLink">すべての写真を見る</a>
         </div>
         <ul className="photoContents">
           {

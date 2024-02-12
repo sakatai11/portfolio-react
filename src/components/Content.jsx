@@ -10,9 +10,7 @@ const Content = (props) => {
         <Col><img src={props.list.image} alt={props.list.title} /></Col>
         <Col>
           <p>{props.list.title}</p>
-          <div className='arrowLinkArea'>
-            <a href={props.list.url}>写真を見る</a>
-          </div>
+          <a href={props.list.url} className="arrowLink">写真を見る</a>
         </Col>
       </Row>
     </Container>
