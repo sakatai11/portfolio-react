@@ -8,7 +8,12 @@ const Content = (props) => {
     <Container>
       <Row>
         <Col><img src={props.list.image} alt={props.list.title} /></Col>
-        <Col>1 of 2</Col>
+        <Col>
+          <p>{props.list.title}</p>
+          <div className='arrowLinkArea'>
+            <a href={props.list.url}>写真を見る</a>
+          </div>
+        </Col>
       </Row>
     </Container>
   );

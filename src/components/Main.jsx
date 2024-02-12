@@ -46,16 +46,19 @@ const photoContents = [
     id: 4,
     title: "タイトル4",
     image: Img04,
+    url: "#",
   },
   {
     id: 5,
     title: "タイトル5",
     image: Img05,
+    url: "#",
   },
   {
     id: 6,
     title: "タイトル6",
     image: Img06,
+    url: "#",
   },
   ];
 
@@ -69,7 +72,9 @@ const Main = () => {
       <div className="listArea">
         <div className="titleArea">
           <h2>PHOTO LIST</h2>
-          <a href="#" tabIndex={500}>すべての写真を見る</a>
+          <div className="arrowLinkArea">
+            <a href="#" tabIndex={500}>すべての写真を見る</a>
+          </div>
         </div>
         <ul className="photoContents">
           {
