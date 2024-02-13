@@ -1,11 +1,12 @@
-import { useState } from "react"
+import { useState,useRef } from "react"
 import { createPortal } from "react-dom"
-import Ham from "./Ham";
+import Ham from "./Ham"
 
 const HamPortal = ({children}) => {
   console.log(children)
-  const target = document.getElementById('container');
-  return createPortal(children, target)
+  const target = useRef(document.getElementById('container'));
+  console.log(target.current);
+  return createPortal(children, target.current)
 }
 
 

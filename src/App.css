@@ -221,7 +221,7 @@ footer p {
     position: fixed;
     top: 0;
     right: -100%;
-    transition-duration: .7s;
+    transition-duration: .7s; 
   }
 
   #container.is-open {
