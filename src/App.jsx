@@ -6,10 +6,9 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'; // BootstrapのCSSをインポート
 
 function App() {
-
   return (
     <div>
-      <Header />
+      <Header/>
       <Main />
       <Footer />
     </div>

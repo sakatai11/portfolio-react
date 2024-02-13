@@ -1,4 +1,21 @@
+import { useState } from "react"
+import { createPortal } from "react-dom"
+import Ham from "./Ham";
+
+const HamPortal = ({children}) => {
+  console.log(children)
+  const target = document.getElementById('container');
+  return createPortal(children, target)
+}
+
+
 const Header = () => {
+  const [hamOpen, setHamOpen] = useState(false)
+  const [isMenu, setIsMenu] = useState('')
+
+
+  console.log(hamOpen);
+
   return (
     <header>
       <div className="Header_text">
@@ -13,6 +30,29 @@ const Header = () => {
           <li><a href="#" tabIndex={400}>旅行</a></li>
         </ul>
       </div>
+
+      <div id="hamburger" 
+        onClick={ () => {
+          setHamOpen(!hamOpen) // hamOpenの真偽値を反転させる
+          setIsMenu(hamOpen ? '' : 'is-open')  // hamOpenに応じてisMenuを変更する
+        }}
+        disabled={hamOpen}>
+      </div>
+
+      <div id="container" className={isMenu}>
+
+        {
+          hamOpen && 
+          (
+            <HamPortal>
+              <Ham handleCloseClick={() => {
+                setHamOpen(false)
+                setIsMenu(hamOpen ? '' : 'is-open')  // hamOpenに応じてisMenuを変更する
+              }}/>
+            </HamPortal>
+          )
+        }
+        </div>
     </header>
   );
 }

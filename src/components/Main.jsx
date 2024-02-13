@@ -13,7 +13,7 @@ import Img04 from "../images/image04.jpeg";
 import Img05 from "../images/image05.jpeg";
 import Img06 from "../images/image06.jpeg";
 
-const kvImages = [kvImgPc,kvImgSp]
+const kvImages = [kvImgPc,kvImgSp];
 
 const photoList = [ 
   {
@@ -65,8 +65,6 @@ const photoContents = [
     url: "#",
   },
   ];
-
-
 
 const Main = () => {
   return (
