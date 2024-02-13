@@ -1,7 +1,11 @@
+import Card from 'react-bootstrap/Card';
+
 const Footer = () => {
   return (
     <footer>
-      <p>© TAICHI PHOTO</p>
+      <Card style={{ padding: '1rem' }} className="text-center">
+        <p>© TAICHI PHOTO</p>
+      </Card>
     </footer>
   );
 }

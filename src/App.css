@@ -150,7 +150,7 @@ main {
 
 .mainArticles .titleArea a:hover:after,
 .mainArticles .eachContents .col a:hover:after {
-  right: -0.0972222222000001vw;
+  right: 0;
 }
 
 .photoContents li {
@@ -200,4 +200,9 @@ main {
 
 .row .col img {
   width: 100%;
+}
+
+/**** Footer ****/
+footer p {
+  margin-bottom: 0;
 }
