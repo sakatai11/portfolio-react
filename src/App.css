@@ -17,6 +17,14 @@ body a {
   color: inherit;
 }
 
+.sp-none {
+  display: flex !important;
+}
+
+.pc-none {
+  display: none !important;
+}
+
 /**** header ****/
 header {
   padding: 1rem 55px;
@@ -138,8 +146,15 @@ main {
   padding-right: 50px;
 }
 
+.mainArticles .linkContent {
+  width: fit-content;
+  margin: 0 auto;
+  padding-top: 8.4rem;
+}
+
 .mainArticles .titleArea a::after,
-.mainArticles .eachContents .col a::after {
+.mainArticles .eachContents .col a::after,
+.mainArticles .linkContent a::after {
   position: absolute;
   content: "";
   height: 17px;
@@ -172,7 +187,7 @@ main {
   padding: 10px 7px;
   background-color: #FFFFFF;
   font-weight: 700;
-  font-size: 1.8rem;
+  font-size: 0.8em;
 }
 
 .mainArticles .photoContents .card {
@@ -216,6 +231,15 @@ footer p {
 }
 
 @media screen and (max-width: 767px){
+  .sp-none {
+    display: none !important;
+  }
+  
+  .pc-none {
+    display: flex !important;
+  }
+
+/**** Header ****/
   .Header__nav {
     display: none;
   }
@@ -302,4 +326,69 @@ footer p {
   header {
     padding: 1rem 20px;
   }
+
+  /**** Main ****/
+  .mainArticles {
+    padding: 0 15px;
+  }
+
+  main {
+    font-size: 1.8em;
+  }
+
+  .listArea {
+    padding: 13rem 0 6.5rem;
+  }
+
+  .photoContents,
+  .mainArticles .eachContents {
+    display: block;
+    margin-top: 7rem;
+  }
+
+  .mainArticles .photoContents li + li {
+    margin-top: 65px;
+  }
+
+  .photoContents li {
+    width: 100%;
+  }
+
+  .card-body .card-text {
+    font-size: 1em !important; 
+  }
+
+  .card-body .card-title {
+    font-size: 1.7em !important; 
+  }
+
+  .col {
+    align-content: normal;
+    justify-content:inherit
+  }
+
+  .container .col p {
+    font-size: 1.8em;
+  }
+
+  .container .row .col:first-child {
+    margin-bottom: 20px;
+  }
+
+  .mainArticles .contentsArea .arrowLink {
+    justify-content: end;
+  }
+
+  .contentsArea .eachContents li .row {
+    display: block;
+  }
+
+  .mainArticles .contentsArea {
+    padding: 6.5rem 0;
+  }
+
+  .eachContents li + li {
+    margin-top: 9.2rem;
+  }
+
 }

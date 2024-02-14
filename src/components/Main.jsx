@@ -74,7 +74,7 @@ const Main = () => {
       <div className="listArea">
         <div className="titleArea">
           <h2>PHOTO LIST</h2>
-          <a href="#" tabIndex={500} className="arrowLink">すべての写真を見る</a>
+          <a href="#" tabIndex={500} className="arrowLink sp-none">すべての写真を見る</a>
         </div>
         <ul className="photoContents">
           {
@@ -85,6 +85,9 @@ const Main = () => {
             ))
           }
         </ul>
+      <div className="linkContent">
+        <a href="#" tabIndex={500} className="arrowLink pc-none">すべての写真を見る</a>
+      </div>
       </div>
       <div className="contentsArea">
           <h2>CONTENTS</h2>
