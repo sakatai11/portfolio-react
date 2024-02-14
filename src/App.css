@@ -207,6 +207,10 @@ main {
 }
 
 /**** Footer ****/
+
+footer {
+  margin-top: 10rem;
+}
 footer p {
   margin-bottom: 0;
 }
@@ -219,9 +223,11 @@ footer p {
   #container {
     display: block;
     position: fixed;
+    width: 100%;
+    height: 100%;
     top: 0;
     right: -100%;
-    transition-duration: .7s; 
+    transition-duration: .5s; 
   }
 
   #container.is-open {
@@ -230,7 +236,7 @@ footer p {
     height: 100%;
     top: 0;
     right: 0;
-    transition-duration: .7s;
+    transition-duration: .5s;
   }
 
   .headerHambugerArea {
@@ -240,19 +246,8 @@ footer p {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 100;
     color: #000000;
   }
-  
-  /* .headerHambugerArea {
-    background-color: #FFFFFF;
-    transition: top 0.5s ease-in-out;
-    width: 100%;
-    position: fixed;
-    top: -100%;
-    left: 0;
-    display: block;
-  } */
   
   /* ハンバーガーボタンの切り替え */
   #hamburger {
@@ -279,15 +274,14 @@ footer p {
     margin-top: -1px;
     background: #FFFFFF;
     transform-origin: center;
-    transition: all 0.2s;
   }
 
-  #container.is-open .closeBtn::before {
+  #container .headerHambugerArea .closeBtn::before {
     transform: rotate(-45deg);
     background: #000000;
   } 
 
-  #container.is-open .closeBtn::after {
+  #container .headerHambugerArea .closeBtn::after {
     transform: rotate(45deg);
     background: #000000;
   } 
@@ -302,7 +296,6 @@ footer p {
     width: 30px;
     height: 2px;
     transform-origin: center;
-    transition: all 0.2s;
     background-color: #FFFFFF;
   } 
 
