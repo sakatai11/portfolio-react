@@ -3,6 +3,27 @@ import Ham from "./Ham";
 
 
 const Header = () => {
+  // スクロールの位置を取得する関数
+  const getScrollPosition = () => {
+    return window.scrollY || document.documentElement.scrollTop;
+  };
+
+  // スクロールイベントのリスナー
+  const handleScroll = () => {
+    // スクロールの位置がheaderの高さより大きい場合
+    if (getScrollPosition() > 0) {
+      // headerにwhiteクラスを付ける
+      document.querySelector("header").classList.add("white");
+    } else {
+      // headerからwhiteクラスを外す
+      document.querySelector("header").classList.remove("white");
+    }
+  };
+
+  // スクロールイベントにリスナーを登録する
+  window.addEventListener("scroll", handleScroll);
+
+
   const [isMenu, setIsMenu] = useState('')
 
   return (

@@ -37,8 +37,22 @@ header {
   top: 0;
   left: 0;
   z-index: 9999;
-  color: #FFFFFF;
+  color: #000000;
 }
+
+/* headerの初期の背景色 */
+header {
+  background-color: transparent;
+  transition: all .3s;
+}
+
+/* headerにwhiteクラスが付いたときの背景色 */
+header.white {
+  background-color: white;
+  opacity: 1;
+  transition: all .3s;
+}
+
 
 header p,
 header ul {
@@ -279,8 +293,8 @@ footer p {
     position: relative;
     width: 30px;
     height: 18px;
-    border-top: 2px solid #FFFFFF;
-    border-bottom: 2px solid #FFFFFF;
+    border-top: 2px solid #000000;
+    border-bottom: 2px solid #000000;
     transition: all 0.2s;
     cursor: pointer;
     /* z-index: 20; */
@@ -296,7 +310,7 @@ footer p {
     width: 100%;
     height: 2px;
     margin-top: -1px;
-    background: #FFFFFF;
+    background: #000000;
     transform-origin: center;
   }
 
