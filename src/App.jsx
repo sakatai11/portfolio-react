@@ -4,17 +4,24 @@ import Main from './components/Main'
 import Footer from './components/Footer'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'; // BootstrapのCSSをインポート
-import { client } from './libs/client';
+import { client } from '../libs/client'
 
-//SSG
 export const getStaticProps = async () => {
   const listData = await client.get({
-    endpoint: "photo_list",
+    endpoint: 'photo_list',
   });
-
     //dataが取得できているのか確認
-    console.log(listData);
+    console.log(listData.contents);
+
+    // propsオブジェクトを返す
+    return {
+      props: {
+        listData,
+      },
+    };
   };
+
+  getStaticProps();
 
 function App() {
   return (

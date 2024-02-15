@@ -67,6 +67,7 @@ const photoContents = [
   ];
 
 const Main = () => {
+
   return (
     <main>
       <Kv src={kvImages}/>
