@@ -112,6 +112,43 @@ main {
 }
 
 /**** KV ****/
+.scrollArea {
+  position: absolute;
+  bottom: 0;
+  right: 80px;
+}
+
+.scrollArea p {
+  color: #FFFFFF;
+  font-size: 0.7em;
+}
+
+.scroll-down4 {
+  width: 2px;
+  height: 80px;
+  background: #ffffff;
+  animation: scrollDown4 3s ease infinite;
+  margin: 0 auto;
+}
+
+@keyframes scrollDown4 {
+  0% {
+    transform-origin: top;
+    transform: scaleY(0);
+  }
+  45% {
+    transform-origin: top;
+    transform: scaleY(1);
+  }
+  55% {
+    transform-origin: bottom;
+    transform: scaleY(1);
+  }
+  100% {
+    transform-origin: bottom;
+    transform: scaleY(0);
+  }
+}
 
 .Kv_contents {
   position: relative;
@@ -390,10 +427,19 @@ footer p {
   } 
 
   /**** Main ****/
+  /** Kv **/
+  .scroll-down4 {
+    height:60px;
+  }
+  
+  .scrollArea {
+    right: 24px;
+  }
+  
   .mainArticles {
     padding: 0 15px;
   }
-
+  
   main {
     font-size: 1.8em;
   }

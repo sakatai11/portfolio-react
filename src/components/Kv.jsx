@@ -5,10 +5,15 @@ const Kv = (props) => {
   return (
     <>
       <div className="Kv_contents">
-      <picture>
+        <picture>
           <source srcSet={`${props.src[0]} 1x, ${props.src[1]} 2x`} alt="KV"  media="(max-width: 767px)"/>
           <img src={props.src[0]} alt="KV" />
         </picture>
+
+        <div className="scrollArea">
+          <p>SCROLL</p>
+          <div class="scroll-down4"></div>
+        </div>
       </div>
     </>
   );
