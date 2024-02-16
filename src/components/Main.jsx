@@ -4,46 +4,16 @@ import kvImgPc from "../images/KV_pc.jpeg";
 import kvImgSp from "../images/KV_sp.jpeg";
 /*----List-----*/
 import List from "./List";
-import Img01 from "../images/image01.jpg";
-import Img02 from "../images/image02.jpeg";
-import Img03 from "../images/image03.jpeg";
 /*----Content-----*/
 import Content from "./Content";
 import Img04 from "../images/image04.jpeg";
 import Img05 from "../images/image05.jpeg";
 import Img06 from "../images/image06.jpeg";
 
+import { useState, useEffect } from "react";
+import getPhotoList from "../api/microCMSClient";
+
 const kvImages = [kvImgPc,kvImgSp];
-
-const photoList = [ 
-  {
-    id: 1,
-    date: 20230101,
-    contentId: "サブ1",
-    title: "テキスト1",
-    image: Img01,
-    url: "#",
-
-  },
-  {
-    id: 2,
-    date: 20230102,
-    contentId: "サブ2",
-    title: "テキスト2",
-    image: Img02,
-    url: "#",
-  },
-  {
-    id: 3,
-    date: 20230103,
-    contentId: "サブ3",
-    title: "テキスト3",
-    image: Img03,
-    url: "#",
-  },
-  ];
-
-// console.log(photoList);
 
 const photoContents = [ 
   {
@@ -67,6 +37,21 @@ const photoContents = [
   ];
 
 const Main = () => {
+  const [photoList, setPhotoList] = useState([]); 
+
+  useEffect(() => {
+    // ここでgetPhotoList関数を呼び出して、APIデータを取得する
+    try {
+      getPhotoList().then((data) => {
+        console.log(data.props.listData.contents);
+        setPhotoList(data.props.listData.contents); // 取得したデータのcontents配列をsetPhotoListでローカルステートに保存する
+        console.log(photoList);
+      });
+    } catch (error) {
+      console.error(error); 
+    }
+  }, []); // 空の依存配列を渡すことで、コンポーネントのマウント時に一度だけ実行される
+
 
   return (
     <main>
