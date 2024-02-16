@@ -12,7 +12,7 @@ const Kv = (props) => {
 
         <div className="scrollArea">
           <p>SCROLL</p>
-          <div class="scroll-down4"></div>
+          <div className="scroll-down4"></div>
         </div>
       </div>
     </>
