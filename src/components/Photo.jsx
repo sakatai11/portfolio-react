@@ -28,7 +28,7 @@ const Photo = () => {
     // アニメーション、refとinViewを定義する
     const { ref, inView } = useInView({
       rootMargin: "100px",
-      triggerOnce: true,
+      triggerOnce: false,
       threshold: threshold,
     });
 
