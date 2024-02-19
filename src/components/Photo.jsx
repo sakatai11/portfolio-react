@@ -21,16 +21,37 @@ const Photo = () => {
     }
   }, []); // 空の依存配列を渡すことで、コンポーネントのマウント時に一度だけ実行される
 
+  //デバイスサイズごとにthresholdの値を変更
+  const mediaQuery = window.matchMedia('(min-width: 767px)');
+  const threshold = mediaQuery.matches ? 0.6 : 0.3;
+
     // アニメーション、refとinViewを定義する
     const { ref, inView } = useInView({
       rootMargin: "100px",
       triggerOnce: true,
-      threshold: 0.6,
+      threshold: threshold,
     });
 
 
   return (
-    <motion.div className="listArea" ref={ref} initial={{ opacity: 0 }} animate={{ opacity: inView ? 1 : 0 }} transition={{ duration: 1 }}>
+    <motion.div 
+      className="listArea" 
+      ref={ref} 
+      initial={{ y: 100, opacity: 0 }} 
+      animate={inView ? "onscreen" : "offscreen"} // ここに文字列を渡す
+      variants={{
+        onscreen: {
+          y: 0,
+          opacity: 1,
+          transition: { duration: 2, ease: "anticipate" }
+        },
+        offscreen: {
+          y: 100,
+          opacity: 0,
+          transition: { duration: 1, ease: "anticipate" }
+        }
+      }}
+    >
       <div className="titleArea">
         <h2>PHOTO</h2>
         <a href="#" tabIndex={500} className="arrowLink sp-none">すべての写真を見る</a>

@@ -21,16 +21,22 @@ const Contents = () => {
     }
   }, []); // 空の依存配列を渡すことで、コンポーネントのマウント時に一度だけ実行される
 
-    // アニメーション、refとinViewを定義する
-    const { ref, inView } = useInView({
-      rootMargin: "100px",
-      triggerOnce: true,
-      threshold: 0.3,
-    });
+  // アニメーション、refとinViewを定義する
+  const { ref, inView } = useInView({
+    rootMargin: "100px",
+    triggerOnce: true,
+    threshold: 0.3,
+  });
 
 
   return (
-    <motion.div className="contentsArea" ref={ref} initial={{ opacity: 0 }} animate={{ opacity: inView ? 1 : 0 }} transition={{ duration: 1 }}>
+    <motion.div 
+    className="contentsArea" 
+    ref={ref} 
+    initial={{ opacity: 0 }} 
+    animate={{ opacity: inView ? 1 : 0 }} 
+    transition={{ duration: 1 }}
+    >
         <h2>CONTENTS</h2>
       <ul className="eachContents">
         {
