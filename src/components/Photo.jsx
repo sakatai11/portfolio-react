@@ -23,7 +23,7 @@ const Photo = () => {
 
   //デバイスサイズごとにthresholdの値を変更
   const mediaQuery = window.matchMedia('(min-width: 767px)');
-  const threshold = mediaQuery.matches ? 0.6 : 0.05;
+  const threshold = mediaQuery.matches ? 0.6 : 0.02;
 
     // アニメーション、refとinViewを定義する
     const { ref, inView } = useInView({
