@@ -23,7 +23,7 @@ const Photo = () => {
 
   //デバイスサイズごとにthresholdの値を変更
   const mediaQuery = window.matchMedia('(min-width: 767px)');
-  const threshold = mediaQuery.matches ? 0.6 : 0.02;
+  const threshold = mediaQuery.matches ? 0.5 : 0.2;
 
     // アニメーション、refとinViewを定義する
     const { ref, inView } = useInView({
@@ -48,7 +48,7 @@ const Photo = () => {
         offscreen: {
           y: 100,
           opacity: 0,
-          transition: { duration: 1, ease: "anticipate" }
+          transition: { duration: 2, ease: "anticipate" }
         }
       }}
     >
