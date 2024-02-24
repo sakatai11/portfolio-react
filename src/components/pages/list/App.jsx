@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react'
-import Header from './components/common/Header'
-import Main from './components/Main'
-import Footer from './components/common/Footer'
-import './layouts/App.css'
-import './App.css'
+import Header from '../../common/Header'
+// import Main from './components/Main'
+import Footer from '../../common/Footer'
+import '../../../layouts/App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'; // BootstrapのCSSをインポート
 
 function App() {
@@ -18,10 +17,10 @@ function App() {
   return (
     <div className={opacity}>
       <Header/>
-      <Main />
+      <p>list</p>
       <Footer />
     </div>
   )
 }
 
-export default App;
+export default App

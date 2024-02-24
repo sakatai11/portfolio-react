@@ -1,0 +1,394 @@
+@charset 'UTF-8';
+/**** 全エリア共通 ****/
+
+#root {
+  font-size: 62.5%;
+}
+
+.l-container {
+  opacity: 0;
+}
+
+.l-container.display {
+  opacity: 1;
+  transition: all .8s;
+  transition-delay: 0.7s; /* 0.7秒遅らせる */
+}
+
+.display header {
+  z-index: 9999;
+}
+
+
+body ul {
+  padding-left: initial;
+}
+
+ul li {
+  list-style: none;
+}
+
+body a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.sp-none {
+  display: flex !important;
+}
+
+.pc-none {
+  display: none !important;
+}
+
+/**** header ****/
+header {
+  background-color: transparent;
+  transition: all .3s;
+  padding: 1.2rem 55px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  font-size: 3em;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: #000000;
+}
+
+.display header {
+  z-index: 9999;
+}
+
+.Header_text h1 {
+  font-size: 1em;
+  margin-bottom: 0;
+}
+
+/* headerにwhiteクラスが付いたときの背景色 */
+header.white {
+  background-color: white;
+  opacity: 1;
+  transition: all .3s;
+}
+
+
+header p,
+header ul {
+  margin-bottom: initial;
+}
+
+header .Header__nav a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+header .Header__nav a::after {
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 1px;
+  background: #000000;
+  transform: scale(0, 1);
+  transform-origin: center top;
+  transition: transform .3s;
+}
+
+header .Header__nav a:hover {
+  font-weight: 700;
+}
+
+header .Header__nav a:hover::after {
+  transform: scale(1, 1);
+}
+
+header .Header__nav ul {
+  display: flex;
+}
+
+header .Header__nav ul li {
+  font-size: 0.5em;
+}
+
+header .Header__nav ul li + li {
+  margin-left: 82px;
+}
+
+#hamburger,
+#container {
+  display: none;
+}
+
+/**** main ****/
+
+main {
+  font-size: 2.4em;
+}
+
+.mainArticles {
+  max-width: 1335px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+.photoContents .card .imgDate {
+  overflow:hidden;
+}
+
+.photoContents a .card-img-top {
+  transition:200ms all;
+}
+
+.photoContents a:hover .card-img-top {
+  transform: scale(1.1);
+}
+
+.photoContents a:hover {
+  opacity: 0.7;
+}
+
+/**** listArea ****/
+.listArea {
+  padding: 25rem 0  12.5rem;
+}
+
+.photoContents {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 3.2rem;
+  margin-top: 10rem;
+}
+
+.mainArticles .titleArea {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.mainArticles h2 {
+  font-size: 2.3em;
+}
+
+.mainArticles .arrowLink {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 50px;
+}
+
+.mainArticles .linkContent {
+  width: fit-content;
+  margin: 0 auto;
+  padding-top: 8.4rem;
+}
+
+.mainArticles .titleArea a::after,
+.mainArticles .eachContents .col a::after,
+.mainArticles .linkContent a::after {
+  position: absolute;
+  content: "";
+  height: 17px;
+  width: 10px;
+  right: 0.9027777778vw;
+  display: inline-block;
+  background-image: url(../assets/images/arrow-right.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: all .3s;
+}
+
+.mainArticles .titleArea a:hover:after,
+.mainArticles .eachContents .col a:hover:after {
+  right: 0;
+}
+
+.mainArticles .titleArea a:hover,
+.mainArticles .eachContents .col a:hover {
+  font-weight: 700;
+}
+
+.photoContents li {
+  width: 33.3%;
+}
+
+.photoContents .imgDate {
+  position: relative;
+}
+
+.photoContents .imgDate span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10px 7px;
+  background-color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.8em;
+}
+
+.mainArticles .photoContents .card {
+  width: 100%;
+  border: none;
+}
+
+
+/**** Footer ****/
+
+footer {
+  margin-top: 10rem;
+}
+footer p {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 767px){
+  .sp-none {
+    display: none !important;
+  }
+  
+  .pc-none {
+    display: flex !important;
+  }
+
+  .mainArticles .arrowLink {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 50px;
+    font-weight: 700;
+  }
+
+/**** Header ****/
+  header {
+    padding: 1.3rem 20px;
+    align-items: center;
+  }
+
+  .Header_text h1 {
+    font-size: initial;
+  }
+
+  .Header__nav {
+    display: none;
+  }
+
+  #container {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: -100%;
+    transition-duration: .5s; 
+  }
+
+  #container.is-open {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    transition-duration: .5s;
+  }
+
+  .headerHambugerArea {
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+  }
+  
+  /* ハンバーガーボタンの切り替え */
+  #hamburger {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 18px;
+    border-top: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+    transition: all 0.2s;
+    cursor: pointer;
+    /* z-index: 20; */
+  }
+  
+  #hamburger::before,
+  #hamburger::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    margin-top: -1px;
+    background: #000000;
+    transform-origin: center;
+  }
+
+  #container .headerHambugerArea .closeBtn::before {
+    transform: rotate(-45deg);
+    background: #000000;
+  } 
+
+  #container .headerHambugerArea .closeBtn::after {
+    transform: rotate(45deg);
+    background: #000000;
+  } 
+
+  #container .closeBtn::before,
+  #container .closeBtn::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    width: 30px;
+    height: 2px;
+    transform-origin: center;
+    background-color: #FFFFFF;
+  } 
+
+  /**** Main ****/
+  .mainArticles {
+    padding: 0 15px;
+  }
+  
+  main {
+    font-size: 1.8em;
+  }
+
+  .listArea {
+    padding: 13rem 0 6.5rem;
+  }
+
+  .photoContents {
+    display: block;
+    margin-top: 7rem;
+  }
+
+  .mainArticles .photoContents li + li {
+    margin-top: 65px;
+  }
+
+  .photoContents li {
+    width: 100%;
+  }
+
+  .card-body .card-text {
+    font-size: 1em !important; 
+  }
+
+  .card-body .card-title {
+    font-size: 1.7em !important; 
+  }
+}
