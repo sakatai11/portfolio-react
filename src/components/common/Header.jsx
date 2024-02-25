@@ -30,7 +30,7 @@ const Header = () => {
     <header>
       <div className="Header_text">
         <h1>
-          <a href="#" tabIndex={100}>TAICHI PHOTO</a>
+          <a href="/" tabIndex={100}>TAICHI PHOTO</a>
         </h1>
       </div>
       <div className="Header__nav">
