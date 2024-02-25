@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import Header from '../../common/Header'
+import Header from '../../components/common/Header'
 // import Main from './components/Main'
-import Footer from '../../common/Footer'
-import '../../../layouts/App.css'
+import Footer from '../../components/common/Footer'
+import '../../layouts/App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'; // BootstrapのCSSをインポート
 
 function App() {
