@@ -161,7 +161,6 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: start;
-  gap: 3.2rem;
   margin-top: 10rem;
 }
 
@@ -215,7 +214,7 @@ main {
 }
 
 .photoContents li {
-  width: 33.3%;
+  width: 30.66%;
 }
 
 .photoContents .imgDate {
