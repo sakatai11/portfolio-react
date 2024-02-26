@@ -58,7 +58,7 @@ const Photo = () => {
       </div>
       <ul className="photoContents">
         {
-          photo.slice(0, 2).map((photoList) => (
+          photo.slice(0, 3).map((photoList) => (
           <li key={photoList.id} >
             <PhotoList list={photoList}/>
           </li>
