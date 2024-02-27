@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import Header from '../../components/common/Header'
-import ListMain from '../../components/List.main'
+import ListMain from '../../components/ListMain'
 import Footer from '../../components/common/Footer'
 import '../../layouts/App.css'
 import './App.css'

@@ -1,7 +1,7 @@
 /*----Photo-----*/
-import ListPhoto from "./List.Photo";
+import ListPhoto from "./ListPhoto";
 /*----Content-----*/
-import ListContents from "./List.Contents";;
+import ListContents from "./ListContents";
 
 const ListMain = () => {
 
