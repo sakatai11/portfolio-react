@@ -185,7 +185,7 @@ main {
 .mainArticles .linkContent {
   width: fit-content;
   margin: 0 auto;
-  padding-top: 8.4rem;
+  padding-top: 4.4rem;
 }
 
 .mainArticles .titleArea a::after,
@@ -244,6 +244,10 @@ footer {
 }
 footer p {
   margin-bottom: 0;
+}
+
+footer .text-center {
+  border-radius: 0;
 }
 
 @media screen and (max-width: 767px){
@@ -367,7 +371,7 @@ footer p {
   }
 
   .listArea {
-    padding: 13rem 0 6.5rem;
+    padding: 8rem 0 6.5rem;
   }
 
   .photoContents {

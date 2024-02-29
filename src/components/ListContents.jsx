@@ -5,6 +5,8 @@ import ContentList from "./ContentList";
 
 const ListContents = () => {
   const [content, setContent] = useState([]); // contentListというローカルステートを定義する
+  const pageUrl = window.location.pathname;
+  console.log(pageUrl);
 
   useEffect(() => {
     // ここでgetData関数を呼び出して、APIデータを取得する
@@ -26,7 +28,7 @@ const ListContents = () => {
         {
           content.map((contentList) => (
           <li key={contentList.id} >
-            <ContentList list={contentList}/>
+            <ContentList list={contentList} url={pageUrl}/>
           </li>
           ))
         }

@@ -6,6 +6,7 @@
 
 .mainArticles .listArea {
   padding: 0;
+  margin-bottom: 14.5rem;
 }
 
 .mainArticles .photoContents {
@@ -13,12 +14,77 @@
   row-gap: 3.2rem;
 }
 
+.mainArticles .contentsArea h2 {
+  font-size: 1.5em;
+}
+
+.mainArticles .contentsArea .eachContents .col a::after {
+  content: none;
+}
+
+.mainArticles .contentsArea .eachContents {
+  display: flex;
+  margin-top: 70px;
+}
+
+.container .row {
+  flex-wrap: initial;
+}
+
+.container .row .col img {
+  width: 100%;
+}
+
+.container .row .col:first-child {
+  flex: 2;
+}
+
+.container .row .col:last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container .row .col:last-child a {
+  width: fit-content;
+  padding-left: 10px;
+}
+
 @media screen and (max-width: 767px){
   /**** Main ****/
   main .mainArticles .titleArea {
-    display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.mainArticles .contentsArea .eachContents {
+  display: block;
+  margin-top: 70px;
+}
+
+.container .row .col:last-child a {
+  margin: 0 auto;
+}
+
+.container .row .col:first-child {
+  flex: 1;
+}
+
+.mainArticles .contentsArea {
+  margin-top: 8rem;
+}
+
+.mainArticles .contentsArea .eachContents li:first-child {
+  padding-top: 0;
+}
+
+.mainArticles .contentsArea .eachContents li {
+  padding: 30px 0 30px 0;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.mainArticles .contentsArea h2 {
+  text-align: center;
 }
 
 }

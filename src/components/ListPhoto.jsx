@@ -34,9 +34,6 @@ const ListPhoto = () => {
           ))
         }
       </ul>
-      <div className="linkContent">
-        <a href="#" tabIndex={500} className="arrowLink pc-none">すべての写真を見る</a>
-      </div>
     </div>
   );
 }

@@ -23,12 +23,12 @@ const Photo = () => {
 
   //デバイスサイズごとにthresholdの値を変更
   const mediaQuery = window.matchMedia('(min-width: 767px)');
-  const threshold = mediaQuery.matches ? 0.5 : 0.2;
+  const threshold = mediaQuery.matches ? 0.3 : 0.2;
 
     // アニメーション、refとinViewを定義する
     const { ref, inView } = useInView({
       rootMargin: "100px",
-      triggerOnce: false,
+      triggerOnce: true,
       threshold: threshold,
     });
 
@@ -65,7 +65,7 @@ const Photo = () => {
           ))
         }
       </ul>
-      <div className="linkContent">
+      <div className="linkContent pc-none">
         <a href="#" tabIndex={500} className="arrowLink pc-none">すべての写真を見る</a>
       </div>
     </motion.div>

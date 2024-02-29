@@ -10,10 +10,12 @@ const Main = () => {
   return (
     <main>
       <Kv />
+      <section>
       <div className="mainArticles">
       <Photo />
       <Contents />
       </div>
+      </section>
     </main>
   );
 }

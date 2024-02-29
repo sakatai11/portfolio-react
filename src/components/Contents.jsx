@@ -24,7 +24,7 @@ const Contents = () => {
   // アニメーション、refとinViewを定義する
   const { ref, inView } = useInView({
     rootMargin: "100px",
-    triggerOnce: false,
+    triggerOnce: true,
     threshold: 0.3,
   });
 
