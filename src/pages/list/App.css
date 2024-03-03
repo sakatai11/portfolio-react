@@ -12,6 +12,8 @@
 .mainArticles .photoContents {
   flex-wrap: wrap;
   row-gap: 3.2rem;
+  column-gap: 2.93rem;
+  justify-content: flex-start;
 }
 
 .mainArticles .contentsArea h2 {

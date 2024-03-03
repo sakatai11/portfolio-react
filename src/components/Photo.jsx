@@ -54,7 +54,7 @@ const Photo = () => {
     >
       <div className="titleArea">
         <h2>PHOTO</h2>
-        <a href="#" tabIndex={500} className="arrowLink sp-none">すべての写真を見る</a>
+        <a href="/list/" tabIndex={500} className="arrowLink sp-none">すべての写真を見る</a>
       </div>
       <ul className="photoContents">
         {
@@ -66,7 +66,7 @@ const Photo = () => {
         }
       </ul>
       <div className="linkContent pc-none">
-        <a href="#" tabIndex={500} className="arrowLink pc-none">すべての写真を見る</a>
+        <a href="/list/" tabIndex={500} className="arrowLink pc-none">すべての写真を見る</a>
       </div>
     </motion.div>
   );
