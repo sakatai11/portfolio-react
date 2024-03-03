@@ -34,6 +34,9 @@ const ListPhoto = () => {
           ))
         }
       </ul>
+      <div className="linkContent">
+        <button>さらに写真を表示する</button>
+      </div>
     </div>
   );
 }

@@ -12,8 +12,13 @@
 .mainArticles .photoContents {
   flex-wrap: wrap;
   row-gap: 3.2rem;
-  column-gap: 2.93rem;
-  justify-content: flex-start;
+}
+
+.mainArticles .photoContents::before {
+  display: block;
+  order: 1;
+  width: 30%;
+  content: '';
 }
 
 .mainArticles .contentsArea h2 {
@@ -52,11 +57,19 @@
   padding-left: 10px;
 }
 
+.listArea button {
+  width: 390px;
+}
+
 @media screen and (max-width: 767px){
   /**** Main ****/
   main .mainArticles .titleArea {
     align-items: center;
     justify-content: center;
+}
+
+.listArea button {
+  width: 100%;
 }
 
 .mainArticles .contentsArea .eachContents {

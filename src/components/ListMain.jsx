@@ -3,13 +3,13 @@ import ListPhoto from "./ListPhoto";
 /*----Content-----*/
 import ListContents from "./ListContents";
 
-const ListMain = () => {
+const ListMain = ( {url} ) => {
 
   return (
     <main>
       <div className="mainArticles">
       <ListPhoto />
-      <ListContents />
+      <ListContents pageUrl={url} />
       </div>
     </main>
   );

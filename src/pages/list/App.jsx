@@ -15,10 +15,12 @@ function App() {
     setOpacity("l-container display");
   }, []);
 
+  const pageUrl = window.location.pathname;
+
   return (
     <div className={opacity}>
-      <Header/>
-      <ListMain />
+      <Header urlCheck={pageUrl} />
+      <ListMain url={pageUrl} />
       <Footer />
     </div>
   )

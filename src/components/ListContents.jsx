@@ -3,10 +3,8 @@ import getListData from "../api/microCMSClient";
 import ContentList from "./ContentList";
 
 
-const ListContents = () => {
+const ListContents = ( {pageUrl} ) => {
   const [content, setContent] = useState([]); // contentListというローカルステートを定義する
-  const pageUrl = window.location.pathname;
-  console.log(pageUrl);
 
   useEffect(() => {
     // ここでgetData関数を呼び出して、APIデータを取得する
