@@ -4,8 +4,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 const ContentList = ({ list, url }) => {
-  console.log(list);
-  console.log(url);
+  // console.log(list);
+  // console.log(url);
 
   return (
     <Container>

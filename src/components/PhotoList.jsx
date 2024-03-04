@@ -1,7 +1,8 @@
 import Card from 'react-bootstrap/Card';
 
 const PhotoList = ({list}) => {
-  console.log(list);
+  // console.log("click2");
+  // console.log(list);
 
   return (
     <a href={list.url} tabIndex={600}>
