@@ -10,6 +10,7 @@ const ListPhoto = () => {
   // 新しい写真を既存のリストに追加する前に重複をチェックする
 const addNewPhotos = (newPhotos) => {
   setPhoto(prevPhotos => {
+    console.log(prevPhotos);
     const existingIds = new Set(prevPhotos.map(li => li.id));
     console.log(existingIds);
     const uniqueNewPhotos = newPhotos.filter(li => !existingIds.has(li.id));
@@ -22,11 +23,11 @@ const addNewPhotos = (newPhotos) => {
     // APIから写真データを取得する
     const fetchData = async () => {
       try {
-        const data = await getListData('photo', 100, count * 9, null);
+        const data = await getListData('photo', 9, count * 9, null);
+        console.log(count);
         console.log(data.props.data.contents); // ここでは全ての写真が取得される
-        console.log("ok");
         // 重複をチェックしてから新しい写真をリストに追加する
-        addNewPhotos(data.props.data.contents.slice(0, 9));
+        addNewPhotos(data.props.data.contents);
       } catch (error) {
         console.error(error); 
       }
@@ -37,6 +38,7 @@ const addNewPhotos = (newPhotos) => {
 
   const loadMore = () => {
     setCount(prev => prev + 1); // countを増やして次の9枚をロードする
+    console.log(count);
   }
 
   return (

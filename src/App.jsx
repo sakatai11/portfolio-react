@@ -11,8 +11,10 @@ function App() {
   const [opacity, setOpacity] = useState("l-container");
 
   // コンポーネントがマウントされた後に、opacityを1に変更する副作用フックを定義
-  useEffect(() => {
-    setOpacity("l-container display");
+  useEffect(() => {    
+    window.onload = () => {
+    setOpacity('l-container display');
+  };
   }, []);
 
   return (
