@@ -12,7 +12,7 @@ const getListData = async (endpoint, limit, offset, params) => {
     // 開発環境のみconsole.logを実行する
     if (process.env.NODE_ENV === 'development') {
       //dataが取得できているのか確認
-      console.log(data.contents);
+      // console.log(data.contents);
     }
 
     // propsオブジェクトを返す
