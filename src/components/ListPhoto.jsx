@@ -14,6 +14,7 @@ const addNewPhotos = (newPhotos) => {
     const existingIds = new Set(prevPhotos.map(li => li.id));
     console.log(existingIds);
     const uniqueNewPhotos = newPhotos.filter(li => !existingIds.has(li.id));
+    console.log(prevPhotos);
     console.log(uniqueNewPhotos);
     return [...prevPhotos, ...uniqueNewPhotos];
   });
