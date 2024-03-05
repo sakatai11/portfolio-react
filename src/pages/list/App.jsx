@@ -11,10 +11,8 @@ function App() {
   const [opacity, setOpacity] = useState("l-container");
 
   // コンポーネントがマウントされた後に、opacityを1に変更する副作用フックを定義
-  useEffect(() => { // ページの読み込みが完了したら実行されるイベントリスナーを追加
-    window.onload = () => {
-      setOpacity('l-container display');
-    };
+  useEffect(() => {
+    setOpacity("l-container display");
   }, []);
 
   const pageUrl = window.location.pathname;
