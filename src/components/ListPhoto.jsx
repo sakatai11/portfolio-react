@@ -8,6 +8,8 @@ const ListPhoto = () => {
   const [count, setCount] = useState(0); // ロードされた写真セットのカウント
   const [hasMore, setHasMore] = useState(true); // さらに写真があるかどうかのフラグ
 
+  console.log(hasMore);
+
   // 新しい写真を既存のリストに追加する前に重複をチェックする
   const addNewPhotos = (newPhotos) => {
     setPhoto(prevPhotos => {
@@ -51,6 +53,7 @@ const ListPhoto = () => {
   }, [count, hasMore]); // countまたはhasMoreが変更されるたびにuseEffectをトリガーする
 
   const loadMore = () => {
+    console.log(hasMore);
     if (hasMore) {
       setCount(prev => prev + 1); // 次の9枚をロードする
       console.log(count);
@@ -71,11 +74,15 @@ const ListPhoto = () => {
           ))
         }
       </ul>
-        <div className="linkContent">
-          <button id="btnClick" onClick={loadMore}>
-            さらに写真を表示する
-          </button>
-        </div>
+      {
+        hasMore && (
+          <div className="linkContent">
+            <button id="btnClick" onClick={loadMore}>
+              さらに写真を表示する
+            </button>
+          </div>
+        )
+      }
     </div>
   );
 }
