@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
-import Header from './components/common/Header'
-import Main from './components/Main'
-import Footer from './components/common/Footer'
-import './layouts/App.css'
-import './App.css'
+import Header from '../components/common/Header'
+import Main from '../components/Main'
+import Footer from '../components/common/Footer'
+import '../layouts/App.css'
+import '../../App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'; // BootstrapのCSSをインポート
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
   // コンポーネントがマウントされた後に、opacityを1に変更する副作用フックを定義
   useEffect(() => {
     setOpacity("l-container display");
+    console.log("実行");
   }, []);
 
   return (

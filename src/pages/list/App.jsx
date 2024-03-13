@@ -3,7 +3,7 @@ import Header from '../../components/common/Header'
 import ListMain from '../../components/ListMain'
 import Footer from '../../components/common/Footer'
 import '../../layouts/App.css'
-import './App.css'
+import '../../../list/App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'; // BootstrapのCSSをインポート
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
   // コンポーネントがマウントされた後に、opacityを1に変更する副作用フックを定義
   useEffect(() => { // ページの読み込みが完了したら実行されるイベントリスナーを追加
       setOpacity('l-container display');
+      console.log("実行list");
   }, []);
 
   const pageUrl = window.location.pathname;
