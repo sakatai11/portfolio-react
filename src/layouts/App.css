@@ -11,8 +11,8 @@
 
 .l-container.display {
   opacity: 1;
-  transition: all .8s;
-  transition-delay: 0.7s; /* 0.7秒遅らせる */
+  transition: all 1s;
+  /* transition-delay: 1s; 0.7秒遅らせる */
 }
 
 .display header {
