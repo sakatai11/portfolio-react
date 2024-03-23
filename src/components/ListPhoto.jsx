@@ -7,6 +7,8 @@ const ListPhoto = () => {
   const [photo, setPhoto] = useState([]); ////prevPhotosとuniqueNewPhotosの結合データ
   const [count, setCount] = useState(0); // ロードされた写真セットのカウント
   const [hasMore, setHasMore] = useState(true); // さらに写真があるかどうかのフラグ
+  const [button, setButton] = useState(false); // 画像が読み込まれたら表示
+  
 
   console.log(hasMore);
 
@@ -34,6 +36,7 @@ const ListPhoto = () => {
         const data = await getListData('photo', 100, count * 9, null);
         console.log(count);
         console.log(data.props.data.contents); // ここでは全ての写真が取得される
+        setButton(true);
         // 取得した写真データが空の場合、ロードモアを停止
         if (data.props.data.contents.length === 0) {
           setHasMore(false);
@@ -77,7 +80,11 @@ const ListPhoto = () => {
       {
         hasMore && (
           <div className="linkContent">
-            <button id="btnClick" onClick={loadMore}>
+            <button 
+              id="btnClick" 
+              btnDisplay={button}
+              onClick={loadMore}
+            >
               さらに写真を表示する
             </button>
           </div>
