@@ -15,6 +15,7 @@ const ListPhoto = () => {
   // 新しい写真を既存のリストに追加する前に重複をチェックする
   const addNewPhotos = (newPhotos) => {
     setPhoto(prevPhotos => {
+      setButton(true);
       console.log(prevPhotos);
       const existingIds = new Set(prevPhotos.map(li => li.id));
       console.log(existingIds);
@@ -36,7 +37,6 @@ const ListPhoto = () => {
         const data = await getListData('photo', 100, count * 9, null);
         console.log(count);
         console.log(data.props.data.contents); // ここでは全ての写真が取得される
-        setButton(true);
         // 取得した写真データが空の場合、ロードモアを停止
         if (data.props.data.contents.length === 0) {
           setHasMore(false);
@@ -82,8 +82,8 @@ const ListPhoto = () => {
           <div className="linkContent">
             <button 
               id="btnClick" 
-              btnDisplay={button}
               onClick={loadMore}
+              style={{ display: button ? 'block' : 'none' }} // buttonの状態に応じて表示/非表示を切り替える
             >
               さらに写真を表示する
             </button>
