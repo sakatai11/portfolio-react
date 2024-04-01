@@ -378,6 +378,14 @@ footer .text-center {
     margin-top: 7rem;
   }
 
+  .mainArticles .titleArea {
+    justify-content: center;
+  }
+
+  .mainArticles h2 {
+    text-align: center;
+  }
+
   .mainArticles .photoContents li + li {
     margin-top: 65px;
   }
