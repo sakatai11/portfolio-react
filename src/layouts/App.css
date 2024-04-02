@@ -5,16 +5,6 @@
   font-size: 62.5%;
 }
 
-.l-container {
-  opacity: 0;
-}
-
-.l-container.display {
-  opacity: 1;
-  transition: all 1s;
-  transition-delay: 1s;  /* 0.7秒遅らせる */
-}
-
 .display header {
   z-index: 9999;
 }

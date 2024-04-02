@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import getListData from "../api/microCMSClient";
 
-const Kv = () => {
+const Kv = ( {className} ) => {
   // console.log(props);
   // console.log(props.src);
 
@@ -27,7 +27,7 @@ const Kv = () => {
 
   return (
     <>
-      <div className="Kv_contents">
+      <div className={className.Kv_contents}>
         <picture>
           {/* isLoadingがfalseになってからレンダリング、kv[0].urlにアクセスする */}
           {isLoading ? null : (
@@ -38,9 +38,9 @@ const Kv = () => {
           )}
         </picture>
 
-        <div className="scrollArea">
+        <div className={className.scrollArea}>
           <p>SCROLL</p>
-          <div className="scroll-down4"></div>
+          <div className={className.scroll_down4}></div>
         </div>
       </div>
     </>

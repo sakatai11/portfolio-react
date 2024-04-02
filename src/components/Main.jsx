@@ -5,11 +5,11 @@ import Photo from "./Photo";
 /*----Content-----*/
 import Contents from "./Contents";
 
-const Main = () => {
+const Main = ( TopStyles ) => {
 
   return (
     <main>
-      <Kv />
+      <Kv className={ TopStyles.className } />
       <section>
       <div className="mainArticles">
       <Photo />
