@@ -5,8 +5,9 @@ import getListData from "../api/microCMSClient";
 import PhotoList from "./PhotoList";
 
 
-const Photo = () => {
+const Photo = ( {className} ) => {
   const [photo, setPhoto] = useState([]); 
+  console.log(className);
 
   useEffect(() => {
     // ここでgetListData関数を呼び出して、APIデータを取得する
@@ -35,7 +36,7 @@ const Photo = () => {
 
   return (
     <motion.div 
-      className="listArea" 
+      className={className.listArea}
       ref={ref} 
       initial={{ y: 100, opacity: 0 }} 
       animate={inView ? "onscreen" : "offscreen"} // ここに文字列を渡す

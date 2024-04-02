@@ -12,7 +12,7 @@ const Main = ( TopStyles ) => {
       <Kv className={ TopStyles.className } />
       <section>
       <div className="mainArticles">
-      <Photo />
+      <Photo className={ TopStyles.className } />
       <Contents />
       </div>
       </section>
