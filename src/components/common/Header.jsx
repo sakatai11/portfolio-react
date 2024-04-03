@@ -2,31 +2,29 @@ import { useState } from "react"
 import Ham from "./Ham";
 
 const Header = ( {urlCheck} ) => {
+  console.log(urlCheck);
   // スクロールイベントを監視する
     window.addEventListener("scroll", function() {
       // .mainArticles の位置を取得
       const mainArticles = document.querySelector(".mainArticles");
       const mainArticlesRect = mainArticles.getBoundingClientRect();
 
-      const kvImg = document.querySelector(".Kv_contents img");
-      
       // ヘッダーの位置を取得
       const header = document.querySelector("header");
       const headerRect = header.getBoundingClientRect();
       
+      if (!urlCheck) {
       // .mainArticles の上端がヘッダーの下端よりも高いかどうかをチェック
-      if ( headerRect.top >= mainArticlesRect.top) {
+        if ( headerRect.top >= mainArticlesRect.top) {
           // ヘッダーに "white" クラスを追加
           header.classList.add("white");
-          if (!urlCheck) {
-            kvImg.style.position = "static";
-          }
-      } else {
+          } else {
           // ヘッダーから "white" クラスを削除
           header.classList.remove("white");
-          if (!urlCheck) {
-            kvImg.style.position = "";
-          }
+        }
+      } else {
+        // ヘッダーに "white" クラスを追加
+        header.classList.add("white");
       }
     });
 

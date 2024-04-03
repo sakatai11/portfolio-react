@@ -3,9 +3,6 @@ import getListData from "../api/microCMSClient";
 import styles from "../layouts/Kv.module.css"
 
 const Kv = () => {
-  // console.log(props);
-  // console.log(props.src);
-
   const [kv, setKv] = useState([]); 
   // ローカルステートを追加する
   const [isLoading, setIsLoading] = useState(true);
@@ -25,6 +22,30 @@ const Kv = () => {
       console.error(error); 
     }
   }, []); // 空の依存配列を渡すことで、コンポーネントのマウント時に一度だけ実行される
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const mainArticles = document.querySelector('.mainArticles');
+      const kvImage = document.querySelector('.Kv_contents img');
+
+      if (mainArticles && kvImage) {
+        const mainArticlesRect = mainArticles.getBoundingClientRect();
+
+        if (0 >= mainArticlesRect.top) {
+          // mainArticlesに到達したら、追従を停止
+          kvImage.style.position = 'absolute';
+        } else {
+          // それ以外の場合は、追従を続ける
+          kvImage.style.position = '';
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // コンポーネントのアンマウント時にイベントリスナーを削除
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <>
