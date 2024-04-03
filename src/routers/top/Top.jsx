@@ -1,14 +1,14 @@
 import Header from '../../components/common/Header'
 import Main from '../../components/Main'
 import Footer from '../../components/common/Footer'
-import TopStyles from '../../layouts/Top.module.css'
+import styles from '../../layouts/Top.module.css'
 
 function Top( {property} ) {
 
   return (
-    <div className={`${TopStyles.lContainer} ${property}`}>
+    <div className={`${styles['.l-container']} ${property}`}>
       <Header/>
-      <Main className={TopStyles} />
+      <Main />
       <Footer />
     </div>
   )

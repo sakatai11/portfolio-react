@@ -8,7 +8,7 @@ import React, { useState, useEffect } from 'react';
 import Top from './routers/top/Top';
 import List from './routers/list/List';
 import 'bootstrap/dist/css/bootstrap.min.css'; // BootstrapのCSSをインポート
-import './layouts/App.css'
+import './layouts/globals.css'
 import ListStyles from './layouts/List.module.css'
 
 

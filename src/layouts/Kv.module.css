@@ -1,0 +1,72 @@
+@charset 'UTF-8';
+/**** KV ****/
+.scrollArea {
+  position: absolute;
+  bottom: 0;
+  right: 80px;
+}
+
+.scrollArea p {
+  color: #FFFFFF;
+  font-size: 0.7em;
+}
+
+.scroll_down4 {
+  width: 2px;
+  height: 80px;
+  background: #ffffff;
+  animation: scrollDown4 3s ease infinite;
+  margin: 0 auto;
+}
+
+@keyframes scrollDown4 {
+  0% {
+    transform-origin: top;
+    transform: scaleY(0);
+  }
+  45% {
+    transform-origin: top;
+    transform: scaleY(1);
+  }
+  55% {
+    transform-origin: bottom;
+    transform: scaleY(1);
+  }
+  100% {
+    transform-origin: bottom;
+    transform: scaleY(0);
+  }
+}
+
+.Kv_contents {
+  position: relative;
+  height: 100vh;
+}
+.Kv_contents picture {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;/*はみ出た要素を隠す*/
+}
+
+.Kv_contents img {
+  width: 100%;
+  height: 100%; /* 高さは自動調整 */
+  object-fit: cover;
+  position: fixed;
+  z-index: 0;
+}
+
+@media screen and (max-width: 767px){
+  /** Kv **/
+  .scroll_down4 {
+    height:60px;
+  }
+  
+  .scrollArea {
+    right: 24px;
+  }
+}

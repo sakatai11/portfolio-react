@@ -3,11 +3,11 @@ import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
 import getListData from "../api/microCMSClient";
 import PhotoList from "./PhotoList";
+import styles from "../layouts/Photo.module.css"
 
 
-const Photo = ( {className} ) => {
+const Photo = () => {
   const [photo, setPhoto] = useState([]); 
-  console.log(className);
 
   useEffect(() => {
     // ここでgetListData関数を呼び出して、APIデータを取得する
@@ -36,7 +36,7 @@ const Photo = ( {className} ) => {
 
   return (
     <motion.div 
-      className={className.listArea}
+      className={styles.listArea}
       ref={ref} 
       initial={{ y: 100, opacity: 0 }} 
       animate={inView ? "onscreen" : "offscreen"} // ここに文字列を渡す

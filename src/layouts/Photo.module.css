@@ -1,0 +1,10 @@
+@charset 'UTF-8';
+.listArea {
+  padding: 15rem 0 0;
+}
+
+@media screen and (max-width: 767px){
+  .listArea {
+    padding: 8rem 0 4.5rem;
+  }
+}

@@ -1,0 +1,41 @@
+@charset 'UTF-8';
+/**** contentsList ****/
+ul li:nth-of-type(2n) .rowStyle {
+  flex-direction: row-reverse;
+}
+
+.colStyle {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+
+.colStyle img {
+  width: 100%;
+}
+
+@media screen and (max-width: 767px){
+  /**** contentsList ****/
+
+  .colStyle {
+    align-content: normal;
+    justify-content:inherit
+  }
+
+  .colStyle p {
+    font-size: 1.8em;
+  }
+
+  .rowStyle .colStyle:first-child {
+    margin-bottom: 20px;
+  }
+
+  .rowStyle .colStyle .arrowLink {
+    justify-content: end;
+  }
+
+  li .rowStyle {
+    display: block;
+  }
+
+}

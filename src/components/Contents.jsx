@@ -3,6 +3,7 @@ import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
 import getListData from "../api/microCMSClient";
 import ContentList from "./ContentList";
+import styles from "../layouts/TopContents.module.css";
 
 
 const Contents = () => {
@@ -31,18 +32,18 @@ const Contents = () => {
 
   return (
     <motion.div 
-    className="contentsArea" 
+    className={`${styles.contentsArea} ${'contentsArea'}`}
     ref={ref} 
     initial={{ opacity: 0 }} 
     animate={{ opacity: inView ? 1 : 0 }} 
     transition={{ duration: 1 }}
     >
         <h2>CONTENTS</h2>
-      <ul className="eachContents">
+      <ul className={`${styles.eachContents} ${'eachContents'}`}>
         {
           content.map((contentList) => (
           <li key={contentList.id} >
-            <ContentList list={contentList}/>
+            <ContentList list={contentList} />
           </li>
           ))
         }
