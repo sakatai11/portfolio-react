@@ -3,7 +3,7 @@ import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
 import getListData from "../api/microCMSClient";
 import PhotoList from "./PhotoList";
-import styles from "../layouts/Photo.module.css"
+import styles from "./layouts/Photo.module.css"
 
 
 const Photo = () => {

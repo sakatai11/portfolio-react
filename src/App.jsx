@@ -8,9 +8,7 @@ import React, { useState, useEffect } from 'react';
 import Top from './routers/top/Top';
 import List from './routers/list/List';
 import 'bootstrap/dist/css/bootstrap.min.css'; // BootstrapのCSSをインポート
-import './layouts/globals.css'
-import ListStyles from './layouts/List.module.css'
-
+import './components/layouts/globals.css'
 
 function App() {
   // opacityの状態を管理するステートフックを定義
@@ -24,7 +22,7 @@ function App() {
   return (
     <Routes>
       <Route path='/' element={ <Top property={opacity} />}/>
-      <Route path='/list' element={ <List className={ListStyles} />}/>
+      <Route path='/list' element={ <List />}/>
     </Routes>
   )
 }

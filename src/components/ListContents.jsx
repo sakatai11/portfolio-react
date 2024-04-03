@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import getListData from "../api/microCMSClient";
 import ContentList from "./ContentList";
+import styles from "./layouts/ListContents.module.css";
 
 
 const ListContents = ( {pageUrl} ) => {
@@ -20,9 +21,9 @@ const ListContents = ( {pageUrl} ) => {
   }, []); // 空の依存配列を渡すことで、コンポーネントのマウント時に一度だけ実行される
 
   return (
-    <div className="contentsArea" >
+    <div className={`${styles.contentsArea} ${"contentsArea"}`}>
         <h2>CONTENTS</h2>
-      <ul className="eachContents">
+      <ul className={styles.eachContents}>
         {
           content.map((contentList) => (
           <li key={contentList.id} >

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import getListData from "../api/microCMSClient";
 import PhotoList from "./PhotoList";
+import styles from "./layouts/ListArea.module.css"
 
 
 const ListPhoto = () => {
@@ -64,11 +65,11 @@ const ListPhoto = () => {
   }
 
   return (
-    <div className="listArea" >
+    <div className={styles.listArea} >
       <div className="titleArea">
         <h2>PHOTO</h2>
       </div>
-      <ul className="photoContents">
+      <ul className={`${styles.photoContents} ${"photoContents"}`}>
         {
           photo.map((photoList) => (
           <li key={photoList.id} >
