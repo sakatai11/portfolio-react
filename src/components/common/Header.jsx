@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Link } from 'react-router-dom'
+import { Link , NavLink } from 'react-router-dom'
 import Ham from "./Ham";
 
 const Header = ( {urlCheck} ) => {
@@ -42,13 +42,31 @@ const Header = ( {urlCheck} ) => {
       <div className="Header__nav">
         <ul>
           <li>
-            <Link to="/list/" tabIndex={200}>すべての写真を見る</Link>
+            <NavLink 
+              to="/list/" 
+              tabIndex={200}
+              className={({ isActive }) => (isActive ? 'active' : '')}
+              >
+                すべての写真を見る
+            </NavLink>
           </li>
           <li>
-            <Link to="/list/" tabIndex={300}>雑記</Link>
+            <NavLink 
+              to="/zaki/" 
+              tabIndex={300}
+              className={({ isActive }) => (isActive ? 'active' : '')}
+              >
+                雑記
+            </NavLink>
           </li>
           <li>
-            <Link to="/list/" tabIndex={400}>旅行</Link>
+            <NavLink 
+              to="/trip/" 
+              tabIndex={400}
+              className={({ isActive }) => (isActive ? 'active' : '')}
+              >
+                旅行
+            </NavLink>
           </li>
         </ul>
       </div>
@@ -59,7 +77,7 @@ const Header = ( {urlCheck} ) => {
       </div>
 
       <div id="container" className={isMenu}>
-        <Ham handleCloseClick={() => setIsMenu('')} LinkRouter={Link} />
+        <Ham handleCloseClick={() => setIsMenu('')} NavRouter={NavLink} />
       </div>
     </header>
   );

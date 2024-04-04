@@ -1,12 +1,36 @@
-const Ham = ({ handleCloseClick, LinkRouter }) => {
+const Ham = ({ handleCloseClick, NavRouter }) => {
   return (
     <nav className="headerHambugerArea">
       <div className="closeBtn" onClick={handleCloseClick}>
       </div>
       <ul className="headerNavHumburerInner">
-        <li><LinkRouter to="/list/" tabIndex={200} >すべての写真を見る</LinkRouter></li>
-        <li><LinkRouter to="#" tabIndex={300} onClick={handleCloseClick}>雑記</LinkRouter></li>
-        <li><LinkRouter to="#" tabIndex={400} onClick={handleCloseClick}>旅行</LinkRouter></li>
+      <li>
+            <NavRouter 
+              to="/list/" 
+              tabIndex={200}
+              className={({ isActive }) => (isActive ? 'active' : '')}
+              >
+                すべての写真を見る
+            </NavRouter>
+          </li>
+          <li>
+            <NavRouter 
+              to="/zaki/" 
+              tabIndex={300}
+              className={({ isActive }) => (isActive ? 'active' : '')}
+              >
+                雑記
+            </NavRouter>
+          </li>
+          <li>
+            <NavRouter 
+              to="/trip/" 
+              tabIndex={400}
+              className={({ isActive }) => (isActive ? 'active' : '')}
+              >
+                旅行
+            </NavRouter>
+          </li>
       </ul>
     </nav>
   )

@@ -66,13 +66,15 @@ header ul {
   margin-bottom: initial;
 }
 
-header .Header__nav a {
+header .Header__nav a,
+header .Header__nav .active {
   position: relative;
   display: inline-block;
   text-decoration: none;
 }
 
-header .Header__nav a::after {
+header .Header__nav a::after,
+header .Header__nav .active::after {
   position: absolute;
   bottom: -3px;
   left: 0;
@@ -85,11 +87,13 @@ header .Header__nav a::after {
   transition: transform .3s;
 }
 
-header .Header__nav a:hover {
+header .Header__nav a:hover,
+header .Header__nav .active {
   font-weight: 700;
 }
 
-header .Header__nav a:hover::after {
+header .Header__nav a:hover::after,
+header .Header__nav .active::after {
   transform: scale(1, 1);
 }
 
