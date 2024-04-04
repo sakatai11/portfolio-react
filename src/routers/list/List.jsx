@@ -2,14 +2,12 @@ import Header from '../../components/common/Header'
 import ListMain from '../../components/ListMain'
 import Footer from '../../components/common/Footer'
 
-function List() {
-
-  const pageUrl = window.location.pathname;
+function List( {link} ) {
 
   return (
     <div>
-      <Header urlCheck={pageUrl} />
-      <ListMain url={pageUrl} />
+      <Header urlCheck={link} />
+      <ListMain url={link} />
       <Footer />
     </div>
   )

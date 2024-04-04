@@ -1,9 +1,4 @@
-import {
-  Routes,
-  Route,
-  Link,
-  NavLink,
-} from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import React, { useState, useEffect } from 'react';
 import Top from './routers/top/Top';
 import List from './routers/list/List';
@@ -22,7 +17,7 @@ function App() {
   return (
     <Routes>
       <Route path='/' element={ <Top property={opacity} />}/>
-      <Route path='/list' element={ <List />}/>
+      <Route path='/list' element={ <List link='/list/' />}/>
     </Routes>
   )
 }

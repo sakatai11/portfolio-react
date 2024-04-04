@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from 'react-router-dom'
 import Ham from "./Ham";
 
 const Header = ( {urlCheck} ) => {
@@ -35,14 +36,20 @@ const Header = ( {urlCheck} ) => {
     <header>
       <div className="Header_text">
         <h1>
-          <a href="/" tabIndex={100}>TAICHI PHOTO</a>
+          <Link to="/" tabIndex={100}>TAICHI PHOTO</Link>
         </h1>
       </div>
       <div className="Header__nav">
         <ul>
-          <li><a href="/list/" tabIndex={200}>すべての写真を見る</a></li>
-          <li><a href="#" tabIndex={300}>雑記</a></li>
-          <li><a href="#" tabIndex={400}>旅行</a></li>
+          <li>
+            <Link to="/list/" tabIndex={200}>すべての写真を見る</Link>
+          </li>
+          <li>
+            <Link to="/list/" tabIndex={300}>雑記</Link>
+          </li>
+          <li>
+            <Link to="/list/" tabIndex={400}>旅行</Link>
+          </li>
         </ul>
       </div>
 
@@ -52,7 +59,7 @@ const Header = ( {urlCheck} ) => {
       </div>
 
       <div id="container" className={isMenu}>
-        <Ham handleCloseClick={() => setIsMenu('')} />
+        <Ham handleCloseClick={() => setIsMenu('')} LinkRouter={Link} />
       </div>
     </header>
   );

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import getListData from "../api/microCMSClient";
 import PhotoList from "./PhotoList";
 import styles from "./layouts/ListArea.module.css"
+import { Link } from 'react-router-dom'
 
 
 const ListPhoto = () => {
@@ -73,7 +74,7 @@ const ListPhoto = () => {
         {
           photo.map((photoList) => (
           <li key={photoList.id} >
-            <PhotoList list={photoList}/>
+            <PhotoList list={photoList} LinkRouter={Link} />
           </li>
           ))
         }

@@ -2,6 +2,7 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { Link } from 'react-router-dom'
 import Topstyles from './layouts/TopContentsList.module.css';
 import Liststyles from './layouts/ListContentsList.module.css';
 
@@ -19,13 +20,13 @@ const ContentList = ({ list, url}) => {
         </Col>
         <Col className={styleCategory.colStyle}>
           {url === '/list/' ? (
-            <a href={list.url}>{list.title}</a>
+            <Link to={list.url}>{list.title}</Link>
           ) : (
             <>
               <p>{list.title}</p>
-              <a href={list.url} className={`${Topstyles.arrowLink} ${'arrowLink'}` }>
+              <Link to={list.url} className={`${Topstyles.arrowLink} ${'arrowLink'}` }>
                 写真を見る
-              </a>
+              </Link>
             </>
           )}
         </Col>

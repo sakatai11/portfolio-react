@@ -1,11 +1,11 @@
 import Card from 'react-bootstrap/Card';
 
-const PhotoList = ({list}) => {
+const PhotoList = ({list, LinkRouter}) => {
   // console.log("click2");
   // console.log(list);
 
   return (
-    <a href={list.url} tabIndex={600}>
+    <LinkRouter to={list.url} tabIndex={600}>
       <Card>
           <div className='imgDate'>
             <Card.Img variant="top" src={list.image.url} />
@@ -16,7 +16,7 @@ const PhotoList = ({list}) => {
             <Card.Title style={{ fontSize: '1.34em' }}>{list.title}</Card.Title>
           </Card.Body>
       </Card>
-    </a>
+    </LinkRouter>
   );
 }
 

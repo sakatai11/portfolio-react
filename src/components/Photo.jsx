@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
+import { Link } from 'react-router-dom'
 import getListData from "../api/microCMSClient";
 import PhotoList from "./PhotoList";
 import styles from "./layouts/Photo.module.css"
@@ -55,19 +56,19 @@ const Photo = () => {
     >
       <div className="titleArea">
         <h2>PHOTO</h2>
-        <a href="/list/" tabIndex={500} className="arrowLink sp-none">すべての写真を見る</a>
+        <Link to="/list/" tabIndex={500} className="arrowLink sp-none">すべての写真を見る</Link>
       </div>
       <ul className="photoContents">
         {
           photo.slice(0, 3).map((photoList) => (
           <li key={photoList.id} >
-            <PhotoList list={photoList}/>
+            <PhotoList list={photoList} LinkRouter={Link} />
           </li>
           ))
         }
       </ul>
       <div className="linkContent pc-none">
-        <a href="/list/" tabIndex={500} className="arrowLink pc-none">すべての写真を見る</a>
+        <Link to="/list/" tabIndex={500} className="arrowLink pc-none">すべての写真を見る</Link>
       </div>
     </motion.div>
   );
