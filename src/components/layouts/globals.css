@@ -1,13 +1,13 @@
 @charset 'UTF-8';
 /**** 全エリア共通 ****/
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP&family=Zen+Old+Mincho&display=swap');
 
 #root {
   font-size: 62.5%;
 }
 
 body {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Zen Old Mincho", serif;
 }
 
 body ul {
