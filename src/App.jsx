@@ -1,7 +1,8 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation} from 'react-router-dom'
 import React, { useState, useEffect } from 'react';
 import Top from './routers/top/Top';
 import List from './routers/list/List';
+import ScrollToTop from './ScrollToTop'; // スクロールを制御
 import 'bootstrap/dist/css/bootstrap.min.css'; // BootstrapのCSSをインポート
 import './components/layouts/globals.css'
 
@@ -14,11 +15,16 @@ function App() {
       setOpacity('l-container display');
   }, []);
 
+  const { pathname } = useLocation();
+
   return (
-    <Routes>
-      <Route path='/' element={ <Top property={opacity} />}/>
-      <Route path='/list' element={ <List link='/list/' />}/>
-    </Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route path='/' element={ <Top property={opacity} />}/>
+        <Route path='/list' element={ <List link={pathname} />}/>
+      </Routes>
+    </>
   )
 }
 

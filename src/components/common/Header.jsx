@@ -56,7 +56,7 @@ const Header = ( {urlCheck} ) => {
               tabIndex={300}
               className={({ isActive }) => (isActive ? 'active' : '')}
               >
-                雑記
+                おでかけ
             </NavLink>
           </li>
           <li>
@@ -65,7 +65,16 @@ const Header = ( {urlCheck} ) => {
               tabIndex={400}
               className={({ isActive }) => (isActive ? 'active' : '')}
               >
-                旅行
+              夜
+            </NavLink>
+          </li>
+          <li>
+            <NavLink 
+              to="/trip/" 
+              tabIndex={500}
+              className={({ isActive }) => (isActive ? 'active' : '')}
+              >
+              スポーツ
             </NavLink>
           </li>
         </ul>

@@ -19,7 +19,7 @@ const Ham = ({ handleCloseClick, NavRouter }) => {
               tabIndex={300}
               className={({ isActive }) => (isActive ? 'active' : '')}
               >
-                雑記
+                おでかけ
             </NavRouter>
           </li>
           <li>
@@ -28,7 +28,16 @@ const Ham = ({ handleCloseClick, NavRouter }) => {
               tabIndex={400}
               className={({ isActive }) => (isActive ? 'active' : '')}
               >
-                旅行
+                夜
+            </NavRouter>
+          </li>
+          <li>
+            <NavRouter 
+              to="/trip/" 
+              tabIndex={500}
+              className={({ isActive }) => (isActive ? 'active' : '')}
+              >
+                スポーツ
             </NavRouter>
           </li>
       </ul>
