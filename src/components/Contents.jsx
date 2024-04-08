@@ -12,7 +12,7 @@ const Contents = () => {
   useEffect(() => {
     // ここでgetData関数を呼び出して、APIデータを取得する
     try {
-      getListData('contents', null).then((data) => { // content_listというエンドポイントを指定する
+      getListData('contents', null, null, ['id','image','title', 'url']).then((data) => { // content_listというエンドポイントを指定する
         console.log(data.props.data.contents);
         setContent(data.props.data.contents); // 取得したデータのcontents配列をsetContentListでローカルステートに保存する
         console.log(content);

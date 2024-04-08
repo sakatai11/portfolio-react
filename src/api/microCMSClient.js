@@ -1,13 +1,14 @@
 import { client } from '../../libs/client'
 
-const getListData = async (endpoint, limit, offset, params) => {
+const getListData = async (endpoint, limit, offset, fields) => {
   // endpointとparamsを引数として受け取る
   const data = await client.get({
     endpoint: endpoint, // 引数のendpointを使う
     queries: {
       limit,
       offset,
-    }, // 引数のparamsを使う
+      fields,
+    }, 
   });
     // 開発環境のみconsole.logを実行する
     if (process.env.NODE_ENV === 'development') {

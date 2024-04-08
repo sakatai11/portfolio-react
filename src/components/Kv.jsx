@@ -10,7 +10,7 @@ const Kv = () => {
   useEffect(() => {
     // ここでgetListData関数を呼び出して、APIデータを取得する
     try {
-      getListData('key_visual', null).then((data) => {
+      getListData('key_visual', null, null, null).then((data) => {
         console.log(data.props.data.contents[0].keyVisual);
         // setKvをthenメソッドの中に移動する
         setKv(data.props.data.contents[0].keyVisual); // 取得したデータのをsetKvでローカルステートに保存する

@@ -36,7 +36,7 @@ const ListPhoto = () => {
     // APIから写真データを取得する
     const fetchData = async () => {
       try {
-        const data = await getListData('photo', 100, count * 9, null);
+        const data = await getListData('photo', 100, count * 9, [ 'id', 'date', 'tag', 'title', 'image', 'url' ]);
         console.log(count);
         console.log(data.props.data.contents); // ここでは全ての写真が取得される
         // 取得した写真データが空の場合、ロードモアを停止
