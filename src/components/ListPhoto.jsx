@@ -5,7 +5,7 @@ import styles from "./layouts/ListArea.module.css"
 import { Link } from 'react-router-dom'
 
 
-const ListPhoto = () => {
+const ListPhoto = ( {pageUrl} ) => {
   const [photo, setPhoto] = useState([]); ////prevPhotosとuniqueNewPhotosの結合データ
   const [count, setCount] = useState(0); // ロードされた写真セットのカウント
   const [hasMore, setHasMore] = useState(true); // さらに写真があるかどうかのフラグ
@@ -36,11 +36,18 @@ const ListPhoto = () => {
     // APIから写真データを取得する
     const fetchData = async () => {
       try {
-        const data = await getListData('photo', 100, count * 9, [ 'id', 'date', 'tag', 'title', 'image', 'url' ]);
+        let data; // data変数を関数スコープで定義する
+        if (pageUrl === '/list/') {
+          data = await getListData('photo', 100, count * 9, [ 'id', 'date', 'tag', 'title', 'image', 'url' ]);
+        } else if (pageUrl === '/list/outing') {
+          data = await getListData('photo', 100, count * 9, [ 'id', 'date', 'tag', 'title', 'image', 'url' ], 'tag[contains]おでかけ');
+        }
+
         console.log(count);
         console.log(data.props.data.contents); // ここでは全ての写真が取得される
+        
         // 取得した写真データが空の場合、ロードモアを停止
-        if (data.props.data.contents.length === 0) {
+        if (data && data.props.data.contents.length === 0) {
           setHasMore(false);
           return;
         }

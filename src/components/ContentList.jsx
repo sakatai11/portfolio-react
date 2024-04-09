@@ -11,6 +11,8 @@ const ContentList = ({ list, url}) => {
   // console.log(url);
 
   const styleCategory = url ? Liststyles : Topstyles;
+  const regex = /^\/list\/(.*|$)/; // 正規表現
+
 
   return (
     <Container>
@@ -19,7 +21,7 @@ const ContentList = ({ list, url}) => {
           <img src={list.image.url} alt={list.title} />
         </Col>
         <Col className={styleCategory.colStyle}>
-          {url === '/list/' ? (
+          {regex.test(url) ? ( // 正規表現、/list/もしくは/の後の任意の文字列が続くURLとマッチする
             <Link to={list.url}>{list.title}</Link>
           ) : (
             <>

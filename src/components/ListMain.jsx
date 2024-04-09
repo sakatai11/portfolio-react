@@ -9,7 +9,7 @@ const ListMain = ( {url} ) => {
   return (
     <main className={styles.listMain}>
       <div className="mainArticles">
-      <ListPhoto />
+      <ListPhoto pageUrl={url} />
       <ListContents pageUrl={url} />
       </div>
     </main>

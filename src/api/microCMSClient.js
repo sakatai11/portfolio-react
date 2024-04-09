@@ -1,6 +1,6 @@
 import { client } from '../../libs/client'
 
-const getListData = async (endpoint, limit, offset, fields) => {
+const getListData = async (endpoint, limit, offset, fields, filters) => {
   // endpointとparamsを引数として受け取る
   const data = await client.get({
     endpoint: endpoint, // 引数のendpointを使う
@@ -8,6 +8,7 @@ const getListData = async (endpoint, limit, offset, fields) => {
       limit,
       offset,
       fields,
+      filters,
     }, 
   });
     // 開発環境のみconsole.logを実行する
