@@ -52,7 +52,7 @@ const Header = ( {urlCheck} ) => {
           </li>
           <li>
             <NavLink 
-              to="/zaki/" 
+              to="/list/outing/" 
               tabIndex={300}
               className={({ isActive }) => (isActive ? 'active' : '')}
               >
@@ -61,7 +61,7 @@ const Header = ( {urlCheck} ) => {
           </li>
           <li>
             <NavLink 
-              to="/trip/" 
+              to="/list/night/" 
               tabIndex={400}
               className={({ isActive }) => (isActive ? 'active' : '')}
               >
@@ -70,7 +70,7 @@ const Header = ( {urlCheck} ) => {
           </li>
           <li>
             <NavLink 
-              to="/trip/" 
+              to="/list/sports/" 
               tabIndex={500}
               className={({ isActive }) => (isActive ? 'active' : '')}
               >

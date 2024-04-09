@@ -3,11 +3,18 @@ import ListMain from '../../components/ListMain'
 import Footer from '../../components/common/Footer'
 
 function List( {link} ) {
+  let titleName;
+
+  if (link) {
+    titleName = "PHOTO";
+  } else {
+    titleName = "Not Found";
+  }
 
   return (
     <div>
       <Header urlCheck={link} />
-      <ListMain url={link} />
+      <ListMain url={link} name={titleName}  />
       <Footer />
     </div>
   )

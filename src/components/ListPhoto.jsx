@@ -5,7 +5,7 @@ import styles from "./layouts/ListArea.module.css"
 import { Link } from 'react-router-dom'
 
 
-const ListPhoto = ( {pageUrl} ) => {
+const ListPhoto = ( {pageUrl, title} ) => {
   const [photo, setPhoto] = useState([]); ////prevPhotosとuniqueNewPhotosの結合データ
   const [count, setCount] = useState(0); // ロードされた写真セットのカウント
   const [hasMore, setHasMore] = useState(true); // さらに写真があるかどうかのフラグ
@@ -39,7 +39,7 @@ const ListPhoto = ( {pageUrl} ) => {
         let data; // data変数を関数スコープで定義する
         if (pageUrl === '/list/') {
           data = await getListData('photo', 100, count * 9, [ 'id', 'date', 'tag', 'title', 'image', 'url' ]);
-        } else if (pageUrl === '/list/outing') {
+        } else if (pageUrl === '/list/outing/') {
           data = await getListData('photo', 100, count * 9, [ 'id', 'date', 'tag', 'title', 'image', 'url' ], 'tag[contains]おでかけ');
         }
 
@@ -75,7 +75,7 @@ const ListPhoto = ( {pageUrl} ) => {
   return (
     <div className={styles.listArea} >
       <div className="titleArea">
-        <h2>PHOTO</h2>
+        <h2>{title}</h2>
       </div>
       <ul className={`${styles.photoContents} ${"photoContents"}`}>
         {

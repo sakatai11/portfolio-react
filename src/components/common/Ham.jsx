@@ -15,7 +15,7 @@ const Ham = ({ handleCloseClick, NavRouter }) => {
           </li>
           <li>
             <NavRouter 
-              to="/zaki/" 
+              to="/list/outing/" 
               tabIndex={300}
               className={({ isActive }) => (isActive ? 'active' : '')}
               >
@@ -24,7 +24,7 @@ const Ham = ({ handleCloseClick, NavRouter }) => {
           </li>
           <li>
             <NavRouter 
-              to="/trip/" 
+              to="/list/night/" 
               tabIndex={400}
               className={({ isActive }) => (isActive ? 'active' : '')}
               >
@@ -33,7 +33,7 @@ const Ham = ({ handleCloseClick, NavRouter }) => {
           </li>
           <li>
             <NavRouter 
-              to="/trip/" 
+              to="/trip/sports/" 
               tabIndex={500}
               className={({ isActive }) => (isActive ? 'active' : '')}
               >

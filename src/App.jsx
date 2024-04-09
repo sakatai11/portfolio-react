@@ -24,7 +24,7 @@ function App() {
       <Routes>
         <Route path='/' element={ <Top property={opacity} />}/>
         <Route path='/list' element={ <List link={pathname} />}/>
-        <Route path='/list/outing' element={ <Outing link={pathname} />}/>
+        <Route path='/list/outing/' element={ <Outing link={pathname} />}/>
       </Routes>
     </>
   )
