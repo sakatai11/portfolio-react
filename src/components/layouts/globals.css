@@ -240,24 +240,7 @@ footer .text-center {
   border-radius: 0;
 }
 
-@media screen and (max-width: 767px){
-  .sp-none {
-    display: none !important;
-  }
-  
-  .pc-none {
-    display: flex !important;
-  }
-
-  .mainArticles .arrowLink {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-right: 50px;
-    font-weight: 700;
-  }
-
+@media screen and (max-width: 966px) {
 /**** Header ****/
   header {
     padding: 1.3rem 20px;
@@ -265,7 +248,7 @@ footer .text-center {
   }
 
   .Header_text h1 {
-    font-size: initial;
+    font-size: 0.8em;
   }
 
   .Header__nav {
@@ -350,14 +333,44 @@ footer .text-center {
     transform-origin: center;
     background-color: #FFFFFF;
   } 
-
-  /**** Main ****/
-  .mainArticles {
-    padding: 0 15px;
-  }
   
+  /**** main ****/
   main {
     font-size: 1.8em;
+  }
+
+  .mainArticles {
+    padding: 0 2.6rem;
+  }
+}
+
+
+@media screen and (max-width: 767px){
+  .sp-none {
+    display: none !important;
+  }
+  
+  .pc-none {
+    display: flex !important;
+  }
+
+  .mainArticles .arrowLink {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 50px;
+    font-weight: 700;
+  }
+
+/**** Header ****/
+  .Header_text h1 {
+    font-size: initial;
+  }
+
+  /**** main ****/
+  .mainArticles {
+    padding: 0 15px;
   }
 
   .listArea {
