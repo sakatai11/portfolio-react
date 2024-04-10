@@ -32,20 +32,23 @@ const ListPhoto = ( {pageUrl, title} ) => {
     setHasMore(newPhotos.length === 9);
   };
 
+  // ページURLに基づいてフィルター条件を返すヘルパー関数
+const getFilterForPageUrl = (pageUrl) => {
+  const filters = {
+    '/list/outing/': 'tag[contains]おでかけ',
+    '/list/night/': 'tag[contains]夜',
+    '/list/sports/': 'tag[contains]スポーツ',
+  };
+  return filters[pageUrl] || ''; // マッチするフィルターがなければ空文字を返す
+};
+
   useEffect(() => {
     // APIから写真データを取得する
     const fetchData = async () => {
       try {
         let data; // data変数を関数スコープで定義する
-        if (pageUrl === '/list/') {
-          data = await getListData('photo', 100, count * 9, [ 'id', 'date', 'tag', 'title', 'image', 'url' ]);
-        } else if (pageUrl === '/list/outing/') {
-          data = await getListData('photo', 100, count * 9, [ 'id', 'date', 'tag', 'title', 'image', 'url' ], 'tag[contains]おでかけ');
-        } else if (pageUrl === '/list/night/') {
-          data = await getListData('photo', 100, count * 9, [ 'id', 'date', 'tag', 'title', 'image', 'url' ], 'tag[contains]夜');
-        } else if (pageUrl === '/list/sports/') {
-          data = await getListData('photo', 100, count * 9, [ 'id', 'date', 'tag', 'title', 'image', 'url' ], 'tag[contains]スポーツ');
-        }
+        const filter = getFilterForPageUrl(pageUrl);
+        data = await getListData('photo', 100, count * 9, [ 'id', 'date', 'tag', 'title', 'image', 'url' ], filter);
 
         console.log(count);
         console.log(data.props.data.contents); // ここでは全ての写真が取得される
@@ -66,7 +69,7 @@ const ListPhoto = ( {pageUrl, title} ) => {
     if (hasMore) {
       fetchData();
     }
-  }, [count, hasMore]); // countまたはhasMoreが変更されるたびにuseEffectをトリガーする
+  }, [count, hasMore, pageUrl]); // count,hasMore,pageUrlが変更されるたびにuseEffectをトリガーする
 
   const loadMore = () => {
     console.log(hasMore);
