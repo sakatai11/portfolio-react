@@ -2,11 +2,11 @@ import Header from '../../components/common/Header'
 import ListMain from '../../components/ListMain'
 import Footer from '../../components/common/Footer'
 
-function List( {link} ) {
+function Night( {link} ) {
   let titleName;
 
   if (link) {
-    titleName = "PHOTO";
+    titleName = "夜";
   } else {
     titleName = "Not Found";
   }
@@ -14,10 +14,10 @@ function List( {link} ) {
   return (
     <div>
       <Header urlCheck={link} />
-      <ListMain url={link} name={titleName}  />
+      <ListMain url={link} name={titleName} />
       <Footer />
     </div>
   )
 }
 
-export default List;
+export default Night;

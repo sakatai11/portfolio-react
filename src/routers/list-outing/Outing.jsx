@@ -20,4 +20,4 @@ function Outing( {link} ) {
   )
 }
 
-export default Outing
+export default Outing;

@@ -41,6 +41,10 @@ const ListPhoto = ( {pageUrl, title} ) => {
           data = await getListData('photo', 100, count * 9, [ 'id', 'date', 'tag', 'title', 'image', 'url' ]);
         } else if (pageUrl === '/list/outing/') {
           data = await getListData('photo', 100, count * 9, [ 'id', 'date', 'tag', 'title', 'image', 'url' ], 'tag[contains]おでかけ');
+        } else if (pageUrl === '/list/night/') {
+          data = await getListData('photo', 100, count * 9, [ 'id', 'date', 'tag', 'title', 'image', 'url' ], 'tag[contains]夜');
+        } else if (pageUrl === '/list/sports/') {
+          data = await getListData('photo', 100, count * 9, [ 'id', 'date', 'tag', 'title', 'image', 'url' ], 'tag[contains]スポーツ');
         }
 
         console.log(count);
