@@ -11,7 +11,7 @@ const Ham = ({ handleCloseClick, NavRouter }) => {
               end
               className={({ isActive }) => (isActive ? 'active' : '')}
               >
-                すべての写真を見る
+                すべての写真
             </NavRouter>
           </li>
           <li>

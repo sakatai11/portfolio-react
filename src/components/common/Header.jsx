@@ -48,7 +48,7 @@ const Header = ( {urlCheck} ) => {
               end
               className={({ isActive }) => (isActive ? 'active' : '')}
               >
-                すべての写真を見る
+                すべての写真
             </NavLink>
           </li>
           <li>
