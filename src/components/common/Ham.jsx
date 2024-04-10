@@ -8,6 +8,7 @@ const Ham = ({ handleCloseClick, NavRouter }) => {
             <NavRouter 
               to="/list/" 
               tabIndex={200}
+              end
               className={({ isActive }) => (isActive ? 'active' : '')}
               >
                 すべての写真を見る

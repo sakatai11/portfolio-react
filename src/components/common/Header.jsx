@@ -45,6 +45,7 @@ const Header = ( {urlCheck} ) => {
             <NavLink 
               to="/list/" 
               tabIndex={200}
+              end
               className={({ isActive }) => (isActive ? 'active' : '')}
               >
                 すべての写真を見る
