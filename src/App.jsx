@@ -4,7 +4,7 @@ import Top from './routers/top/Top';
 import List from './routers/list/List';
 import Outing from './routers/list-outing/Outing';
 import Night from './routers/list-night/Night';
-import Sports from './routers/list-sports/sports';
+import Sports from './routers/list-sports/Sports';
 import ScrollToTop from './ScrollToTop'; // スクロールを制御
 import 'bootstrap/dist/css/bootstrap.min.css'; // BootstrapのCSSをインポート
 import './components/layouts/globals.css'
