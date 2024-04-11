@@ -39,6 +39,7 @@ const getFilterForPageUrl = (pageUrl) => {
     '/list/night/': 'tag[contains]夜',
     '/list/sports/': 'tag[contains]スポーツ',
   };
+  console.log(filters[pageUrl]);
   return filters[pageUrl] || ''; // マッチするフィルターがなければ空文字を返す
 };
 
@@ -48,6 +49,7 @@ const getFilterForPageUrl = (pageUrl) => {
       try {
         let data; // data変数を関数スコープで定義する
         const filter = getFilterForPageUrl(pageUrl);
+        console.log(filter);
         data = await getListData('photo', 100, count * 9, [ 'id', 'date', 'tag', 'title', 'image', 'url' ], filter);
 
         console.log(count);
