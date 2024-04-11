@@ -1,6 +1,6 @@
 import Card from 'react-bootstrap/Card';
 
-const PhotoList = ({list, LinkRouter}) => {
+const PicPhotoList = ({list, LinkRouter}) => {
   // console.log("click2");
   // console.log(list);
 
@@ -20,4 +20,4 @@ const PhotoList = ({list, LinkRouter}) => {
   );
 }
 
-export default PhotoList;
+export default PicPhotoList;
