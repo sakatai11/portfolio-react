@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import getListData from "../api/microCMSClient";
-import PicPhotoList from "./PicPhotoList";
+import PhotoList from "./PicPhotoList";
 import styles from "./layouts/ListArea.module.css"
 import { Link } from 'react-router-dom'
 
