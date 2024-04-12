@@ -1,0 +1,9 @@
+@charset 'UTF-8';
+
+.imgArea li img {
+  width: 100%;
+}
+
+.imgArea ul {
+  display: flex;
+}
