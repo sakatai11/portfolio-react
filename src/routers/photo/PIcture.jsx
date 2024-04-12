@@ -1,14 +1,16 @@
-
+import { useParams } from 'react-router-dom';
 import Header from '../../components/common/Header'
-import ListMain from '../../components/ListMain'
+import PicMain from '../../components/PicMain'
 import Footer from '../../components/common/Footer'
 
 function Picture () {
 
+  const { id } = useParams(); // URLからidパラメータを取得
+
   return (
     <div>
       <Header />
-      <ListMain />
+      <PicMain id={id} />
       <Footer />
     </div>
   )

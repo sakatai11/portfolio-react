@@ -1,56 +1,40 @@
 import { useState, useEffect } from "react";
 import getListData from "../api/microCMSClient";
-import PhotoList from "./PicPhotoList";
+import PicPhotoList from "./PicPhotoList";
 import styles from "./layouts/ListArea.module.css"
-import { Link } from 'react-router-dom'
 
+const PicPhoto = ( {id} ) => {
+  const [photo, setPhoto] = useState([]); 
+  // ローカルステートを追加する
+  const [isLoading, setIsLoading] = useState(true);
+  console.log(id);
 
-const PicPhotoList = ( {title} ) => {
-
-  useEffect(async() => {
+  useEffect(() => {
     // APIから写真データを取得する
       try {
-        getListData('photo', null, null, [ 'id', 'date', 'tag', 'title', 'image', 'url' ]).then((data) => {
-          console.log(data.props.data.contents);
-          setPhoto(data.props.data.contents); // 取得したデータのcontents配列をsetPhotoListでローカルステートに保存する
+        getListData('photo',null, null, [ 'camara', 'film', 'image_list' ], null, id ).then((data) => {
+          console.log(data.props.data);
+          setPhoto(data.props.data); // 取得したデータをsetPhotoListでローカルステートに保存する
           console.log(photo);
+          setIsLoading(false);
         });
         
       } catch (error) {
         console.error(error); 
       }
 
-  }, []); 
+  }, [id]); 
 
   return (
     <div className={styles.listArea} >
-      <div className="titleArea">
-        <h2>{title}</h2>
-      </div>
-      <ul className={`${styles.photoContents} ${"photoContents"}`}>
-        {
-          photo.map((photoList) => (
-          <li key={photoList.id} >
-            <PhotoList list={photoList} LinkRouter={Link} />
-          </li>
-          ))
-        }
-      </ul>
+      {/* isLoadingがfalseになってからレンダリング、kv[0].urlにアクセスする */}
       {
-        hasMore && (
-          <div className="linkContent">
-            <button 
-              id="btnClick" 
-              onClick={loadMore}
-              style={{ display: button ? 'block' : 'none' }} // buttonの状態に応じて表示/非表示を切り替える
-            >
-              さらに写真を表示する
-            </button>
-          </div>
+        isLoading ? null : (
+          <PicPhotoList img={photo} />
         )
       }
     </div>
   );
 }
 
-export default PicPhotoList;
+export default PicPhoto;

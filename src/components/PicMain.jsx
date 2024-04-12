@@ -1,12 +1,11 @@
-/*----Photo-----*/
 import PicPhoto from "./PicPhoto";
 
-const PicMain = () => {
+const PicMain = ( {id} ) => {
 
   return (
     <main>
       <div className="mainArticles">
-      <PicPhoto />
+      <PicPhoto id={id} />
       </div>
     </main>
   );
