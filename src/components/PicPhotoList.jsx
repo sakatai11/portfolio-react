@@ -3,6 +3,7 @@ import styles from "./layouts/PicArea.module.css";
 const PicPhotoList = ( {img} ) => {
   console.log(img);
   console.log(img.image_list);
+  const photoImg = img.image_list;
 
   return (
     <>
@@ -10,11 +11,19 @@ const PicPhotoList = ( {img} ) => {
       <div className={styles.imgArea}>
         <ul>
           {
-            img.image_list.map((imageItem, index) => (
-              <li key={index}>
-                <img src={imageItem.url} alt={`Photo ${index}`} />
-              </li>
-            ))
+            photoImg.map((imageItem, index) => {
+              // widthが450以下の場合に適用するスタイルオブジェクト
+              const customStyle = imageItem.width <= 450 ? { width: '70%' } : {};
+  
+              return (
+                <li key={index}>
+                  <div className={styles.photoImg}>
+                    {/* インラインスタイルとしてcustomStyleを適用 */}
+                    <img src={imageItem.url} alt={`Photo ${index}`} style={customStyle} />
+                  </div>
+                </li>
+              );
+            })
           }
         </ul>
       </div>
