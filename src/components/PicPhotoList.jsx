@@ -13,13 +13,13 @@ const PicPhotoList = ( {img} ) => {
           {
             photoImg.map((imageItem, index) => {
               // widthが450以下の場合に適用するスタイルオブジェクト
-              const customStyle = imageItem.width <= 450 ? { width: '70%' } : {};
+              const imageClass = imageItem.width <= 450 ? styles.wh70 : '';
   
               return (
                 <li key={index}>
                   <div className={styles.photoImg}>
                     {/* インラインスタイルとしてcustomStyleを適用 */}
-                    <img src={imageItem.url} alt={`Photo ${index}`} style={customStyle} />
+                    <img src={imageItem.url} alt={`Photo ${index}`} className={imageClass}/>
                   </div>
                 </li>
               );
