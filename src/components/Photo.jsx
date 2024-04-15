@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import getListData from "../api/microCMSClient";
 import PhotoList from "./PhotoList";
+import ArrowRight from "./parts/ArrowRight";
 import styles from "./layouts/Photo.module.css";
 
 
@@ -56,7 +57,9 @@ const Photo = () => {
     >
       <div className="titleArea">
         <h2>PHOTO</h2>
-        <Link to="/list/" tabIndex={500} className="arrowLink sp-none">すべての写真を見る</Link>
+        <div className="sp-none">
+          <ArrowRight url={"/list/"} text={"すべての写真を見る"} />
+        </div>
       </div>
       <ul className="photoContents">
         {
@@ -68,7 +71,7 @@ const Photo = () => {
         }
       </ul>
       <div className="linkContent pc-none">
-        <Link to="/list/" tabIndex={500} className="arrowLink pc-none">すべての写真を見る</Link>
+        <ArrowRight url={"/list/"} text={"すべての写真を見る"} />
       </div>
     </motion.div>
   );

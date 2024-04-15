@@ -2,6 +2,7 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import ArrowRight from './parts/ArrowRight';
 import { Link } from 'react-router-dom'
 import Topstyles from './layouts/TopContentsList.module.css';
 import Liststyles from './layouts/ListContentsList.module.css';
@@ -26,9 +27,7 @@ const ContentList = ({ list, url}) => {
           ) : (
             <>
               <p>{list.title}</p>
-              <Link to={list.url} className={`${Topstyles.arrowLink} ${'arrowLink'}` }>
-                写真を見る
-              </Link>
+              <ArrowRight url={list.url} style={Topstyles.arrowLink} text={"写真を見る"} />
             </>
           )}
         </Col>
