@@ -1,5 +1,5 @@
 import PicPhoto from "./PicPhoto";
-import styles from './layouts/ListMain.module.css'
+import styles from './layouts/ListMain.module.css';
 
 const PicMain = ( {id} ) => {
 

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom'
 import getListData from "../api/microCMSClient";
 import PhotoList from "./PhotoList";
-import styles from "./layouts/Photo.module.css"
+import styles from "./layouts/Photo.module.css";
 
 
 const Photo = () => {

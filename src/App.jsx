@@ -1,13 +1,14 @@
-import { Routes, Route, useLocation} from 'react-router-dom'
+import { Routes, Route, useLocation} from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import Top from './routers/top/Top';
 import List from './routers/list/List';
 import Outing from './routers/list-outing/Outing';
 import Night from './routers/list-night/Night';
+import Picture from './routers/photo/Picture';
 import Sports from './routers/list-sports/Sports';
 import ScrollToTop from './ScrollToTop'; // スクロールを制御
 import 'bootstrap/dist/css/bootstrap.min.css'; // BootstrapのCSSをインポート
-import './components/layouts/globals.css'
+import './components/layouts/globals.css';
 
 function App() {
   // opacityの状態を管理するステートフックを定義

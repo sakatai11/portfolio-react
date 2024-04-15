@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import getListData from "../api/microCMSClient";
 import PhotoList from "./PhotoList";
 import LoadButton from "./parts/LoadButton";
-import styles from "./layouts/ListArea.module.css"
-import { Link } from 'react-router-dom'
+import styles from "./layouts/ListArea.module.css";
+import { Link } from 'react-router-dom';
 
 
 const ListPhoto = ( {pageUrl, title} ) => {

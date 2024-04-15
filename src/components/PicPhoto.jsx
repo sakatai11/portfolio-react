@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import getListData from "../api/microCMSClient";
 import PicPhotoList from "./PicPhotoList";
-import styles from "./layouts/ListArea.module.css"
+import styles from "./layouts/ListArea.module.css";
 
 const PicPhoto = ( {id} ) => {
   const [photo, setPhoto] = useState([]); 

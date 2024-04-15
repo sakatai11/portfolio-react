@@ -2,7 +2,7 @@
 import ListPhoto from "./ListPhoto";
 /*----Content-----*/
 import ListContents from "./ListContents";
-import styles from './layouts/ListMain.module.css'
+import styles from './layouts/ListMain.module.css';
 
 const ListMain = ( {url, name} ) => {
 
