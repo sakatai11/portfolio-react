@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import getListData from "../api/microCMSClient";
 import PhotoList from "./PhotoList";
+import LoadButton from "./parts/LoadButton";
 import styles from "./layouts/ListArea.module.css"
 import { Link } from 'react-router-dom'
 
@@ -8,6 +9,7 @@ import { Link } from 'react-router-dom'
 const ListPhoto = ( {pageUrl, title} ) => {
   const [photo, setPhoto] = useState([]); ////prevPhotosとuniqueNewPhotosの結合データ
   const [count, setCount] = useState(0); // ロードされた写真セットのカウント
+  const [isLoading, setIsLoading] = useState(false); // ボタンをクリックした時の文言の表示
   const [hasMore, setHasMore] = useState(true); // さらに写真があるかどうかのフラグ
   const [button, setButton] = useState(false); // 画像が読み込まれたら表示
   
@@ -69,13 +71,16 @@ const getFilterForPageUrl = (pageUrl) => {
     };
 
     if (hasMore) {
-      fetchData();
+      fetchData().then(() => {
+        setIsLoading(false); // 読み込み完了時にisLoadingをfalseに設定
+      });
     }
   }, [count, hasMore, pageUrl]); // count,hasMore,pageUrlが変更されるたびにuseEffectをトリガーする
 
   const loadMore = () => {
     console.log(hasMore);
     if (hasMore) {
+      setIsLoading(true); // 読み込み開始時にisLoadingをtrueに設定
       setCount(prev => prev + 1); // 次の9枚をロードする
       console.log(count);
     }
@@ -98,13 +103,12 @@ const getFilterForPageUrl = (pageUrl) => {
       {
         hasMore && (
           <div className="linkContent">
-            <button 
-              id="btnClick" 
-              onClick={loadMore}
+            <LoadButton 
+              id="btnClick"
+              onClick={loadMore} 
               style={{ display: button ? 'block' : 'none' }} // buttonの状態に応じて表示/非表示を切り替える
-            >
-              さらに写真を表示する
-            </button>
+              isLoading={isLoading} // isLoading状態をLoadButtonに渡す
+            />
           </div>
         )
       }
