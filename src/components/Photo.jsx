@@ -37,43 +37,45 @@ const Photo = () => {
 
 
   return (
-    <motion.div 
-      className={styles.listArea}
-      ref={ref} 
-      initial={{ y: 100, opacity: 0 }} 
-      animate={inView ? "onscreen" : "offscreen"} // ここに文字列を渡す
-      variants={{
-        onscreen: {
-          y: 0,
-          opacity: 1,
-          transition: { duration: 2, ease: "anticipate" }
-        },
-        offscreen: {
-          y: 100,
-          opacity: 0,
-          transition: { duration: 2, ease: "anticipate" }
-        }
-      }}
-    >
+    <div className={styles.listArea}>
       <div className="titleArea">
         <h2>PHOTO</h2>
         <div className="sp-none">
           <ArrowRight url={"/list/"} text={"すべての写真を見る"} />
         </div>
       </div>
-      <ul className="photoContents">
-        {
-          photo.slice(0, 3).map((photoList) => (
-          <li key={photoList.id} >
-            <PhotoList list={photoList} LinkRouter={Link} />
-          </li>
-          ))
-        }
-      </ul>
+
+      <motion.div
+        ref={ref} 
+        initial={{ y: 100, opacity: 0 }} 
+        animate={inView ? "onscreen" : "offscreen"} // ここに文字列を渡す
+        variants={{
+          onscreen: {
+            y: 0,
+            opacity: 1,
+            transition: { duration: 2, ease: "anticipate" }
+          },
+          offscreen: {
+            y: 100,
+            opacity: 0,
+            transition: { duration: 2, ease: "anticipate" }
+          }
+        }}
+      >
+        <ul className="photoContents">
+          {
+            photo.slice(0, 3).map((photoList) => (
+            <li key={photoList.id} >
+              <PhotoList list={photoList} LinkRouter={Link} />
+            </li>
+            ))
+          }
+        </ul>
+      </motion.div>
       <div className="linkContent pc-none">
-        <ArrowRight url={"/list/"} text={"すべての写真を見る"} />
+          <ArrowRight url={"/list/"} text={"すべての写真を見る"} />
       </div>
-    </motion.div>
+    </div>
   );
 }
 
