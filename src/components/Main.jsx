@@ -2,8 +2,8 @@
 import Kv from "./Kv";
 /*----Photo-----*/
 import Photo from "./Photo";
-/*----Content-----*/
-import Contents from "./Contents";
+/*----Category-----*/
+import Category from "./Category";
 
 const Main = () => {
 
@@ -13,7 +13,7 @@ const Main = () => {
       <section>
       <div className="mainArticles">
       <Photo />
-      <Contents />
+      <Category />
       </div>
       </section>
     </main>

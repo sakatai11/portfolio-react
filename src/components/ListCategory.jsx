@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import getListData from "../api/microCMSClient";
-import ContentList from "./ContentList";
-import styles from "./layouts/ListContents.module.css";
+import CategoryList from "./CategoryList";
+import styles from "./layouts/ListCategory.module.css";
 
 
-const ListContents = ( {pageUrl} ) => {
-  const [content, setContent] = useState([]); // contentListというローカルステートを定義する
+const ListCategory = ( {pageUrl} ) => {
+  const [content, setContent] = useState([]); // ローカルステートを定義する
 
   useEffect(() => {
     // ここでgetData関数を呼び出して、APIデータを取得する
@@ -27,7 +27,7 @@ const ListContents = ( {pageUrl} ) => {
         {
           content.map((contentList) => (
           <li key={contentList.id} >
-            <ContentList list={contentList} url={pageUrl}/>
+            <CategoryList list={contentList} url={pageUrl}/>
           </li>
           ))
         }
@@ -36,4 +36,4 @@ const ListContents = ( {pageUrl} ) => {
   );
 }
 
-export default ListContents;
+export default ListCategory;

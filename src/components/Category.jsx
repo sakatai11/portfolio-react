@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
 import getListData from "../api/microCMSClient";
-import ContentList from "./ContentList";
-import styles from "./layouts/TopContents.module.css";
+import CategoryList from "./CategoryList";
+import styles from "./layouts/TopCategory.module.css";
 
 
 const Contents = () => {
-  const [content, setContent] = useState([]); // contentListというローカルステートを定義する
+  const [content, setContent] = useState([]); // ローカルステートを定義する
 
   useEffect(() => {
     // ここでgetData関数を呼び出して、APIデータを取得する
@@ -43,7 +43,7 @@ const Contents = () => {
         {
           content.map((contentList) => (
           <li key={contentList.id} >
-            <ContentList list={contentList} />
+            <CategoryList list={contentList} />
           </li>
           ))
         }

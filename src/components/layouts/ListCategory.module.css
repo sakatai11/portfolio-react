@@ -1,5 +1,5 @@
 @charset 'UTF-8';
-/**** ListContents ****/
+/**** ListCategory ****/
 .contentsArea h2 {
   font-size: 1.5em !important;
 }
@@ -14,7 +14,7 @@
 }
 
 @media screen and (max-width: 767px){
-  /**** ListContents ****/
+  /**** ListCategory ****/
   .contentsArea .eachContents {
     display: block;
     margin-top: 70px;

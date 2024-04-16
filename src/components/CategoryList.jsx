@@ -4,10 +4,10 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ArrowRight from './parts/ArrowRight';
 import { Link } from 'react-router-dom'
-import Topstyles from './layouts/TopContentsList.module.css';
-import Liststyles from './layouts/ListContentsList.module.css';
+import Topstyles from './layouts/TopCategoryList.module.css';
+import Liststyles from './layouts/ListCategoryList.module.css';
 
-const ContentList = ({ list, url}) => {
+const CategoryList = ({ list, url}) => {
   // console.log(list);
   // console.log(url);
 
@@ -36,4 +36,4 @@ const ContentList = ({ list, url}) => {
   );
 };
 
-export default ContentList;
+export default CategoryList;

@@ -1,7 +1,7 @@
 /*----Photo-----*/
 import ListPhoto from "./ListPhoto";
-/*----Content-----*/
-import ListContents from "./ListContents";
+/*----ategory-----*/
+import ListCategory from "./ListCategory";
 import styles from './layouts/ListMain.module.css';
 
 const ListMain = ( {url, name} ) => {
@@ -10,7 +10,7 @@ const ListMain = ( {url, name} ) => {
     <main className={styles.listMain}>
       <div className="mainArticles">
       <ListPhoto pageUrl={url} title={name} />
-      <ListContents pageUrl={url} />
+      <ListCategory pageUrl={url} />
       </div>
     </main>
   );
