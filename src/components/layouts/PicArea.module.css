@@ -1,5 +1,22 @@
 @charset 'UTF-8';
 
+.titleArea {
+  width: 100%;
+  text-align: center;
+}
+
+.subtitleArea {
+  padding-top: 5rem;
+}
+
+.subtitleArea p {
+  margin-bottom: 0;
+}
+
+.imgArea {
+  margin-top: 2.6rem;
+}
+
 .imgArea li img {
   width: 100%;
   height:auto;

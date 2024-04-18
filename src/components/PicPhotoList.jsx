@@ -7,7 +7,13 @@ const PicPhotoList = ( {img} ) => {
 
   return (
     <>
-      <h1>{img.camara}<span>{img.film}</span></h1>
+      <div className={styles.titleArea}>
+        <h2>{img.title}</h2>
+        <div className={styles.subtitleArea}>
+          <p>{img.camara}</p>
+          <p>{img.film}</p>
+        </div>
+      </div>
       <div className={styles.imgArea}>
         <ul>
           {

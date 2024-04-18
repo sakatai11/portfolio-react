@@ -12,7 +12,7 @@ const PicPhoto = ( {id} ) => {
   useEffect(() => {
     // APIから写真データを取得する
       try {
-        getListData('photo',null, null, [ 'camara', 'film', 'image_list' ], null, id ).then((data) => {
+        getListData('photo',null, null, [ 'title', 'camara', 'film', 'image_list' ], null, id ).then((data) => {
           console.log(data.props.data);
           setPhoto(data.props.data); // 取得したデータをsetPhotoListでローカルステートに保存する
           console.log(photo);
