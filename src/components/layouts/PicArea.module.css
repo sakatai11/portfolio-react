@@ -45,6 +45,16 @@
   width: 70% !important;
 }
 
+/****** modal ******/
+.content {
+  position: fixed;
+  width: 100%;
+  height: auto;
+  z-index: 999;
+  left: 0;
+  top: 0;
+}
+
 
 @media screen and (max-width: 767px){
   .imgArea ul {

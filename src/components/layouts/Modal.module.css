@@ -1,0 +1,24 @@
+@charset 'UTF-8';
+
+.modalArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(0 0 0 / 77%);
+}
+
+.container {
+  position: relative;
+  margin: 3.2vw;
+}
+
+.modalContents {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.picture img {
+  width: 100%;
+}
