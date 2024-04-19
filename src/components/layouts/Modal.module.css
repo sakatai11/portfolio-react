@@ -16,9 +16,50 @@
 .modalContents {
   display: flex;
   flex-direction: column;
-  align-items: end;
+  /* align-items: end; */
+}
+
+.textContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.textContent p {
+  color: #FFFFFF ;
+  margin-bottom: 0;
+  padding-left: 1vw;
+}
+
+.clossBtn {
+  width: 35px;
+  height: auto;
+  cursor: pointer;
 }
 
 .picture img {
   width: 100%;
+  height: auto;
+}
+
+.wh80 {
+  width: 80% !important;
+}
+
+@media screen and (max-width: 767px){
+  .clossbtn {
+    width: 24px;
+  }
+
+  .textContent {
+    align-items: end;
+  }
+
+  .textContent p {
+    font-size: 0.8em;
+  }
+
+  .wh80 {
+    width: initial !important;
+  }
 }

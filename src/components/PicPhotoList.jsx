@@ -16,6 +16,7 @@ const PicPhotoList = ( {img} ) => {
   console.log(img);
   console.log(img.image_list);
   const photoImg = img.image_list;
+  const tabletWh = img.image_list.width;
 
   const [ modalOpen, setModalOpen] = useState(false);
   const [selectedImageUrl, setSelectedImageUrl] = useState(null);
@@ -28,6 +29,8 @@ const PicPhotoList = ( {img} ) => {
     setModalOpen(true);
     setSelectedImageUrl(imageUrl);
     setSelectedAlt(alt);
+    // スクロールを無効にする
+    document.body.style.overflow = 'hidden';
   }
 
   return (
@@ -51,12 +54,11 @@ const PicPhotoList = ( {img} ) => {
                 <li 
                   key={index}
                   onClick={() => {
-                    photoGet(imageItem.url, `Photo ${index + 1 }`) 
+                    photoGet(imageItem.url,index + 1) 
                   }}
                   disabled={modalOpen}
                 >
                   <div className={styles.photoImg}>
-                    {/* インラインスタイルとしてcustomStyleを適用 */}
                     <img src={imageItem.url} alt={`Photo ${index + 1 }`} className={imageClass}/>
                   </div>
                 </li>
@@ -67,7 +69,16 @@ const PicPhotoList = ( {img} ) => {
         {
           modalOpen && (
             <ModalPortal>
-              <Modal handleCloseClick={() => setModalOpen(false)} imageUrl={selectedImageUrl} alt={selectedAlt} />
+              <Modal handleCloseClick={() => { 
+                setModalOpen(false) 
+                // スクロールを再度有効にする
+                document.body.style.overflow = 'visible';
+                }} 
+                imageUrl={selectedImageUrl} 
+                alt={selectedAlt} 
+                totalImages={photoImg.length} // ここでphotoImg配列の長さを渡す
+                tabletResize={tabletWh}
+              />
             </ModalPortal>
           )
         }

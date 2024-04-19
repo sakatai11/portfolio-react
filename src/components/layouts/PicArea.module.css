@@ -39,6 +39,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: zoom-in;
+}
+
+.photoImg:hover {
+  opacity: 0.7;
 }
 
 .wh70 {
