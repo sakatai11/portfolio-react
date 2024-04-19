@@ -34,7 +34,7 @@ const Modal = ( {handleCloseClick, imageUrl, alt, totalImages, tablet} ) => {
           <div className={styles.textContent}>
             <p>{alt}&ensp;<span>/</span>&ensp;{totalImages}</p>
             <div className={styles.clossBtn} onClick={handleCloseClick}>
-              <img src="../src/assets/images/close-solid.svg" alt="閉じる" />
+              <img src="/assets/images/close-solid.svg" alt="閉じる" />
             </div>
           </div>
 
