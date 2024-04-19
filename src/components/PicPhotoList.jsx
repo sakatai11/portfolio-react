@@ -16,19 +16,18 @@ const PicPhotoList = ( {img} ) => {
   console.log(img);
   console.log(img.image_list);
   const photoImg = img.image_list;
-  const tabletWh = img.image_list.width;
 
   const [ modalOpen, setModalOpen] = useState(false);
   const [selectedImageUrl, setSelectedImageUrl] = useState(null);
   const [selectedAlt, setSelectedAlt] = useState(null);
-
-
+  const [selectedTablet, setSelectedTablet] = useState(null);
 
   // モーダルの表示とクリックしたし画像を表示
-  const photoGet = (imageUrl,alt) => {
+  const photoGet = (imageUrl,alt,imageClass) => {
     setModalOpen(true);
     setSelectedImageUrl(imageUrl);
     setSelectedAlt(alt);
+    setSelectedTablet(imageClass);
     // スクロールを無効にする
     document.body.style.overflow = 'hidden';
   }
@@ -54,7 +53,7 @@ const PicPhotoList = ( {img} ) => {
                 <li 
                   key={index}
                   onClick={() => {
-                    photoGet(imageItem.url,index + 1) 
+                    photoGet(imageItem.url,index + 1,imageClass) 
                   }}
                   disabled={modalOpen}
                 >
@@ -77,7 +76,7 @@ const PicPhotoList = ( {img} ) => {
                 imageUrl={selectedImageUrl} 
                 alt={selectedAlt} 
                 totalImages={photoImg.length} // ここでphotoImg配列の長さを渡す
-                tabletResize={tabletWh}
+                tablet={selectedTablet}
               />
             </ModalPortal>
           )

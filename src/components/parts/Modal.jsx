@@ -1,20 +1,12 @@
 import { useEffect } from "react";
-import { useState } from "react"; 
 import styles from "../layouts/Modal.module.css";
 
 
-const Modal = ( {handleCloseClick, imageUrl, alt, totalImages, tabletResize} ) => {
+const Modal = ( {handleCloseClick, imageUrl, alt, totalImages, tablet} ) => {
   console.log(handleCloseClick);
   console.log(imageUrl);
   console.log(totalImages);
-  console.log(window.innerWidth);
-  console.log(tabletResize);
-
-  const [ tablet, setTablet ] = useState(false);
-
-  if (window.innerWidth <= 1024  && tabletResize <= 450  ) {
-    setTablet(true); 
-  }
+  console.log(tablet);
 
   useEffect(() => {
     const handleResize = () => {
@@ -37,7 +29,7 @@ const Modal = ( {handleCloseClick, imageUrl, alt, totalImages, tabletResize} ) =
 
   return (
     <div className={styles.modalArea}>
-        <div className={tabletResize <= 450 && tablet  ? styles.containerWh80 : styles.container}>
+      <div className={tablet ? `${styles.container} ${styles.wh80}` : styles.container} >
         <div className={styles.modalContents}>
           <div className={styles.textContent}>
             <p>{alt}&ensp;<span>/</span>&ensp;{totalImages}</p>

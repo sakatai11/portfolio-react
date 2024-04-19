@@ -42,12 +42,14 @@
   height: auto;
 }
 
-.wh80 {
-  width: 80% !important;
+@media screen and (max-width: 1024px) {
+  .wh80 {
+    width: 80% !important;
+  }
 }
 
 @media screen and (max-width: 767px){
-  .clossbtn {
+  .clossBtn {
     width: 24px;
   }
 
