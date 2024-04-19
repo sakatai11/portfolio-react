@@ -82,12 +82,21 @@ const Header = ( {urlCheck} ) => {
       </div>
 
       <div id="hamburger" 
-        onClick={() => setIsMenu('is-open')}
+        onClick={() => {
+          setIsMenu('is-open')
+          document.body.style.overflow = 'hidden';
+        }
+        }
       >
       </div>
 
       <div id="container" className={isMenu}>
-        <Ham handleCloseClick={() => setIsMenu('')} NavRouter={NavLink} />
+        <Ham handleCloseClick={() => {
+          setIsMenu('')
+          // スクロールを無効にする
+          document.body.style.overflow = 'visible';
+        }
+        } NavRouter={NavLink} />
       </div>
     </header>
   );
