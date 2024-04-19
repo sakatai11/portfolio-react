@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import clossIcon from "../../assets/images/close-solid.svg";
 import styles from "../layouts/Modal.module.css";
 
 
@@ -34,7 +35,7 @@ const Modal = ( {handleCloseClick, imageUrl, alt, totalImages, tablet} ) => {
           <div className={styles.textContent}>
             <p>{alt}&ensp;<span>/</span>&ensp;{totalImages}</p>
             <div className={styles.clossBtn} onClick={handleCloseClick}>
-              <img src="/assets/images/close-solid.svg" alt="閉じる" />
+              <img src={clossIcon} alt="閉じる" />
             </div>
           </div>
 
