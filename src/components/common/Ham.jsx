@@ -10,6 +10,7 @@ const Ham = ({ handleCloseClick, NavRouter }) => {
               tabIndex={200}
               end
               className={({ isActive }) => (isActive ? 'active' : '')}
+              onClick={handleCloseClick}
               >
                 すべての写真
             </NavRouter>
@@ -19,6 +20,7 @@ const Ham = ({ handleCloseClick, NavRouter }) => {
               to="/list/outing/" 
               tabIndex={300}
               className={({ isActive }) => (isActive ? 'active' : '')}
+              onClick={handleCloseClick}
               >
                 おでかけ
             </NavRouter>
@@ -28,6 +30,7 @@ const Ham = ({ handleCloseClick, NavRouter }) => {
               to="/list/night/" 
               tabIndex={400}
               className={({ isActive }) => (isActive ? 'active' : '')}
+              onClick={handleCloseClick}
               >
                 夜
             </NavRouter>
@@ -37,6 +40,7 @@ const Ham = ({ handleCloseClick, NavRouter }) => {
               to="/list/sports/" 
               tabIndex={500}
               className={({ isActive }) => (isActive ? 'active' : '')}
+              onClick={handleCloseClick}
               >
                 スポーツ
             </NavRouter>
