@@ -31,6 +31,10 @@ body a {
   display: none !important;
 }
 
+.container {
+  max-width: initial;
+}
+
 /**** header ****/
 header {
   background-color: transparent;
@@ -123,6 +127,11 @@ main {
 .mainArticles {
   width: 100%;
   padding: 0 5.6rem;
+}
+
+main section .wideArea {
+  margin: 0;
+  padding: 0;
 }
 
 .photoContents .card .imgDate {
@@ -226,6 +235,12 @@ main {
   border: none;
 }
 
+/* CategoryListの最初の子要素 */
+.wideArea .container .row .col:first-child {
+  flex: 3.5;
+  display: flex;
+  align-items: flex-end;
+}
 
 /**** Footer ****/
 

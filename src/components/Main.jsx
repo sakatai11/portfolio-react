@@ -11,10 +11,10 @@ const Main = () => {
     <main>
       <Kv />
       <section>
-      <div className="mainArticles">
-      <Photo />
-      <Category />
-      </div>
+        <div className="mainArticles">
+          <Photo />
+          <Category />
+        </div>
       </section>
     </main>
   );

@@ -21,7 +21,7 @@ const CategoryList = ({ list, url, index }) => {
   const { ref, inView } = useInView({
     // rootMargin: "100px",
     triggerOnce: true,
-    threshold: 1.0,
+    threshold: 0.8,
   });
 
     // コンテナとその中身をレンダリングする関数
