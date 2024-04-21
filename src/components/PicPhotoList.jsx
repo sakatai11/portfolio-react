@@ -1,5 +1,5 @@
 import styles from "./layouts/PicArea.module.css";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { createPortal } from "react-dom"; 
 import Modal from "./parts/Modal";
 
@@ -22,7 +22,10 @@ const PicPhotoList = ( {img} ) => {
   const [selectedAlt, setSelectedAlt] = useState(null);
   const [selectedTablet, setSelectedTablet] = useState(null);
 
-  // モーダルの表示とクリックしたし画像を表示
+  const modalRef = useRef();
+  console.log(modalRef);
+
+  // モーダルの表示とクリックした,画像を表示,dom操作
   const photoGet = (imageUrl,alt,imageClass) => {
     setModalOpen(true);
     setSelectedImageUrl(imageUrl);
@@ -30,11 +33,14 @@ const PicPhotoList = ( {img} ) => {
     setSelectedTablet(imageClass);
     // スクロールを無効にする
     document.body.style.overflow = 'hidden';
+
+    // modalRef.currentにクラスを追加
+    modalRef.current.classList.add(styles.modalOpen);
   }
 
   return (
     <>
-      <div className={styles.content} />
+      <div className={styles.content} ref={modalRef} />
       <div className={styles.titleArea}>
         <h2>{img.title}</h2>
         <div className={styles.subtitleArea}>
@@ -48,13 +54,14 @@ const PicPhotoList = ( {img} ) => {
             photoImg.map((imageItem, index) => {
               // widthが450以下の場合に適用するスタイルオブジェクト
               const imageClass = imageItem.width <= 450 ? styles.wh70 : '';
-  
+
               return (
                 <li 
                   key={index}
                   onClick={() => {
                     photoGet(imageItem.url,index + 1,imageClass) 
                   }}
+
                   disabled={modalOpen}
                 >
                   <div className={styles.photoImg}>
@@ -72,6 +79,8 @@ const PicPhotoList = ( {img} ) => {
                 setModalOpen(false) 
                 // スクロールを再度有効にする
                 document.body.style.overflow = 'visible';
+                // modalRef.currentからクラスを削除
+                modalRef.current.classList.remove(styles.modalOpen);
                 }} 
                 imageUrl={selectedImageUrl} 
                 alt={selectedAlt} 
