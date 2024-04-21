@@ -40,8 +40,9 @@
 
 .Kv_contents {
   position: relative;
-  height: 100vh;
+  /* height: 100vh; */
 }
+
 .Kv_contents picture {
   width: 100%;
   position: absolute;
