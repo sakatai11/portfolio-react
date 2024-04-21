@@ -19,9 +19,9 @@ const CategoryList = ({ list, url, index }) => {
   const shouldApplyMotion = url == undefined;
 
   const { ref, inView } = useInView({
-    rootMargin: "150px",
+    // rootMargin: "100px",
     triggerOnce: true,
-    threshold: 0.3,
+    threshold: 1.0,
   });
 
     // コンテナとその中身をレンダリングする関数
@@ -51,7 +51,7 @@ const CategoryList = ({ list, url, index }) => {
       ref={ref}
       initial={{ opacity: 0 }}
       animate={{ opacity: inView ? 1 : 0 }}
-      transition={{ duration: 1, delay: index * 0.3 }}
+      transition={{ duration: 1, delay: index * 0.2 }}
     >
       {renderContent()}
     </motion.div>
