@@ -25,7 +25,7 @@ function App() {
     <>
       <ScrollToTop />
       <Routes>
-        <Route path='/' element={ <Top property={opacity} />}/>
+        <Route path='/' element={ <Top property={opacity} link={pathname} />}/>
         <Route path='/list' element={ <List link={pathname} />}/>
         <Route path='/list/outing/' element={ <Outing link={pathname} />}/>
         <Route path='/list/night/' element={ <Night link={pathname} />}/>

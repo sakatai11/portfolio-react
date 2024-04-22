@@ -5,14 +5,14 @@ import Photo from "./Photo";
 /*----Category-----*/
 import Category from "./Category";
 
-const Main = () => {
+const Main = ({ url }) => {
 
   return (
     <main>
       <Kv />
       <section>
         <div className="mainArticles">
-          <Photo />
+          <Photo url={url} />
           <Category />
         </div>
       </section>

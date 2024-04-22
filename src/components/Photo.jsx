@@ -8,7 +8,7 @@ import ArrowRight from "./parts/ArrowRight";
 import styles from "./layouts/Photo.module.css";
 
 
-const Photo = () => {
+const Photo = ( {url} ) => {
   const [photo, setPhoto] = useState([]); 
 
   useEffect(() => {
@@ -62,11 +62,13 @@ const Photo = () => {
           }
         }}
       >
-        <ul className="photoContents">
+        <ul className={`${styles.photoContents} ${"photoContents"}`}>
           {
-            photo.slice(0, 3).map((photoList) => (
-            <li key={photoList.id} >
-              <PhotoList list={photoList} LinkRouter={Link} />
+            photo.slice(0, 6).map((photoList, index) => (
+            <li 
+              key={photoList.id}
+              className={index < 2 ? styles.firstSecondStyle : ''} >
+              <PhotoList list={photoList} LinkRouter={Link} url={url} index={index} />
             </li>
             ))
           }

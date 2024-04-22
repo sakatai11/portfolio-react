@@ -139,7 +139,7 @@ main section .wideArea {
 }
 
 .photoContents a .card-img-top {
-  transition:200ms all;
+  transition: 200ms all;
 }
 
 .photoContents a:hover .card-img-top {
@@ -156,9 +156,10 @@ main section .wideArea {
 }
 
 .photoContents {
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
+  display: grid;
+  grid-template-columns:repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 3.2vw;
   margin-top: 10rem;
 }
 
@@ -213,7 +214,7 @@ main section .wideArea {
 }
 
 .photoContents li {
-  width: 30.66%;
+  width: 100%;
 }
 
 .photoContents .imgDate {
@@ -230,16 +231,13 @@ main section .wideArea {
   font-size: 0.8em;
 }
 
+.topFont {
+  font-size: 1.1em !important;
+}
+
 .mainArticles .photoContents .card {
   width: 100%;
   border: none;
-}
-
-/* CategoryListの最初の子要素 */
-.wideArea .container .row .col:first-child {
-  flex: 3.5;
-  display: flex;
-  align-items: flex-end;
 }
 
 /**** Footer ****/

@@ -3,6 +3,14 @@
   padding: 10rem 0 0;
 }
 
+.photoContents {
+  grid-template-columns:repeat(4, 1fr) !important;
+}
+
+.firstSecondStyle {
+  grid-column: span 2;
+}
+
 @media screen and (max-width: 767px){
   .listArea {
     padding: 8rem 0 4.5rem;

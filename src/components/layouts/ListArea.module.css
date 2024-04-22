@@ -10,12 +10,12 @@
   row-gap: 3.2rem;
 }
 
-.photoContents::before {
+/* .photoContents::before {
   display: block;
   order: 1;
   width: 30%;
   content: '';
-}
+} */
 
 .listArea button {
   width: 390px;
