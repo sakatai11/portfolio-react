@@ -10,7 +10,7 @@
 }
 
 .container {
-  position: relative;
+  /* position: relative; */
   margin: auto 3.2vw;
 }
 
@@ -38,9 +38,62 @@
   cursor: pointer;
 }
 
+.picture {
+  position: relative;
+}
+
 .picture img {
   width: 100%;
   height: auto;
+}
+
+.arrowArea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.picPrev,
+.picNext {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity .6s;
+}
+
+.picPrev:hover,
+.picNext:hover {
+  opacity: 1;
+}
+
+.picPrev {
+  justify-content: flex-start;
+  left: 0;
+}
+
+.picNext {
+  justify-content: flex-end;
+  right: 0;
+}
+
+.prevIcon,
+.nextIcon {
+  width: 23px !important;
+  height: auto !important;
+}
+
+.nextIcon {
+  margin-right: 15px;
+}
+
+.prevIcon {
+  transform: rotateY( 180deg );
+  margin-left: 15px;
 }
 
 @media screen and (max-width: 1024px) {

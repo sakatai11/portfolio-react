@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import clossIcon from "../../assets/images/close-solid.svg";
+import arrowIcon from "../../assets/images/modal-arrowIcon.svg"
 import styles from "../layouts/Modal.module.css";
 
 
@@ -41,6 +42,14 @@ const Modal = ( {handleCloseClick, imageUrl, alt, totalImages, tablet} ) => {
 
           <div className={styles.picture}>
             <img src={imageUrl} alt={`Photo ${alt}`} />
+            <div className={styles.arrowArea}>
+              <a href="" className={styles.picPrev} >
+                <img src={arrowIcon} alt="前へ" className={styles.prevIcon} />
+              </a>
+              <a href="" className={styles.picNext} >
+                <img src={arrowIcon} alt="次へ" className={styles.nextIcon}/>
+              </a>
+            </div>
           </div>
         </div>
       </div>
