@@ -4,11 +4,13 @@ import arrowIcon from "../../assets/images/modal-arrowIcon.svg"
 import styles from "../layouts/Modal.module.css";
 
 
-const Modal = ( {handleCloseClick, imageUrl, alt, totalImages, tablet} ) => {
+const Modal = ( {handleCloseClick, nextClick, prevClick, imageUrl, alt, totalImages, tablet} ) => {
   console.log(handleCloseClick);
   console.log(imageUrl);
   console.log(totalImages);
   console.log(tablet);
+
+  const indexNumber = alt;
 
   useEffect(() => {
     const handleResize = () => {
@@ -29,6 +31,20 @@ const Modal = ( {handleCloseClick, imageUrl, alt, totalImages, tablet} ) => {
 
   },[]);
 
+  // 次へのコンテンツをレンダリングする関数
+  const renderContentNext = () => (
+    <a className={styles.picNext} onClick={nextClick} >
+      <img src={arrowIcon} alt="次へ" className={styles.nextIcon}/>
+    </a>
+  );
+
+  // 前へのコンテンツをレンダリングする関数
+  const renderContentPrev = () => (
+    <a className={styles.picPrev} onClick={prevClick} >
+      <img src={arrowIcon} alt="前へ" className={styles.prevIcon} />
+    </a>
+  );
+
   return (
     <div className={styles.modalArea}>
       <div className={tablet ? `${styles.container} ${styles.wh80}` : styles.container} >
@@ -43,12 +59,8 @@ const Modal = ( {handleCloseClick, imageUrl, alt, totalImages, tablet} ) => {
           <div className={styles.picture}>
             <img src={imageUrl} alt={`Photo ${alt}`} />
             <div className={styles.arrowArea}>
-              <a href="" className={styles.picPrev} >
-                <img src={arrowIcon} alt="前へ" className={styles.prevIcon} />
-              </a>
-              <a href="" className={styles.picNext} >
-                <img src={arrowIcon} alt="次へ" className={styles.nextIcon}/>
-              </a>
+            {indexNumber > 1 && renderContentPrev()}
+            {indexNumber < totalImages && renderContentNext()}
             </div>
           </div>
         </div>

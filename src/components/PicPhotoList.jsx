@@ -17,10 +17,12 @@ const PicPhotoList = ( {img} ) => {
   console.log(img.image_list);
   const photoImg = img.image_list;
 
-  const [ modalOpen, setModalOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
   const [selectedImageUrl, setSelectedImageUrl] = useState(null);
   const [selectedAlt, setSelectedAlt] = useState(null);
   const [selectedTablet, setSelectedTablet] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(null); // 現在の画像のインデックス
+
 
   const modalRef = useRef();
   console.log(modalRef);
@@ -37,6 +39,24 @@ const PicPhotoList = ( {img} ) => {
     // modalRef.currentにクラスを追加
     modalRef.current.classList.add(styles.modalOpen);
   }
+
+    // 次の画像を表示する関数
+    const showNextImage = () => {
+      const nextIndex = (currentIndex + 1) % photoImg.length; // 次のインデックスを計算
+      setCurrentIndex(nextIndex); // インデックスを更新
+      const nextImage = photoImg[nextIndex]; // 次の画像を取得
+      setSelectedImageUrl(nextImage.url); // URLを更新
+      setSelectedAlt(nextIndex + 1); // altテキストを更新
+    };
+  
+    // 前の画像を表示する関数
+    const showPrevImage = () => {
+      const prevIndex = (currentIndex - 1 + photoImg.length) % photoImg.length; // 前のインデックスを計算
+      setCurrentIndex(prevIndex); // インデックスを更新
+      const prevImage = photoImg[prevIndex]; // 前の画像を取得
+      setSelectedImageUrl(prevImage.url); // URLを更新
+      setSelectedAlt(prevIndex + 1); // altテキストを更新
+    };
 
   return (
     <>
@@ -60,6 +80,7 @@ const PicPhotoList = ( {img} ) => {
                   key={index}
                   onClick={() => {
                     photoGet(imageItem.url,index + 1,imageClass) 
+                    setCurrentIndex(index)
                   }}
 
                   disabled={modalOpen}
@@ -82,6 +103,8 @@ const PicPhotoList = ( {img} ) => {
                 // modalRef.currentからクラスを削除
                 modalRef.current.classList.remove(styles.modalOpen);
                 }} 
+                nextClick={showNextImage} // 次への関数を渡す
+                prevClick={showPrevImage} // 前への関数を渡す
                 imageUrl={selectedImageUrl} 
                 alt={selectedAlt} 
                 totalImages={photoImg.length} // ここでphotoImg配列の長さを渡す

@@ -64,6 +64,7 @@
   height: 100%;
   opacity: 0;
   transition: opacity .6s;
+  cursor: pointer;
 }
 
 .picPrev:hover,
@@ -99,6 +100,11 @@
 @media screen and (max-width: 1024px) {
   .wh80 {
     width: 80% !important;
+  }
+
+  .picPrev:hover,
+  .picNext:hover {
+    opacity: 0;
   }
 }
 
