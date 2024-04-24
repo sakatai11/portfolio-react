@@ -14,7 +14,7 @@ const Photo = ( {url} ) => {
   useEffect(() => {
     // ここでgetListData関数を呼び出して、APIデータを取得する
     try {
-      getListData('photo', null, null, [ 'id', 'date', 'tag', 'title', 'image', 'url' ]).then((data) => {
+      getListData('photo', 6, null, [ 'id', 'date', 'tag', 'title', 'image', 'url' ]).then((data) => {
         console.log(data.props.data.contents);
         setPhoto(data.props.data.contents); // 取得したデータのcontents配列をsetPhotoListでローカルステートに保存する
         console.log(photo);

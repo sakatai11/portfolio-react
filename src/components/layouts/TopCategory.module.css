@@ -1,7 +1,7 @@
 @charset 'UTF-8';
 /**** contents ****/
 .contentsArea {
-  padding: 12.5rem 0;
+  padding-top: 12.5rem;
 }
 
 .eachContents {
@@ -9,7 +9,7 @@
 }
 
 .eachContents li + li {
-  margin-top: 27rem;
+  margin-top: 15rem;
 }
 
 

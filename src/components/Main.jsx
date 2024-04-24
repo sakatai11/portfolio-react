@@ -4,6 +4,8 @@ import Kv from "./Kv";
 import Photo from "./Photo";
 /*----Category-----*/
 import Category from "./Category";
+/*----SelectPhoto-----*/
+import Gallery from "./Gallery";
 
 const Main = ({ url }) => {
 
@@ -14,6 +16,7 @@ const Main = ({ url }) => {
         <div className="mainArticles">
           <Photo url={url} />
           <Category />
+          <Gallery />
         </div>
       </section>
     </main>

@@ -10,11 +10,10 @@ const Kv = () => {
   useEffect(() => {
     // ここでgetListData関数を呼び出して、APIデータを取得する
     try {
-      getListData('key_visual', null, null, null).then((data) => {
+      getListData('key_visual', null, null ).then((data) => {
         console.log(data.props.data.contents[0].keyVisual);
         // setKvをthenメソッドの中に移動する
         setKv(data.props.data.contents[0].keyVisual); // 取得したデータのをsetKvでローカルステートに保存する
-        console.log(kv);
         // データの取得が完了したら、isLoadingをfalseにする
         setIsLoading(false);
       });
@@ -22,6 +21,8 @@ const Kv = () => {
       console.error(error); 
     }
   }, []); // 空の依存配列を渡すことで、コンポーネントのマウント時に一度だけ実行される
+
+  console.log(kv);
 
   useEffect(() => {
     const handleScroll = () => {
