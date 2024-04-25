@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef } from "react";
 import { Link , NavLink } from 'react-router-dom';
 import Ham from "./Ham";
 
@@ -30,7 +30,15 @@ const Header = ( {urlCheck} ) => {
     });
 
 
-  const [isMenu, setIsMenu] = useState('')
+  const isMenu = useRef()
+
+  // ハンバーガーを動作をコントロールする関数
+  const toggleMenu = () => {
+    // メニューの状態を切り替える
+    isMenu.current.classList.toggle('is-open');
+    // スクロールを無効にする
+    document.body.style.overflow = isMenu.current.classList.contains('is-open') ? 'hidden' : 'visible';
+  };
 
   return (
     <header>
@@ -83,18 +91,15 @@ const Header = ( {urlCheck} ) => {
 
       <div id="hamburger" 
         onClick={() => {
-          setIsMenu('is-open')
-          document.body.style.overflow = 'hidden';
+          toggleMenu()
         }
         }
       >
       </div>
 
-      <div id="container" className={isMenu}>
+      <div id="container" ref={isMenu}>
         <Ham handleCloseClick={() => {
-          setIsMenu('')
-          // スクロールを無効にする
-          document.body.style.overflow = 'visible';
+          toggleMenu()
         }
         } NavRouter={NavLink} />
       </div>
