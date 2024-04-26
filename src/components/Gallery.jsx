@@ -32,7 +32,7 @@ const Gallery = () => {
               className={styles.imgContent} 
             >
               <div className={styles.imgBox}>
-                <a href={`${`/photo/`}${galleryList.id}`} >
+                <a href={`/photo/${galleryList.id}`} >
                   <img src={galleryList.gallery_image.url} alt={`${'gallery'} ${index + 1 }`}  />
                 </a>
               </div>
