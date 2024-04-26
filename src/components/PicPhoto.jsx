@@ -15,7 +15,6 @@ const PicPhoto = ( {id} ) => {
         getListData('photo',null, null, [ 'title', 'camara', 'film', 'image_list' ], null, id ).then((data) => {
           console.log(data.props.data);
           setPhoto(data.props.data); // 取得したデータをsetPhotoListでローカルステートに保存する
-          console.log(photo);
           setIsLoading(false);
         });
         
@@ -25,9 +24,11 @@ const PicPhoto = ( {id} ) => {
 
   }, [id]); 
 
+  console.log(photo);
+
   return (
     <div className={styles.listArea} >
-      {/* isLoadingがfalseになってからレンダリング、kv[0].urlにアクセスする */}
+      {/* isLoadingがfalseになってからレンダリング、urlにアクセスする */}
       {
         isLoading ? null : (
           <PicPhotoList img={photo} />

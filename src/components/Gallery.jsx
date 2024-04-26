@@ -9,9 +9,9 @@ const Gallery = () => {
   useEffect(() => {
     // ここでgetData関数を呼び出して、APIデータを取得する
     try {
-      getListData('key_visual', 100 , null).then((data) => { 
-        console.log(data.props.data.contents[1].keyVisual);
-        setGallery(data.props.data.contents[1].keyVisual);
+      getListData('photo',100, 6,[ 'id', 'gallery_image'], null ).then((data) => { 
+        console.log(data.props.data.contents);
+        setGallery(data.props.data.contents);
       });
     } catch (error) {
       console.error(error); 
@@ -32,7 +32,9 @@ const Gallery = () => {
               className={styles.imgContent} 
             >
               <div className={styles.imgBox}>
-                <img src={galleryList.url} alt={`${'gallery'} ${index + 1 }`}  />
+                <a href={`${`/photo/`}${galleryList.id}`} >
+                  <img src={galleryList.gallery_image.url} alt={`${'gallery'} ${index + 1 }`}  />
+                </a>
               </div>
             </li>
             ))

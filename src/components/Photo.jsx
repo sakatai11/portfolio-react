@@ -17,12 +17,13 @@ const Photo = ( {url} ) => {
       getListData('photo', 6, null, [ 'id', 'date', 'tag', 'title', 'image', 'url' ]).then((data) => {
         console.log(data.props.data.contents);
         setPhoto(data.props.data.contents); // 取得したデータのcontents配列をsetPhotoListでローカルステートに保存する
-        console.log(photo);
       });
     } catch (error) {
       console.error(error); 
     }
   }, []); // 空の依存配列を渡すことで、コンポーネントのマウント時に一度だけ実行される
+
+  console.log(photo);
 
   //デバイスサイズごとにthresholdの値を変更
   const mediaQuery = window.matchMedia('(min-width: 767px)');
