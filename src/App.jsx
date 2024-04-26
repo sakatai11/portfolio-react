@@ -4,6 +4,7 @@ import Top from './routers/top/Top';
 import List from './routers/list/List';
 import Outing from './routers/list-outing/Outing';
 import Night from './routers/list-night/Night';
+import Picture from './routers/photo/PIcture';
 import Sports from './routers/list-sports/Sports';
 import ScrollToTop from './ScrollToTop'; // スクロールを制御
 import 'bootstrap/dist/css/bootstrap.min.css'; // BootstrapのCSSをインポート
@@ -24,12 +25,12 @@ function App() {
     <>
       <ScrollToTop />
       <Routes>
-        <Route path='/' element={ <Top property={opacity} link={pathname} />}/>
+        <Route path='/' element={ <Top property={opacity} />}/>
         <Route path='/list' element={ <List link={pathname} />}/>
         <Route path='/list/outing/' element={ <Outing link={pathname} />}/>
         <Route path='/list/night/' element={ <Night link={pathname} />}/>
         <Route path='/list/sports/' element={ <Sports link={pathname} />}/>
-        {/* <Route path='/photo/:id' element={ <Picture link={pathname} />}/> */}
+        <Route path='/photo/:id' element={ <Picture link={pathname} />}/>
       </Routes>
     </>
   )
