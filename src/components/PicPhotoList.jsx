@@ -61,7 +61,7 @@ const PicPhotoList = ( {img} ) => {
     <>
       <div className={styles.content} ref={modalRef} />
       <div className={styles.titleArea}>
-        <h2>{title}</h2>
+        <h2>{img.title}</h2>
         <div className={styles.subtitleArea}>
           <p>{img.camara}</p>
           <p>{img.film}</p>
