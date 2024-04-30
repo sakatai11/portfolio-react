@@ -23,7 +23,6 @@ const PicPhotoList = ( {img} ) => {
   const [selectedTablet, setSelectedTablet] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(null); // 現在の画像のインデックス
 
-
   const modalRef = useRef();
   console.log(modalRef);
 
@@ -62,7 +61,7 @@ const PicPhotoList = ( {img} ) => {
     <>
       <div className={styles.content} ref={modalRef} />
       <div className={styles.titleArea}>
-        <h2>{img.title}</h2>
+        <h2>{title}</h2>
         <div className={styles.subtitleArea}>
           <p>{img.camara}</p>
           <p>{img.film}</p>

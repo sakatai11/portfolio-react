@@ -6,6 +6,7 @@ import Footer from '../../components/common/Footer'
 function Picture ( {link} ) {
 
   const { id } = useParams(); // URLからidパラメータを取得
+  console.log(id);
 
   return (
     <div>
