@@ -1,20 +1,24 @@
 import { useState, useEffect } from "react";
+// import { useLocation } from "react-router-dom"; 
 import getListData from "../api/microCMSClient";
 import PhotoList from "./PhotoList";
 import LoadButton from "./parts/LoadButton";
+import LinkState from "./hocks/LinkState";
 import styles from "./layouts/ListArea.module.css";
 import { Link } from 'react-router-dom';
 
 
-const ListPhoto = ( {pageUrl, title} ) => {
+const ListPhoto = ( {pageUrl} ) => {
   const [photo, setPhoto] = useState([]); ////prevPhotosとuniqueNewPhotosの結合データ
   const [count, setCount] = useState(0); // ロードされた写真セットのカウント
   const [isLoading, setIsLoading] = useState(false); // ボタンをクリックした時の文言の表示
   const [hasMore, setHasMore] = useState(true); // さらに写真があるかどうかのフラグ
   const [button, setButton] = useState(false); // 画像が読み込まれたら表示
-  
 
   console.log(hasMore);
+  
+  // LinkコンポーネントのState読み込み
+  const title = LinkState();
 
   // 新しい写真を既存のリストに追加する前に重複をチェックする
   const addNewPhotos = (newPhotos) => {

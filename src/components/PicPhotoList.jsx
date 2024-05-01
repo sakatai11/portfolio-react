@@ -1,7 +1,7 @@
-import styles from "./layouts/PicArea.module.css";
 import { useState, useRef } from "react";
 import { createPortal } from "react-dom"; 
 import Modal from "./parts/Modal";
+import styles from "./layouts/PicArea.module.css";
 
 const ModalPortal = ( {children} ) => {
   // CSS Modulesが生成した実際のクラス名を取得
@@ -63,7 +63,7 @@ const PicPhotoList = ( {img} ) => {
       <div className={styles.titleArea}>
         <h2>{img.title}</h2>
         <div className={styles.subtitleArea}>
-          <p>{img.camara}</p>
+          <p>{img.camera}</p>
           <p>{img.film}</p>
         </div>
       </div>

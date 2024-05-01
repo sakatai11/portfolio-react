@@ -42,7 +42,7 @@ const Photo = ( {url} ) => {
       <div className="titleArea">
         <h2>PHOTO</h2>
         <div className="sp-none">
-          <ArrowRight url={"/list/"} text={"すべての写真を見る"} />
+          <ArrowRight url={"/list/"} state={{title: 'PHOTO'}} text={"すべての写真を見る"} />
         </div>
       </div>
 

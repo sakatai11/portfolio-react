@@ -33,11 +33,11 @@ const CategoryList = ({ list, url, index }) => {
           </Col>
           <Col className={styleCategory.colStyle}>
             {regex.test(url) ? (
-              <Link to={list.url}>{list.title}</Link>
+              <Link to={list.url} state={{title: list.title}}>{list.title}</Link>
             ) : (
               <>
                 <p>{list.title}</p>
-                <ArrowRight url={list.url} style={Topstyles.arrowLink} text={"写真を見る"} />
+                <ArrowRight url={list.url} style={Topstyles.arrowLink} state={{title: list.title}} text={"写真を見る"}  />
               </>
             )}
           </Col>

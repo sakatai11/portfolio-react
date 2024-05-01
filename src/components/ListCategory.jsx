@@ -3,7 +3,6 @@ import getListData from "../api/microCMSClient";
 import CategoryList from "./CategoryList";
 import styles from "./layouts/ListCategory.module.css";
 
-
 const ListCategory = ( {pageUrl} ) => {
   const [content, setContent] = useState([]); // ローカルステートを定義する
 

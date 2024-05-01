@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 
-const ArrowRight = ( {url, style, text} ) => {
+const ArrowRight = ( {url, style, state, text} ) => {
 
   return (
     <>
-      <Link to={url} tabIndex={500} className={`${style} ${'arrowLink'}`}>{text}</Link>
+      <Link to={url} tabIndex={500} state={state}  className={`${style} ${'arrowLink'}`}>{text}</Link>
     </>
   )
 }
