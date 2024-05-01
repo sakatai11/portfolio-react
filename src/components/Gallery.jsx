@@ -48,7 +48,7 @@ const Gallery = () => {
                 transition={{ duration: 1, delay: index * 0.2 }}
               >
                 <Link to={`/photo/${galleryList.id}`} tabIndex={200} >
-                  <img src={galleryList.gallery_image.url} alt={`${'gallery'} ${index + 1 }`}  />
+                  <img src={galleryList.gallery_image.url} alt={`gallery${index + 1 }`}  />
                 </Link>
               </motion.div>
             </li>
