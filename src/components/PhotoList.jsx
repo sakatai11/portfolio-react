@@ -8,7 +8,7 @@ const PhotoList = ({list, LinkRouter, url, index}) => {
   console.log(index);
 
   return (
-    <LinkRouter to={ `/photo/${list.id}`} tabIndex={600}>
+    <LinkRouter to={ `/photo/${list.id}`} tabIndex={200} >
       <Card>
           <div className='imgDate'>
             <Card.Img variant="top" src={list.image.url} />

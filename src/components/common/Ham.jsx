@@ -1,4 +1,4 @@
-const Ham = ({ handleCloseClick, NavRouter }) => {
+const Ham = ({ handleCloseClick, NavRouter,  }) => {
   return (
     <nav className="headerHambugerArea">
       <div className="closeBtn" onClick={handleCloseClick}>
@@ -7,8 +7,9 @@ const Ham = ({ handleCloseClick, NavRouter }) => {
       <li>
             <NavRouter 
               to="/list/" 
-              tabIndex={200}
+              tabIndex={100}
               end
+              state={{title: 'PHOTO'}}
               className={({ isActive }) => (isActive ? 'active' : '')}
               onClick={handleCloseClick}
               >
@@ -18,7 +19,8 @@ const Ham = ({ handleCloseClick, NavRouter }) => {
           <li>
             <NavRouter 
               to="/list/outing/" 
-              tabIndex={300}
+              tabIndex={100}
+              state={{title: 'おでかけ'}}
               className={({ isActive }) => (isActive ? 'active' : '')}
               onClick={handleCloseClick}
               >
@@ -28,7 +30,8 @@ const Ham = ({ handleCloseClick, NavRouter }) => {
           <li>
             <NavRouter 
               to="/list/night/" 
-              tabIndex={400}
+              tabIndex={100}
+              state={{title: '夜'}}
               className={({ isActive }) => (isActive ? 'active' : '')}
               onClick={handleCloseClick}
               >
@@ -38,7 +41,8 @@ const Ham = ({ handleCloseClick, NavRouter }) => {
           <li>
             <NavRouter 
               to="/list/sports/" 
-              tabIndex={500}
+              tabIndex={100}
+              state={{title: 'スポーツ'}}
               className={({ isActive }) => (isActive ? 'active' : '')}
               onClick={handleCloseClick}
               >

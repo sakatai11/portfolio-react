@@ -4,7 +4,7 @@ const ArrowRight = ( {url, style, state, text} ) => {
 
   return (
     <>
-      <Link to={url} tabIndex={500} state={state}  className={`${style} ${'arrowLink'}`}>{text}</Link>
+      <Link to={url} state={state}  className={`${style} ${'arrowLink'}`} tabIndex={200}>{text}</Link>
     </>
   )
 }

@@ -33,7 +33,7 @@ const Gallery = () => {
               className={styles.imgContent} 
             >
               <div className={styles.imgBox}>
-                <Link to={`/photo/${galleryList.id}`} >
+                <Link to={`/photo/${galleryList.id}`} tabIndex={200} >
                   <img src={galleryList.gallery_image.url} alt={`${'gallery'} ${index + 1 }`}  />
                 </Link>
               </div>

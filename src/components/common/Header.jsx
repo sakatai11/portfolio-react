@@ -1,11 +1,13 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { Link , NavLink } from 'react-router-dom';
 import Ham from "./Ham";
 
 const Header = ( {urlCheck} ) => {
   console.log(urlCheck);
-  // スクロールイベントを監視する
-    window.addEventListener("scroll", function() {
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // スクロールイベントの処理
       // .mainArticles の位置を取得
       const mainArticles = document.querySelector(".mainArticles");
       const mainArticlesRect = mainArticles.getBoundingClientRect();
@@ -27,8 +29,15 @@ const Header = ( {urlCheck} ) => {
         // ヘッダーに "white" クラスを追加
         header.classList.add("white");
       }
-    });
-
+    };
+  
+    window.addEventListener("scroll", handleScroll);
+  
+    // コンポーネントがアンマウントされるときにイベントリスナーを削除
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const isMenu = useRef()
 
@@ -52,8 +61,9 @@ const Header = ( {urlCheck} ) => {
           <li>
             <NavLink 
               to="/list/" 
-              tabIndex={200}
+              tabIndex={100}
               end
+              state={{title: 'PHOTO'}}
               className={({ isActive }) => (isActive ? 'active' : '')}
               >
                 すべての写真
@@ -62,7 +72,8 @@ const Header = ( {urlCheck} ) => {
           <li>
             <NavLink 
               to="/list/outing/" 
-              tabIndex={300}
+              tabIndex={100}
+              state={{title: 'おでかけ'}}
               className={({ isActive }) => (isActive ? 'active' : '')}
               >
                 おでかけ
@@ -71,7 +82,8 @@ const Header = ( {urlCheck} ) => {
           <li>
             <NavLink 
               to="/list/night/" 
-              tabIndex={400}
+              tabIndex={100}
+              state={{title: '夜'}}
               className={({ isActive }) => (isActive ? 'active' : '')}
               >
               夜
@@ -80,7 +92,8 @@ const Header = ( {urlCheck} ) => {
           <li>
             <NavLink 
               to="/list/sports/" 
-              tabIndex={500}
+              tabIndex={100}
+              state={{title: 'スポーツ'}}
               className={({ isActive }) => (isActive ? 'active' : '')}
               >
               スポーツ
@@ -101,7 +114,9 @@ const Header = ( {urlCheck} ) => {
         <Ham handleCloseClick={() => {
           toggleMenu()
         }
-        } NavRouter={NavLink} />
+        } 
+          NavRouter={NavLink}
+        />
       </div>
     </header>
   );

@@ -1,21 +1,32 @@
+import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const LinkState = () => {
   const location = useLocation();
-  console.log(location);
-  const title = location.state?.title; // Optional chainingを使用してtitleデータを受け取る
+  const [content, setContent] = useState(''); // 状態管理
+  const [isLoading, setIsLoading] = useState(true);
 
-  if (title === 'PHOTO' ) {
+  useEffect (() => {
+    console.log(location);
+    const title = location.state?.title; // Optional chainingを使用してtitleデータを受け取る
     console.log(title);
-    return title;
-  } else if (!title) {
-    // titleが存在しない場合の処理
-    console.log('title is undefined!');
-    return <div>title is undefined!</div>;
+
+    if (title) {
+      setContent(<h2>{title}</h2>); // JSXを状態に設定
+      setIsLoading(false); // ローディング状態をfalseに設定
+    }
+
+  },[location.state]);
+
+
+  // ローディング中はローディングメッセージを表示
+  if (isLoading) {
+    return <h2>Loading...</h2>;
   }
 
-  console.log(title);
-  return title;
+  // ローディングが完了したらコンテンツを表示
+  return content;
+
 }
 
 

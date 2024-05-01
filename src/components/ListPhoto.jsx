@@ -18,7 +18,7 @@ const ListPhoto = ( {pageUrl} ) => {
   console.log(hasMore);
   
   // LinkコンポーネントのState読み込み
-  const title = LinkState();
+  // const title = LinkState();
 
   // 新しい写真を既存のリストに追加する前に重複をチェックする
   const addNewPhotos = (newPhotos) => {
@@ -93,7 +93,7 @@ const getFilterForPageUrl = (pageUrl) => {
   return (
     <div className={styles.listArea} >
       <div className="titleArea">
-        <h2>{title}</h2>
+        <LinkState />
       </div>
       <ul className={`${styles.photoContents} ${"photoContents"}`}>
         {
