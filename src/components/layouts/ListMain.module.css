@@ -3,3 +3,11 @@
 .listMain {
   margin: 10rem 0;
 }
+
+@media screen and (max-width: 767px){
+  /**** main ****/
+  .listMain {
+    margin-top: 10rem;
+    margin-bottom: 6rem;
+  }
+}

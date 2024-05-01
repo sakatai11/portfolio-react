@@ -35,6 +35,11 @@
 
 @media screen and (max-width: 767px){
   /**** ListArea ****/
+  .listArea {
+    padding: 0;
+    margin-bottom: 8.5rem;
+  }
+
   .listArea button {
     width: 100%;
   }

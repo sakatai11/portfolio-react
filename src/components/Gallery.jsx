@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import { Link } from 'react-router-dom';
 import getListData from "../api/microCMSClient";
 import styles from "./layouts/gallery.module.css";
@@ -21,9 +23,15 @@ const Gallery = () => {
 
   console.log(gallery);
 
+  const { ref, inView } = useInView({
+    rootMargin: "600px",
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+
   return (
     <div className={styles.selectArea }>
-      <h3>Gallery</h3>
+      <h2>GALLERY</h2>
 
       <ul className={styles.gridArea}>
         {
@@ -32,11 +40,17 @@ const Gallery = () => {
               key={index}
               className={styles.imgContent} 
             >
-              <div className={styles.imgBox}>
+              <motion.div 
+                className={styles.imgBox}
+                ref={ref}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: inView ? 1 : 0 }}
+                transition={{ duration: 1, delay: index * 0.2 }}
+              >
                 <Link to={`/photo/${galleryList.id}`} tabIndex={200} >
                   <img src={galleryList.gallery_image.url} alt={`${'gallery'} ${index + 1 }`}  />
                 </Link>
-              </div>
+              </motion.div>
             </li>
             ))
         }

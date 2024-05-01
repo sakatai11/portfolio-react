@@ -9,12 +9,14 @@
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: auto;
   gap: 1.5vw;
+  margin-top: 7rem;
 }
 
 .imgBox img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform .3s ease-in-out;
 }
 
 .imgBox a {
@@ -22,11 +24,24 @@
   justify-content: center; /* 水平方向にセンターに配置 */
   align-items: center;
   aspect-ratio: 1/1;
+  overflow: hidden;
+}
+
+.imgBox a:hover {
+  opacity: 0.7;
+}
+
+.imgBox a:hover img {
+  transform: scale(1.1);
 }
 
 @media screen and (max-width: 767px){
   .gridArea {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .selectArea {
+    padding-top: 6.5rem;
   }
 }
 
