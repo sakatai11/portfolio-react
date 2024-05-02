@@ -44,8 +44,14 @@ const PicPhotoList = ( {img} ) => {
       const nextIndex = (currentIndex + 1) % photoImg.length; // 次のインデックスを計算
       setCurrentIndex(nextIndex); // インデックスを更新
       const nextImage = photoImg[nextIndex]; // 次の画像を取得
+      console.log(nextImage.width);
       setSelectedImageUrl(nextImage.url); // URLを更新
       setSelectedAlt(nextIndex + 1); // altテキストを更新
+      if (nextImage.width < 1370 ) {
+        setSelectedTablet(styles.wh70);
+      } else {
+        setSelectedTablet(null);
+      }
     };
   
     // 前の画像を表示する関数
@@ -53,8 +59,14 @@ const PicPhotoList = ( {img} ) => {
       const prevIndex = (currentIndex - 1 + photoImg.length) % photoImg.length; // 前のインデックスを計算
       setCurrentIndex(prevIndex); // インデックスを更新
       const prevImage = photoImg[prevIndex]; // 前の画像を取得
+      console.log(prevImage.width);
       setSelectedImageUrl(prevImage.url); // URLを更新
       setSelectedAlt(prevIndex + 1); // altテキストを更新
+      if (prevImage.width < 1370 ) {
+        setSelectedTablet(styles.wh70);
+      } else {
+        setSelectedTablet(null);
+      }
     };
 
   return (
