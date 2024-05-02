@@ -93,7 +93,7 @@ const getFilterForPageUrl = (pageUrl) => {
   return (
     <div className={styles.listArea} >
       <div className="titleArea">
-        <LinkState />
+        <LinkState name={getFilterForPageUrl(pageUrl)} />
       </div>
       <ul className={`${styles.photoContents} ${"photoContents"}`}>
         {
