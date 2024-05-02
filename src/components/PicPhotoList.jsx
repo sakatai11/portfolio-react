@@ -71,8 +71,8 @@ const PicPhotoList = ( {img} ) => {
         <ul>
           {
             photoImg.map((imageItem, index) => {
-              // widthが450以下の場合に適用するスタイルオブジェクト
-              const imageClass = imageItem.width <= 450 ? styles.wh70 : '';
+              // widthが1370以下の場合に適用するスタイルオブジェクト
+              const imageClass = imageItem.width <= 1370 ? styles.wh70 : '';
 
               return (
                 <li 
