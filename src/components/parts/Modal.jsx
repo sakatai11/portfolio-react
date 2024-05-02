@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import clossIcon from "../../assets/images/close-solid.svg";
-import arrowIcon from "../../assets/images/modal-arrowIcon.svg"
+import arrowIcon from "../../assets/images/modal-arrowIcon.svg";
 import styles from "../layouts/Modal.module.css";
 
 

@@ -4,6 +4,7 @@ import getListData from "../api/microCMSClient";
 import PhotoList from "./PhotoList";
 import LoadButton from "./parts/LoadButton";
 import LinkState from "./hocks/LinkState";
+import loadingImg from "../assets/images/loading-img.png";
 import styles from "./layouts/ListArea.module.css";
 import { Link } from 'react-router-dom';
 
@@ -11,6 +12,7 @@ import { Link } from 'react-router-dom';
 const ListPhoto = ( {pageUrl} ) => {
   const [photo, setPhoto] = useState([]); ////prevPhotosとuniqueNewPhotosの結合データ
   const [count, setCount] = useState(0); // ロードされた写真セットのカウント
+  const [isLoadingImg, setIsLoadingImg] = useState(true); // 写真データの読み込み表示
   const [isLoading, setIsLoading] = useState(false); // ボタンをクリックした時の文言の表示
   const [hasMore, setHasMore] = useState(true); // さらに写真があるかどうかのフラグ
   const [button, setButton] = useState(false); // 画像が読み込まれたら表示
@@ -60,7 +62,7 @@ const getFilterForPageUrl = (pageUrl) => {
 
         console.log(count);
         console.log(data.props.data.contents); // ここでは全ての写真が取得される
-        
+        setIsLoadingImg(false);
         // 取得した写真データが空の場合、ロードモアを停止
         if (data && data.props.data.contents.length === 0) {
           setHasMore(false);
@@ -95,15 +97,22 @@ const getFilterForPageUrl = (pageUrl) => {
       <div className="titleArea">
         <LinkState name={getFilterForPageUrl(pageUrl)} />
       </div>
-      <ul className={`${styles.photoContents} ${"photoContents"}`}>
+        <ul className={`${styles.photoContents} ${"photoContents"}`}>
         {
-          photo.map((photoList) => (
-          <li key={photoList.id} >
-            <PhotoList list={photoList} LinkRouter={Link} />
-          </li>
-          ))
-        }
-      </ul>
+          isLoadingImg ? (
+            Array.from({length:9},(index) => (
+              <li key={index} className={styles.loadingContent}>
+                <img src={loadingImg} alt="読み込み中" />
+              </li>
+            ))
+          ) : (
+            photo.map((photoList) => (
+            <li key={photoList.id} >
+              <PhotoList list={photoList} LinkRouter={Link} />
+            </li>
+            ))
+        )}
+        </ul>
       {
         hasMore && (
           <div className="linkContent">

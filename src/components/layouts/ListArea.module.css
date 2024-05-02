@@ -33,6 +33,14 @@
   opacity: 0.5;
 }
 
+/****読み込み画像******/
+.loadingContent {
+  margin-bottom: 7.5rem;
+}
+.loadingContent img {
+  width: 100%;
+}
+
 @media screen and (max-width: 767px){
   /**** ListArea ****/
   .listArea {
