@@ -57,6 +57,17 @@ header {
   margin-bottom: 0;
 }
 
+/* topページのみ */
+.l-container {
+  opacity: 0;
+}
+
+.l-container.display {
+  opacity: 1;
+  transition: all 1s;
+  transition-delay: 1s;  /* 0.7秒遅らせる */
+}
+
 /* headerにwhiteクラスが付いたときの背景色 */
 header.white {
   background-color: white;

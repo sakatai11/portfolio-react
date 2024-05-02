@@ -1,14 +1,14 @@
 @charset 'UTF-8';
 /**** ページ読み込み時 ****/
-.l-container {
+/* .l-container {
   opacity: 0;
 }
 
 .l-container.display {
   opacity: 1;
   transition: all 1s;
-  transition-delay: 1s;  /* 0.7秒遅らせる */
-}
+  transition-delay: 1s;  /* 0.7秒遅らせる 
+} */
 
 /**** main ****/
 main section {

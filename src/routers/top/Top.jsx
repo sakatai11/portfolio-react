@@ -6,7 +6,7 @@ import styles from '../../components/layouts/Top.module.css';
 function Top( {property,link} ) {
 
   return (
-    <div className={`${styles['.l-container']} ${property}`}>
+    <div className={property}>
       <Header/>
       <Main url={link} />
       <Footer />
