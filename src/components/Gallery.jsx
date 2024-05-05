@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 import { Link } from 'react-router-dom';
 import getListData from "../api/microCMSClient";
 import styles from "./layouts/gallery.module.css";
-
+import formatImg from "../formatImg";
 
 const Gallery = () => {
   const [gallery, setGallery] = useState([]); // ローカルステートを定義する
@@ -48,7 +48,11 @@ const Gallery = () => {
                 transition={{ duration: 1, delay: index * 0.2 }}
               >
                 <Link to={`/photo/${galleryList.id}`} tabIndex={200} >
-                  <img src={galleryList.gallery_image.url} alt={`gallery${index + 1 }`}  />
+                  {/* <img src={galleryList.gallery_image.url} alt={`gallery${index + 1 }`}  /> */}
+                  <picture>
+                    <source srcSet={`${formatImg(galleryList.gallery_image.url)} 1x, ${galleryList.gallery_image.url} 2x`} alt={`gallery${index + 1 }`} type="image/webp" />
+                    <img src={galleryList.gallery_image.url} alt={`gallery${index + 1 }`} />
+                  </picture>
                 </Link>
               </motion.div>
             </li>

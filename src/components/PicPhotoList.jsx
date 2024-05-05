@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { createPortal } from "react-dom"; 
 import Modal from "./parts/Modal";
 import styles from "./layouts/PicArea.module.css";
+import formatImg from '../formatImg';
 
 const ModalPortal = ( {children} ) => {
   // CSS Modulesが生成した実際のクラス名を取得
@@ -96,9 +97,11 @@ const PicPhotoList = ( {img} ) => {
 
                   disabled={modalOpen}
                 >
-                  <div className={styles.photoImg}>
-                    <img src={imageItem.url} alt={`Photo ${index + 1 }`} className={imageClass}/>
-                  </div>
+                    {/* <img src={imageItem.url} alt={`Photo ${index + 1 }`} className={imageClass}/> */}
+                    <picture className={styles.photoImg}>
+                      <source srcSet={`${formatImg(imageItem.url)} 1x, ${imageItem.url} 2x`} alt={`Photo ${index + 1 }`} type="image/webp" />
+                      <img src={imageItem.url} alt={`Photo ${index + 1 }`} className={imageClass}/>
+                    </picture>
                 </li>
               );
             })

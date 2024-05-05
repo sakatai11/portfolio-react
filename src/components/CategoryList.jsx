@@ -8,6 +8,7 @@ import ArrowRight from './parts/ArrowRight';
 import { Link } from 'react-router-dom'
 import Topstyles from './layouts/TopCategoryList.module.css';
 import Liststyles from './layouts/ListCategoryList.module.css';
+import formatImg from '../formatImg';
 
 const CategoryList = ({ list, url, index }) => {
   // console.log(list);
@@ -29,7 +30,7 @@ const CategoryList = ({ list, url, index }) => {
       <Container>
         <Row className={styleCategory.rowStyle}>
           <Col className={styleCategory.colStyle}>
-            <img src={list.image.url} alt={list.title} />
+            <img src={formatImg(list.image.url)} alt={list.title} />
           </Col>
           <Col className={styleCategory.colStyle}>
             {regex.test(url) ? (

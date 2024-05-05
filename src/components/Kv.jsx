@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import getListData from "../api/microCMSClient";
 import styles from "./layouts/Kv.module.css";
+import formatImg from "../formatImg";
 
 const Kv = () => {
   const [kv, setKv] = useState([]); 
@@ -55,7 +56,10 @@ const Kv = () => {
           {/* isLoadingがfalseになってからレンダリング、kv[0].urlにアクセスする */}
           {isLoading ? null : (
             <>
-              <source srcSet={`${kv[0].url} 1x, ${kv[1].url} 2x`} alt="KV"  media="(max-width: 767px)"/>
+              <source srcSet={`${formatImg(kv[0].url)} 1x, ${formatImg(kv[0].url)} 2x`} alt="KV" type="image/webp" media="(min-width: 768px)" />
+              <source srcSet={`${formatImg(kv[1].url)} 1x, ${formatImg(kv[1].url)} 2x`} alt="KV" type="image/webp" media="(max-width: 767px)"/>
+              <source srcSet={`${kv[0].url} 1x, ${kv[0].url} 2x`} alt="KV" type="image/webp" media="(min-width: 768px)"/>
+              <source srcSet={`${kv[1].url} 1x, ${kv[1].url} 2x`} alt="KV" type="image/webp" media="(max-width: 767px)"/>
               <img src={kv[0].url} alt="KV" />
             </>
           )}

@@ -19,7 +19,7 @@
   transition: transform .3s ease-in-out;
 }
 
-.imgBox a {
+.imgBox picture {
   display: flex;
   justify-content: center; /* 水平方向にセンターに配置 */
   align-items: center;

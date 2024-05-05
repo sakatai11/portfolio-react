@@ -100,8 +100,8 @@ const getFilterForPageUrl = (pageUrl) => {
         <ul className={`${styles.photoContents} ${"photoContents"}`}>
         {
           isLoadingImg ? (
-            Array.from({length:9},(index) => (
-              <li key={index} className={styles.loadingContent}>
+            Array.from({length:9},(_, index)  => (
+              <li key={`loading-${index}`} className={styles.loadingContent}>
                 <img src={loadingImg} alt="読み込み中" />
               </li>
             ))

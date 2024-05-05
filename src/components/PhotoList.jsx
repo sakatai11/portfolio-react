@@ -1,4 +1,5 @@
 import Card from 'react-bootstrap/Card';
+import formatImg from '../formatImg';
 
 const PhotoList = ({list, LinkRouter, url, index}) => {
   // console.log("click2");
@@ -7,11 +8,17 @@ const PhotoList = ({list, LinkRouter, url, index}) => {
   console.log(url);
   console.log(index);
 
+  // console.log(formatImg(list.image.url));
+
   return (
     <LinkRouter to={ `/photo/${list.id}`} tabIndex={200} >
       <Card>
           <div className='imgDate'>
-            <Card.Img variant="top" src={list.image.url} />
+            {/* <Card.Img variant="top" src={list.image.url} /> */}
+            <picture>
+              <source srcSet={`${formatImg(list.image.url)} 1x, ${list.image.url} 2x`} alt={list.title} type="image/webp" />
+              <Card.Img variant="top" src={list.image.url} alt={list.title} />
+            </picture>
             <span className={url && index < 2 ? 'topFont' : ' '}>{list.date}</span>
           </div>
           <Card.Body>
