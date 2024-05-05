@@ -19,7 +19,6 @@ const Modal = ( {handleCloseClick, nextClick, prevClick, imageUrl, alt, totalIma
       if (window.innerWidth < 1475) {
         modal.style.maxWidth = '900px';
       } else if (window.innerWidth >= 1475) {
-        console.log(window.innerWidth);
         modal.style.maxWidth = '1125px';
       }
     };
