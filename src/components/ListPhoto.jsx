@@ -23,8 +23,10 @@ const ListPhoto = ( {pageUrl} ) => {
   // const title = LinkState();
 
   // 新しい写真を既存のリストに追加する前に重複をチェックする
-  const addNewPhotos = (newPhotos) => {
+  const addNewPhotos = (photos) => {
     setPhoto(prevPhotos => {
+      const newPhotos = photos.slice(0, 9);
+      console.log(newPhotos);
       setButton(true);
       console.log(prevPhotos);
       const existingIds = new Set(prevPhotos.map(li => li.id));
@@ -36,8 +38,9 @@ const ListPhoto = ( {pageUrl} ) => {
       //uniqueNewPhotos・・・新しく追加する写真データ
       return [...prevPhotos, ...uniqueNewPhotos];
     });
-    // 新しい写真が9件未満の場合、さらに写真がないと判断
-    setHasMore(newPhotos.length === 9);
+    // 写真が9件もしくは9件未満の場合、さらに写真がないと判断
+    console.log(photos.length);
+    setHasMore(photos.length > 9);
   };
 
   // ページURLに基づいてフィルター条件を返すヘルパー関数
@@ -58,7 +61,7 @@ const getFilterForPageUrl = (pageUrl) => {
         let data; // data変数を関数スコープで定義する
         const filter = getFilterForPageUrl(pageUrl);
         console.log(filter);
-        data = await getListData('photo', 100, count * 9, [ 'id', 'date', 'tag', 'title', 'image', 'url' ], filter);
+        data = await getListData('photo', 10, count * 9, [ 'id', 'date', 'tag', 'title', 'image', 'url' ], filter);
 
         console.log(count);
         console.log(data.props.data.contents); // ここでは全ての写真が取得される
@@ -69,7 +72,7 @@ const getFilterForPageUrl = (pageUrl) => {
           return;
         }
         // 重複をチェックしてから新しい写真をリストに追加する
-        addNewPhotos(data.props.data.contents.slice(0, 9));
+        addNewPhotos(data.props.data.contents);
       } catch (error) {
         console.error(error); 
         setHasMore(false); // エラーが発生した場合もロードモアを停止
