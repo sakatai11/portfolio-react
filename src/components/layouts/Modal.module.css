@@ -104,8 +104,15 @@
 }
 
 .ht {
-  width: 50%;
+  width: 52%;
 }
+
+@media screen and (max-width: 1500px) {
+  .ht {
+    width: 62.5%;
+  }
+}
+
 
 @media screen and (max-width: 1024px) {
   .wh80 {
