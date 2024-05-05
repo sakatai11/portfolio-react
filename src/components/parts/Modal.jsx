@@ -47,10 +47,12 @@ const Modal = ( {handleCloseClick, nextClick, prevClick, imageUrl, alt, totalIma
     </a>
   );
 
+
+
   return (
     <div className={styles.modalArea}>
       <div className={tablet ? `${styles.container} ${styles.wh80}` : styles.container} >
-        <div className={styles.modalContents}>
+        <div className={tablet ? `${styles.modalContents} ${styles.ht}` : styles.modalContents}>
           <div className={styles.textContent}>
             <p>{alt}&ensp;<span>/</span>&ensp;{totalImages}</p>
             <div className={styles.clossBtn} onClick={handleCloseClick}>

@@ -98,7 +98,13 @@
 }
 
 .wh80 {
-  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ht {
+  width: 50%;
 }
 
 @media screen and (max-width: 1024px) {
@@ -109,6 +115,10 @@
   .picPrev:hover,
   .picNext:hover {
     opacity: 0;
+  }
+
+  .ht {
+    width: initial;
   }
 }
 
