@@ -1,3 +1,4 @@
+import { AnimatePresence } from 'framer-motion';
 import { Routes, Route, useLocation} from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import Top from './routers/top/Top';
@@ -20,18 +21,21 @@ function App() {
   }, []);
 
   const { pathname } = useLocation();
+  console.log(location.pathname);
 
   return (
     <>
       <ScrollToTop />
-      <Routes>
-        <Route path='/' element={ <Top property={opacity} />}/>
-        <Route path='/list' element={ <List link={pathname} />}/>
-        <Route path='/list/outing/' element={ <Outing link={pathname} />}/>
-        <Route path='/list/night/' element={ <Night link={pathname} />}/>
-        <Route path='/list/sports/' element={ <Sports link={pathname} />}/>
-        <Route path='/photo/:id' element={ <Picture link={pathname} />}/>
-      </Routes>
+      <AnimatePresence>
+        <Routes location={location} key={location.pathname}>
+          <Route path='/' element={ <Top property={opacity} />}/>
+          <Route path='/list' element={ <List link={pathname} />}/>
+          <Route path='/list/outing/' element={ <Outing link={pathname} />}/>
+          <Route path='/list/night/' element={ <Night link={pathname} />}/>
+          <Route path='/list/sports/' element={ <Sports link={pathname} />}/>
+          <Route path='/photo/:id' element={ <Picture link={pathname} />}/>
+        </Routes>
+      </AnimatePresence>
     </>
   )
 }

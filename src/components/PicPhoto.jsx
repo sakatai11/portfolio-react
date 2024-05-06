@@ -3,7 +3,7 @@ import getListData from "../api/microCMSClient";
 import PicPhotoList from "./PicPhotoList";
 import styles from "./layouts/ListArea.module.css";
 
-const PicPhoto = ( {id} ) => {
+const PicPhoto = ( {id, onLoading} ) => {
   const [photo, setPhoto] = useState([]); 
   // ローカルステートを追加する
   const [isLoading, setIsLoading] = useState(true);
@@ -16,13 +16,14 @@ const PicPhoto = ( {id} ) => {
           console.log(data.props.data);
           setPhoto(data.props.data); // 取得したデータをsetPhotoListでローカルステートに保存する
           setIsLoading(false);
+          onLoading();
         });
         
       } catch (error) {
         console.error(error); 
       }
 
-  }, [id]); 
+  }, [id,onLoading]); 
 
   console.log(photo);
 

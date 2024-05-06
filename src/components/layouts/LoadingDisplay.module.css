@@ -1,0 +1,21 @@
+@charset 'UTF-8';
+
+.loadingDisplay {
+  position: fixed; /* 画面全体に固定 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* ビューポートの高さに基づく */
+  background-color: #FFF;
+  z-index: 1000; /* 他の要素より前面に表示 */
+  /* animation: fadeIn .3s ease-in; フェードインのアニメーションを適用 */
+}
+
+/* @keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+} */
