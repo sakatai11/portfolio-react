@@ -22,22 +22,23 @@ function App() {
   //     setOpacity('l-container display');
   // }, []);
 
-  const { pathname } = useLocation();
-  console.log(pathname);
+  const location = useLocation();
+  console.log(location);
+  console.log(location.pathname);
   console.log('Appコンポーネント');
 
   return (
     <>
       <ScrollToTop />
       <AnimatePresence>
-        <Header urlCheck={pathname} />
-          <Routes >
-            <Route path='/' element={ <Top link={pathname} />} key={'page-top'} />
-            <Route path='/list' element={ <List link={pathname} />} key={'page-list'} />
-            <Route path='/list/outing/' element={ <Outing link={pathname} />} key={'page-outing'} />
-            <Route path='/list/night/' element={ <Night link={pathname} />} key={'page-night'} />
-            <Route path='/list/sports/' element={ <Sports link={pathname} />} key={'page-sport'} />
-            <Route path='/photo/:id' element={ <Picture link={pathname} />} key={'route-picture'} />
+        <Header urlCheck={location.pathname} />
+          <Routes location={location} key={location.pathname} >
+            <Route path='/' element={ <Top link={location.pathname} />} />
+            <Route path='/list' element={ <List link={location.pathname} />} />
+            <Route path='/list/outing/' element={ <Outing link={location.pathname} />} />
+            <Route path='/list/night/' element={ <Night link={location.pathname} />} />
+            <Route path='/list/sports/' element={ <Sports link={location.pathname} />} />
+            <Route path='/photo/:id' element={ <Picture link={location.pathname} />} />
           </Routes>
         <Footer />
       </AnimatePresence>
