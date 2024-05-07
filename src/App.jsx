@@ -15,32 +15,32 @@ import './components/layouts/globals.css';
 
 function App() {
   // opacityの状態を管理するステートフックを定義
-  const [opacity, setOpacity] = useState("l-container");
+  // const [opacity, setOpacity] = useState("l-container");
 
   // コンポーネントがマウントされた後に、opacityを1に変更する副作用フックを定義
-  useEffect(() => { // ページの読み込みが完了したら実行されるイベントリスナーを追加
-      setOpacity('l-container display');
-  }, []);
+  // useEffect(() => { // ページの読み込みが完了したら実行されるイベントリスナーを追加
+  //     setOpacity('l-container display');
+  // }, []);
 
   const { pathname } = useLocation();
-  console.log(location.pathname);
+  console.log(pathname);
   console.log('Appコンポーネント');
 
   return (
     <>
       <ScrollToTop />
-      {/* <AnimatePresence> */}
+      <AnimatePresence>
         <Header urlCheck={pathname} />
-          <Routes location={location} key={location.pathname}>
-            <Route path='/' element={ <Top property={opacity} />}/>
-            <Route path='/list' element={ <List link={pathname} />}/>
-            <Route path='/list/outing/' element={ <Outing link={pathname} />}/>
-            <Route path='/list/night/' element={ <Night link={pathname} />}/>
-            <Route path='/list/sports/' element={ <Sports link={pathname} />}/>
-            <Route path='/photo/:id' element={ <Picture link={pathname} />}/>
+          <Routes >
+            <Route path='/' element={ <Top link={pathname} />} key={'page-top'} />
+            <Route path='/list' element={ <List link={pathname} />} key={'page-list'} />
+            <Route path='/list/outing/' element={ <Outing link={pathname} />} key={'page-outing'} />
+            <Route path='/list/night/' element={ <Night link={pathname} />} key={'page-night'} />
+            <Route path='/list/sports/' element={ <Sports link={pathname} />} key={'page-sport'} />
+            <Route path='/photo/:id' element={ <Picture link={pathname} />} key={'route-picture'} />
           </Routes>
         <Footer />
-      {/* </AnimatePresence> */}
+      </AnimatePresence>
     </>
   )
 }
