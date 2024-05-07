@@ -9,7 +9,7 @@ import Outing from './routers/list-outing/Outing';
 import Night from './routers/list-night/Night';
 import Picture from './routers/photo/Picture';
 import Sports from './routers/list-sports/Sports';
-import ScrollToTop from './ScrollToTop'; // スクロールを制御
+// import ScrollToTop from './ScrollToTop'; // スクロールを制御
 import 'bootstrap/dist/css/bootstrap.min.css'; // BootstrapのCSSをインポート
 import './components/layouts/globals.css';
 
@@ -26,11 +26,6 @@ function App() {
   console.log(location.pathname);
   const [isPageLoaded, setPageLoaded] = useState(false);
 
-  // // ページ遷移前にスクロール位置を保存
-  // const handleExitComplete = () => {
-  //   window.scrollTo(0, 0);
-  // };
-
   // 新しいページがレンダリングされた後、ページが読み込まれたことを示す状態を設定
   useEffect(() => {
     setPageLoaded(true);
@@ -38,9 +33,9 @@ function App() {
 
   return (
     <>
-        {/* <ScrollToTop /> */}
+      {/* <ScrollToTop /> */}
         <Header urlCheck={location.pathname} />
-          <AnimatePresence mode="wait" >
+          <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo({top: 0, behavior: "instant"})}>
             <Routes location={location} key={location.pathname} >
               <Route path='/' element={ <Top link={location.pathname} />} />
               <Route path='/list' element={ <List link={location.pathname} />} />
