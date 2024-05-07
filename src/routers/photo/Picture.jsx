@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import Animation from '../../components/layouts/ Animation';
 import { useParams } from 'react-router-dom';
 import PicMain from '../../components/PicMain';
 
@@ -9,14 +9,9 @@ function Picture ( {link} ) {
 
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0}}
-        animate={{ opacity: 1}}
-        // exit={{opacity: 0}}
-        transition={{ duration: 2, delay: 0.5 }}
-      >
+      <Animation>
         <PicMain id={id} />
-      </motion.div>
+      </Animation>
     </>
   )
 }

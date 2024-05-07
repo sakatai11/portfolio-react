@@ -21,27 +21,36 @@ function App() {
   // useEffect(() => { // ページの読み込みが完了したら実行されるイベントリスナーを追加
   //     setOpacity('l-container display');
   // }, []);
-
   const location = useLocation();
   console.log(location);
   console.log(location.pathname);
-  console.log('Appコンポーネント');
+  const [isPageLoaded, setPageLoaded] = useState(false);
+
+  // // ページ遷移前にスクロール位置を保存
+  // const handleExitComplete = () => {
+  //   window.scrollTo(0, 0);
+  // };
+
+  // 新しいページがレンダリングされた後、ページが読み込まれたことを示す状態を設定
+  useEffect(() => {
+    setPageLoaded(true);
+  }, [location.pathname]);
 
   return (
     <>
-      <ScrollToTop />
-      <AnimatePresence>
+        {/* <ScrollToTop /> */}
         <Header urlCheck={location.pathname} />
-          <Routes location={location} key={location.pathname} >
-            <Route path='/' element={ <Top link={location.pathname} />} />
-            <Route path='/list' element={ <List link={location.pathname} />} />
-            <Route path='/list/outing/' element={ <Outing link={location.pathname} />} />
-            <Route path='/list/night/' element={ <Night link={location.pathname} />} />
-            <Route path='/list/sports/' element={ <Sports link={location.pathname} />} />
-            <Route path='/photo/:id' element={ <Picture link={location.pathname} />} />
-          </Routes>
-        <Footer />
-      </AnimatePresence>
+          <AnimatePresence mode="wait" >
+            <Routes location={location} key={location.pathname} >
+              <Route path='/' element={ <Top link={location.pathname} />} />
+              <Route path='/list' element={ <List link={location.pathname} />} />
+              <Route path='/list/outing/' element={ <Outing link={location.pathname} />} />
+              <Route path='/list/night/' element={ <Night link={location.pathname} />} />
+              <Route path='/list/sports/' element={ <Sports link={location.pathname} />} />
+              <Route path='/photo/:id' element={ <Picture link={location.pathname} />} />
+            </Routes>
+            {isPageLoaded && <Footer />}
+          </AnimatePresence>
     </>
   )
 }

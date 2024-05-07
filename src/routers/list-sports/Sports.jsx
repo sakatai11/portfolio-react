@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import Animation from '../../components/layouts/ Animation';
 import ListMain from '../../components/ListMain';
 
 
@@ -6,14 +6,9 @@ function Sports( {link} ) {
 
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0}}
-        animate={{ opacity: 1}}
-        // exit={{opacity: 0}}
-        transition={{ duration: 2, delay: 0.5 }}
-      >
+      <Animation>
         <ListMain url={link} />
-      </motion.div>
+      </Animation>
     </>
   )
 }
