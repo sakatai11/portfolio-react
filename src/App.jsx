@@ -1,6 +1,8 @@
 import { AnimatePresence } from 'framer-motion';
 import { Routes, Route, useLocation} from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
+import Header from './components/common/Header';
+import Footer from './components/common/Footer';
 import Top from './routers/top/Top';
 import List from './routers/list/List';
 import Outing from './routers/list-outing/Outing';
@@ -22,20 +24,23 @@ function App() {
 
   const { pathname } = useLocation();
   console.log(location.pathname);
+  console.log('Appコンポーネント');
 
   return (
     <>
       <ScrollToTop />
-      <AnimatePresence>
-        <Routes location={location} key={location.pathname}>
-          <Route path='/' element={ <Top property={opacity} />}/>
-          <Route path='/list' element={ <List link={pathname} />}/>
-          <Route path='/list/outing/' element={ <Outing link={pathname} />}/>
-          <Route path='/list/night/' element={ <Night link={pathname} />}/>
-          <Route path='/list/sports/' element={ <Sports link={pathname} />}/>
-          <Route path='/photo/:id' element={ <Picture link={pathname} />}/>
-        </Routes>
-      </AnimatePresence>
+      {/* <AnimatePresence> */}
+        <Header urlCheck={pathname} />
+          <Routes location={location} key={location.pathname}>
+            <Route path='/' element={ <Top property={opacity} />}/>
+            <Route path='/list' element={ <List link={pathname} />}/>
+            <Route path='/list/outing/' element={ <Outing link={pathname} />}/>
+            <Route path='/list/night/' element={ <Night link={pathname} />}/>
+            <Route path='/list/sports/' element={ <Sports link={pathname} />}/>
+            <Route path='/photo/:id' element={ <Picture link={pathname} />}/>
+          </Routes>
+        <Footer />
+      {/* </AnimatePresence> */}
     </>
   )
 }

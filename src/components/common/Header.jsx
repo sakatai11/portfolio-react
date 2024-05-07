@@ -16,20 +16,20 @@ const Header = ( {urlCheck} ) => {
       const header = document.querySelector("header");
       const headerRect = header.getBoundingClientRect();
       
-      if (!urlCheck) {
-      // .mainArticles の上端がヘッダーの下端よりも高いかどうかをチェック
-        if ( headerRect.top >= mainArticlesRect.top) {
+      if (urlCheck === "/") {
+          // .mainArticles の上端がヘッダーの下端よりも下にあるかどうかをチェック
+          if (mainArticlesRect.top <= headerRect.bottom) {
+              // ヘッダーに "white" クラスを追加
+              header.classList.add("white");
+            } else {
+              // ヘッダーから "white" クラスを削除
+              header.classList.remove("white");
+            }
+        } else {
           // ヘッダーに "white" クラスを追加
           header.classList.add("white");
-          } else {
-          // ヘッダーから "white" クラスを削除
-          header.classList.remove("white");
         }
-      } else {
-        // ヘッダーに "white" クラスを追加
-        header.classList.add("white");
-      }
-    };
+      };
   
     window.addEventListener("scroll", handleScroll);
   
@@ -37,7 +37,7 @@ const Header = ( {urlCheck} ) => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [urlCheck]);
 
   const isMenu = useRef()
 
