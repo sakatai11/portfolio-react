@@ -6,7 +6,7 @@ import Footer from './components/common/Footer';
 import Top from './routers/top/Top';
 import List from './routers/list/List';
 import Picture from './routers/photo/Picture';
-import ScrollToTop from './ScrollToTop'; // スクロールを制御
+import ScrollToTop from './components/layouts/ScrollToTop'; // スクロールを制御
 import 'bootstrap/dist/css/bootstrap.min.css'; // BootstrapのCSSをインポート
 import './components/layouts/globals.css';
 

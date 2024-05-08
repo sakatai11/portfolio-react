@@ -19,7 +19,7 @@ ul li:nth-of-type(2n) .rowStyle {
 
   .colStyle {
     align-content: normal;
-    justify-content:inherit
+    justify-content:initial
   }
 
   .colStyle p {

@@ -81,4 +81,8 @@
   .imgArea li + li {
     padding-top: 10px;
   }
+
+  .photoImg:hover {
+    opacity: initial;
+  }
 }
