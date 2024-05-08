@@ -5,11 +5,8 @@ import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 import Top from './routers/top/Top';
 import List from './routers/list/List';
-import Outing from './routers/list-outing/Outing';
-import Night from './routers/list-night/Night';
 import Picture from './routers/photo/Picture';
-import Sports from './routers/list-sports/Sports';
-// import ScrollToTop from './ScrollToTop'; // スクロールを制御
+import ScrollToTop from './ScrollToTop'; // スクロールを制御
 import 'bootstrap/dist/css/bootstrap.min.css'; // BootstrapのCSSをインポート
 import './components/layouts/globals.css';
 
@@ -24,27 +21,22 @@ function App() {
   const location = useLocation();
   console.log(location);
   console.log(location.pathname);
-  const [isPageLoaded, setPageLoaded] = useState(false);
 
-  // 新しいページがレンダリングされた後、ページが読み込まれたことを示す状態を設定
-  useEffect(() => {
-    setPageLoaded(true);
-  }, [location.pathname]);
 
   return (
     <>
-      {/* <ScrollToTop /> */}
+        <ScrollToTop /> 
         <Header urlCheck={location.pathname} />
-          <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo({top: 0, behavior: "instant"})}>
+          <AnimatePresence mode="wait" >
             <Routes location={location} key={location.pathname} >
               <Route path='/' element={ <Top link={location.pathname} />} />
               <Route path='/list' element={ <List link={location.pathname} />} />
-              <Route path='/list/outing/' element={ <Outing link={location.pathname} />} />
-              <Route path='/list/night/' element={ <Night link={location.pathname} />} />
-              <Route path='/list/sports/' element={ <Sports link={location.pathname} />} />
+              <Route path='/list/outing/' element={ <List link={location.pathname} />} />
+              <Route path='/list/night/' element={ <List link={location.pathname} />} />
+              <Route path='/list/sports/' element={ <List link={location.pathname} />} />
               <Route path='/photo/:id' element={ <Picture link={location.pathname} />} />
             </Routes>
-            {isPageLoaded && <Footer />}
+          <Footer />
           </AnimatePresence>
     </>
   )
