@@ -8,8 +8,5 @@ export default defineConfig({
     historyApiFallback: {
       rewrites: [{ from: /^\/*/, to: '/index.html' }],
     },
-  },
-  define: {
-    'import.meta.env': process.env.NODE_ENV === 'production' ? {} : import.meta.env
   }
 });
