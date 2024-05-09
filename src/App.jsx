@@ -16,7 +16,7 @@ function App() {
 
   // コンポーネントがマウントされた後に、opacityを1に変更する副作用フックを定義
   // useEffect(() => { // ページの読み込みが完了したら実行されるイベントリスナーを追加
-  //     setOpacty('l-container display');
+  //     setOpacity('l-container display');
   // }, []);
   const location = useLocation();
   console.log(location);
