@@ -10,6 +10,6 @@ export default defineConfig({
     },
   },
   define: {
-    'import.meta.env': process.env.NODE_ENV === 'production' ? {} : import.meta.env
+    'import.meta.env': process.env.NODE_ENV === 'production' ? import.meta.env : {},
   }
 });
