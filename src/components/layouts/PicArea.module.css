@@ -13,6 +13,10 @@
   margin-bottom: 0;
 }
 
+.subtitleArea p + p {
+  padding-top: 10px;
+}
+
 .imgArea {
   margin-top: 2.6rem;
 }
