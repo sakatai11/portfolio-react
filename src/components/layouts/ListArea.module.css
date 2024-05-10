@@ -36,9 +36,34 @@
 /****読み込み画像******/
 .loadingContent {
   margin-bottom: 7.5rem;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
 }
+
+.loadingContent::after {
+  content:'';
+  height: 100%;
+  width: 30px;
+  position: absolute;
+  top: 0;
+  left: -35px;
+  background-color: #fff;
+  opacity: 0;
+  animation: reflection 2.4s linear infinite;
+  animation-delay: -2.4s;
+}
+
 .loadingContent img {
   width: 100%;
+}
+
+@keyframes reflection {
+  0% { transform: scale(0) ; opacity: 0; }
+  50% { transform: scale(0) ; opacity: 0.25; }
+  80% { transform: scale(0) ; opacity: 0.5; }
+  81% { transform: scale(0) ; opacity: 1; }
+  100% { transform: scale(50) ; opacity: 0; }
 }
 
 @media screen and (max-width: 767px){
