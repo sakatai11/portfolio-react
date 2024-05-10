@@ -9,6 +9,10 @@
   padding-top: 5rem;
 }
 
+.subtitleArea p + p {
+  padding-top: 10px;
+}
+
 .subtitleArea p {
   margin-bottom: 0;
 }
