@@ -9,6 +9,7 @@ export default defineConfig({
       rewrites: [{ from: /^\/*/, to: '/index.html' }],
     },
   },
+  // 本番環境では環境変数を含まないようにする
   define: {
     'import.meta.env': process.env.NODE_ENV === 'production' ? {} : import.meta.env
   }
