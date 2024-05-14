@@ -6,16 +6,18 @@ import styles from './layouts/ListMain.module.css';
 const PicMain = ( {id} ) => {
 
   const [isLoading, setIsLoading] = useState(true);
+  const [completed, setCompleted] = useState('');
 
   const handleLoading = () => {
     setIsLoading(false);
+    setCompleted('completed');
   }
 
   return (
     <>
-      {isLoading && <Loading />}
       <main className={styles.listMain}>
-        <div className="mainArticles">
+        <div className={`mainArticles ${isLoading ? styles.listLoading : ''}`}>
+        {isLoading ? <Loading /> : <Loading completed={completed} />}
         <PicPhoto id={id} onLoading={handleLoading} />
         </div>
       </main>
