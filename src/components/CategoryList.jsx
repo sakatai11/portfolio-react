@@ -10,6 +10,8 @@ import Topstyles from './layouts/TopCategoryList.module.css';
 import Liststyles from './layouts/ListCategoryList.module.css';
 import formatImg from '../formatImg';
 
+
+
 const CategoryList = ({ list, url, index }) => {
   // console.log(list);
   // console.log(url);
@@ -25,26 +27,30 @@ const CategoryList = ({ list, url, index }) => {
     threshold: 0.8,
   });
 
-    // コンテナとその中身をレンダリングする関数
-    const renderContent = () => (
-      <Container>
-        <Row className={styleCategory.rowStyle}>
-          <Col className={styleCategory.colStyle}>
-            <img src={formatImg(list.image.url)} alt={list.title} />
-          </Col>
-          <Col className={styleCategory.colStyle}>
-            {regex.test(url) ? (
-              <Link to={list.url} state={{title: list.title}}>{list.title}</Link>
-            ) : (
-              <>
-                <p>{list.title}</p>
-                <ArrowRight url={list.url} style={Topstyles.arrowLink} state={{title: list.title}} text={"写真を見る"}  />
-              </>
-            )}
-          </Col>
-        </Row>
-      </Container>
-    );
+
+// コンテナとその中身をレンダリングする関数
+const renderContent = () => {
+
+  return (
+  <Container>
+    <Row className={styleCategory.rowStyle}>
+      <Col className={styleCategory.colStyle}>
+        <img src={formatImg(list.image.url)} alt={list.title} />
+      </Col>
+      <Col className={styleCategory.colStyle}>
+        {regex.test(url) ? (
+          <Link to={list.url} state={{title: list.title}}>{list.title}</Link>
+        ) : (
+          <>
+            <p>{list.title}</p>
+            <ArrowRight url={list.url} style={Topstyles.arrowLink} state={{title: list.title}} text={"写真を見る"}  />
+          </>
+        )}
+      </Col>
+    </Row>
+  </Container>
+  );
+}
 
   return (
   shouldApplyMotion ? (
