@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import getListData from "../api/microCMSClient";
@@ -25,18 +23,6 @@ const Photo = ( {url} ) => {
 
   console.log(photo);
 
-  //デバイスサイズごとにthresholdの値を変更
-  const mediaQuery = window.matchMedia('(min-width: 767px)');
-  const threshold = mediaQuery.matches ? 0.3 : 0.2;
-
-    // アニメーション、refとinViewを定義する
-    const { ref, inView } = useInView({
-      rootMargin: "100px",
-      triggerOnce: true,
-      threshold: threshold,
-    });
-
-
   return (
     <div className={styles.listArea}>
       <div className="titleArea">
@@ -46,23 +32,6 @@ const Photo = ( {url} ) => {
         </div>
       </div>
 
-      <motion.div
-        ref={ref} 
-        initial={{ y: 100, opacity: 0 }} 
-        animate={inView ? "onscreen" : "offscreen"} // ここに文字列を渡す
-        variants={{
-          onscreen: {
-            y: 0,
-            opacity: 1,
-            transition: { duration: 2, ease: "anticipate" }
-          },
-          offscreen: {
-            y: 100,
-            opacity: 0,
-            transition: { duration: 2, ease: "anticipate" }
-          }
-        }}
-      >
         <ul className={`${styles.photoContents} ${"photoContents"}`}>
           {
             photo.slice(0, 6).map((photoList, index) => (
@@ -74,7 +43,6 @@ const Photo = ( {url} ) => {
             ))
           }
         </ul>
-      </motion.div>
       <div className="linkContent pc-none">
           <ArrowRight url={"/list/"} text={"すべての写真を見る"} />
       </div>
