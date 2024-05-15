@@ -243,7 +243,11 @@ main section .wideArea {
 }
 
 .topFont {
-  font-size: 1.1em !important;
+  font-size: 1.79vw !important;
+}
+
+.listFont {
+  font-size: 1.3vw !important;
 }
 
 .mainArticles .photoContents .card {
