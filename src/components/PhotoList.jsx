@@ -49,11 +49,11 @@ const PhotoList = ({list, LinkRouter, url, index}) => {
                 <source srcSet={`${formatImg(list.image.url)} 1x, ${formatImg(list.image.url)} 2x`} alt={list.title} type="image/webp" />
                 <Card.Img variant="top" src={list.image.url} alt={list.title} />
               </picture>
-              <span className={url && index < 2 ? 'topFont' : ' '}>{list.date}</span>
+              <span className={url && index < 2 ? 'topFont' : 'listFont'}>{list.date}</span>
             </div>
             <Card.Body>
-              <Card.Text style={url && index < 2 ? { fontSize: '1.1em' } : { fontSize: '0.75em' }}>{list.tag}</Card.Text>
-              <Card.Title style={url && index < 2 ? { fontSize: '1.7em' } : { fontSize: '1.34em' }}>{list.title}</Card.Title>
+              <Card.Text style={url && index < 2 ? { fontSize: '1.79vw' } : { fontSize: '1.23vw' }}>{list.tag}</Card.Text>
+              <Card.Title style={url && index < 2 ? { fontSize: '2.77vw' } : { fontSize: '2.2vw' }}>{list.title}</Card.Title>
             </Card.Body>
         </Card>
       </LinkRouter>
