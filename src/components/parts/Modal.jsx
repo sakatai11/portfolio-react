@@ -63,7 +63,7 @@ const Modal = ( {handleCloseClick, nextClick, prevClick, imageUrl, alt, totalIma
           <div className={styles.picture}>
             {/* <img src={imageUrl} alt={`Photo ${alt}`} /> */}
             <picture className={styles.photoImg}>
-              <source srcSet={`${formatImg(imageUrl)} 1x, ${imageUrl} 2x`} alt={`Photo ${alt}`} type="image/webp" />
+              <source srcSet={`${formatImg(imageUrl)} 1x, ${formatImg(imageUrl)} 2x`} alt={`Photo ${alt}`} type="image/webp" />
               <img src={imageUrl} alt={`Photo ${alt}`} />
             </picture>
             <div className={styles.arrowArea}>

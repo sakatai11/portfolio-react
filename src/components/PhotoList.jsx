@@ -16,7 +16,7 @@ const PhotoList = ({list, LinkRouter, url, index}) => {
           <div className='imgDate'>
             {/* <Card.Img variant="top" src={list.image.url} /> */}
             <picture>
-              <source srcSet={`${formatImg(list.image.url)} 1x, ${list.image.url} 2x`} alt={list.title} type="image/webp" />
+              <source srcSet={`${formatImg(list.image.url)} 1x, ${formatImg(list.image.url)} 2x`} alt={list.title} type="image/webp" />
               <Card.Img variant="top" src={list.image.url} alt={list.title} />
             </picture>
             <span className={url && index < 2 ? 'topFont' : ' '}>{list.date}</span>
