@@ -429,4 +429,8 @@ footer .text-center {
   .card-body .card-title {
     font-size: 1.7em !important; 
   }
+
+  .topFont {
+    font-size: 0.8em !important;
+  }
 }
