@@ -99,7 +99,7 @@ const PicPhotoList = ( {img} ) => {
                 >
                     {/* <img src={imageItem.url} alt={`Photo ${index + 1 }`} className={imageClass}/> */}
                     <picture className={styles.photoImg}>
-                      <source srcSet={`${formatImg(imageItem.url)} 1x, ${imageItem.url} 2x`} alt={`Photo ${index + 1 }`} type="image/webp" />
+                      <source srcSet={`${formatImg(imageItem.url)} 1x, ${formatImg(imageItem.url)} 2x`} alt={`Photo ${index + 1 }`} type="image/webp" />
                       <img src={imageItem.url} alt={`Photo ${index + 1 }`} className={imageClass}/>
                     </picture>
                 </li>

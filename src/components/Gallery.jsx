@@ -50,7 +50,7 @@ const Gallery = () => {
                 <Link to={`/photo/${galleryList.id}`} tabIndex={200} >
                   {/* <img src={galleryList.gallery_image.url} alt={`gallery${index + 1 }`}  /> */}
                   <picture>
-                    <source srcSet={`${formatImg(galleryList.gallery_image.url)} 1x, ${galleryList.gallery_image.url} 2x`} alt={`gallery${index + 1 }`} type="image/webp" />
+                    <source srcSet={`${formatImg(galleryList.gallery_image.url)} 1x, ${formatImg(galleryList.gallery_image.url)} 2x`} alt={`gallery${index + 1 }`} type="image/webp" />
                     <img src={galleryList.gallery_image.url} alt={`gallery${index + 1 }`} />
                   </picture>
                 </Link>
