@@ -437,4 +437,8 @@ footer .text-center {
   .topFont {
     font-size: 0.8em !important;
   }
+
+  .listFont {
+    font-size: initial !important;
+  }
 }
