@@ -9,37 +9,50 @@
   background-color: rgb(0 0 0 / 77%);
 }
 
+.container {
+  margin: auto ;
+}
+
+.container p {
+  position: absolute;
+  z-index: 555;
+  bottom: 0;
+  left: 0;
+  color: #FFFFFF ;
+  margin: 40px;
+  font-size: 1.4em;
+}
+
 .modalContents {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   /* align-items: end; */
 }
 
-.textContent {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.textContent p {
-  color: #FFFFFF ;
-  margin-bottom: 0;
-  padding-left: 1vw;
-}
-
 .clossBtn {
-  width: 35px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 999;
+  width: 48px;
   height: auto;
   cursor: pointer;
+  margin: 40px;
 }
 
-.picture {
-  position: relative;
+.picture picture {
+  /* position: relative; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 40px);
 }
 
 .picture img {
-  width: 100%;
-  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .arrowArea {
@@ -60,6 +73,7 @@
   opacity: 0;
   transition: opacity .6s;
   cursor: pointer;
+  z-index: 555;
 }
 
 .picPrev:hover,
@@ -99,19 +113,22 @@
 }
 
 .ht {
-  width: 52%;
+  /* width: 52%; */
+  width: initial;
 }
 
 @media screen and (max-width: 1500px) {
   .ht {
-    width: 62.5%;
+    /* width: 62.5%; */
+    width: initial;
   }
 }
 
 
 @media screen and (max-width: 1024px) {
   .wh80 {
-    width: 80% !important;
+    /* width: 80% !important; */
+    width: initial;
   }
 
   .picPrev:hover,
@@ -123,26 +140,31 @@
     width: initial;
   }
 
-  .container {
-    /* position: relative; */
-    margin: auto 3.2vw;
+  .clossBtn,
+  .container p {
+    margin: 20px;
   }
-}
 
-@media screen and (max-width: 767px){
   .clossBtn {
     width: 24px;
   }
 
+  .container p {
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width: 767px){
   .textContent {
     align-items: end;
   }
 
-  .textContent p {
-    font-size: 0.8em;
-  }
-
   .wh80 {
     width: initial !important;
+  }
+
+  .clossBtn,
+  .container p {
+    margin: 8px;
   }
 }

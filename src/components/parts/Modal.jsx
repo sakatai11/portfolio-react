@@ -52,13 +52,10 @@ const Modal = ( {handleCloseClick, nextClick, prevClick, imageUrl, alt, totalIma
   return (
     <div className={styles.modalArea}>
       <div className={tablet ? `${styles.container} ${styles.wh80}` : styles.container} >
+        <div className={styles.clossBtn} onClick={handleCloseClick}>
+          <img src={clossIcon} alt="閉じる" />
+        </div>
         <div className={tablet ? `${styles.modalContents} ${styles.ht}` : styles.modalContents}>
-          <div className={styles.textContent}>
-            <p>{alt}&ensp;<span>/</span>&ensp;{totalImages}</p>
-            <div className={styles.clossBtn} onClick={handleCloseClick}>
-              <img src={clossIcon} alt="閉じる" />
-            </div>
-          </div>
 
           <div className={styles.picture}>
             {/* <img src={imageUrl} alt={`Photo ${alt}`} /> */}
@@ -73,6 +70,7 @@ const Modal = ( {handleCloseClick, nextClick, prevClick, imageUrl, alt, totalIma
             </div>
           </div>
         </div>
+            <p>{alt}&ensp;<span>/</span>&ensp;{totalImages}</p>
       </div>
     </div>
   )
