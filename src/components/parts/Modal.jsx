@@ -55,7 +55,7 @@ const Modal = ( {handleCloseClick, nextClick, prevClick, imageUrl, alt, totalIma
         <div className={styles.clossBtn} onClick={handleCloseClick}>
           <img src={clossIcon} alt="閉じる" />
         </div>
-        <div className={tablet ? `${styles.modalContents} ${styles.ht}` : styles.modalContents}>
+        {/* <div className={tablet ? `${styles.modalContents} ${styles.ht}` : styles.modalContents}> */}
 
           <div className={styles.picture}>
             {/* <img src={imageUrl} alt={`Photo ${alt}`} /> */}
@@ -69,7 +69,7 @@ const Modal = ( {handleCloseClick, nextClick, prevClick, imageUrl, alt, totalIma
             {indexNumber < totalImages && renderContentNext()}
             </div>
           </div>
-        </div>
+        {/* </div> */}
             <p>{alt}&ensp;<span>/</span>&ensp;{totalImages}</p>
       </div>
     </div>
