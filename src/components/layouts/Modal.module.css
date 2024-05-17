@@ -23,12 +23,12 @@
   font-size: 1.4em;
 }
 
-.modalContents {
+/* .modalContents {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* align-items: end; */
-}
+  align-items: end;
+} */
 
 .clossBtn {
   position: absolute;
@@ -42,10 +42,9 @@
 }
 
 .picture picture {
-  /* position: relative; */
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   height: calc(100vh - 40px);
 }
 
