@@ -9,11 +9,6 @@
   background-color: rgb(0 0 0 / 77%);
 }
 
-.container {
-  /* position: relative; */
-  margin: auto 3.2vw;
-}
-
 .modalContents {
   display: flex;
   flex-direction: column;
@@ -126,6 +121,11 @@
 
   .ht {
     width: initial;
+  }
+
+  .container {
+    /* position: relative; */
+    margin: auto 3.2vw;
   }
 }
 
