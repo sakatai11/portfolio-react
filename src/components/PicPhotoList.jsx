@@ -21,18 +21,16 @@ const PicPhotoList = ( {img} ) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedImageUrl, setSelectedImageUrl] = useState(null);
   const [selectedAlt, setSelectedAlt] = useState(null);
-  const [selectedTablet, setSelectedTablet] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(null); // 現在の画像のインデックス
 
   const modalRef = useRef();
   console.log(modalRef);
 
   // モーダルの表示とクリックした,画像を表示,dom操作
-  const photoGet = (imageUrl,alt,imageClass) => {
+  const photoGet = (imageUrl,alt) => {
     setModalOpen(true);
     setSelectedImageUrl(imageUrl);
     setSelectedAlt(alt);
-    setSelectedTablet(imageClass);
     // スクロールを無効にする
     document.body.style.overflow = 'hidden';
 
@@ -48,11 +46,6 @@ const PicPhotoList = ( {img} ) => {
       console.log(nextImage.width);
       setSelectedImageUrl(nextImage.url); // URLを更新
       setSelectedAlt(nextIndex + 1); // altテキストを更新
-      if (nextImage.width < 1370 ) {
-        setSelectedTablet(styles.wh70);
-      } else {
-        setSelectedTablet(null);
-      }
     };
   
     // 前の画像を表示する関数
@@ -63,11 +56,6 @@ const PicPhotoList = ( {img} ) => {
       console.log(prevImage.width);
       setSelectedImageUrl(prevImage.url); // URLを更新
       setSelectedAlt(prevIndex + 1); // altテキストを更新
-      if (prevImage.width < 1370 ) {
-        setSelectedTablet(styles.wh70);
-      } else {
-        setSelectedTablet(null);
-      }
     };
 
   return (
@@ -122,7 +110,6 @@ const PicPhotoList = ( {img} ) => {
                 imageUrl={selectedImageUrl} 
                 alt={selectedAlt} 
                 totalImages={photoImg.length} // ここでphotoImg配列の長さを渡す
-                tablet={selectedTablet}
               />
             </ModalPortal>
           )

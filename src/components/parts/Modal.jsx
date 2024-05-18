@@ -5,11 +5,10 @@ import styles from "../layouts/Modal.module.css";
 import formatImg from "../../formatImg";
 
 
-const Modal = ( {handleCloseClick, nextClick, prevClick, imageUrl, alt, totalImages, tablet} ) => {
+const Modal = ( {handleCloseClick, nextClick, prevClick, imageUrl, alt, totalImages} ) => {
   console.log(handleCloseClick);
   console.log(imageUrl);
   console.log(totalImages);
-  console.log(tablet);
 
   const indexNumber = alt;
 
@@ -51,17 +50,14 @@ const Modal = ( {handleCloseClick, nextClick, prevClick, imageUrl, alt, totalIma
 
   return (
     <div className={styles.modalArea}>
-      <div className={tablet ? `${styles.container} ${styles.wh80}` : styles.container} >
+      <div className={styles.container} >
         <div className={styles.clossBtn} onClick={handleCloseClick}>
           <img src={clossIcon} alt="閉じる" />
         </div>
-        {/* <div className={tablet ? `${styles.modalContents} ${styles.ht}` : styles.modalContents}> */}
 
           <div className={styles.picture}>
-            {/* <img src={imageUrl} alt={`Photo ${alt}`} /> */}
             <picture className={styles.photoImg}>
               <source srcSet={`${formatImg(imageUrl)} 1x, ${formatImg(imageUrl)} 2x`} alt={`Photo ${alt}`} type="image/webp" />
-              {/* <source srcSet={`${formatImg(imageUrl)} 1x`} alt={`Photo ${alt}`} type="image/webp" /> */}
               <img src={imageUrl} alt={`Photo ${alt}`} />
             </picture>
             <div className={styles.arrowArea}>
@@ -69,7 +65,6 @@ const Modal = ( {handleCloseClick, nextClick, prevClick, imageUrl, alt, totalIma
             {indexNumber < totalImages && renderContentNext()}
             </div>
           </div>
-        {/* </div> */}
             <p>{alt}&ensp;<span>/</span>&ensp;{totalImages}</p>
       </div>
     </div>
