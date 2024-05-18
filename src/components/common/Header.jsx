@@ -81,12 +81,12 @@ const Header = ( {urlCheck} ) => {
           </li>
           <li>
             <NavLink 
-              to="/list/night/" 
+              to="/list/random_note/" 
               tabIndex={100}
-              state={{title: '夜'}}
+              state={{title: '雑記'}}
               className={({ isActive }) => (isActive ? 'active' : '')}
               >
-              夜
+              雑記
             </NavLink>
           </li>
           <li>
