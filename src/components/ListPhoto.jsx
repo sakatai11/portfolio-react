@@ -47,7 +47,7 @@ const ListPhoto = ( {pageUrl} ) => {
 const getFilterForPageUrl = (pageUrl) => {
   const filters = {
     '/list/outing/': 'tag[contains]おでかけ',
-    '/list/night/': 'tag[contains]夜',
+    '/list/random_note/': 'tag[contains]雑記',
     '/list/sports/': 'tag[contains]スポーツ',
   };
   console.log(filters[pageUrl]);

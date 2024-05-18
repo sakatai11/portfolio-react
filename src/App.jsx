@@ -32,7 +32,7 @@ function App() {
               <Route path='/' element={ <Top link={location.pathname} />} />
               <Route path='/list' element={ <List link={location.pathname} />} />
               <Route path='/list/outing/' element={ <List link={location.pathname} />} />
-              <Route path='/list/night/' element={ <List link={location.pathname} />} />
+              <Route path='/list/random_note/' element={ <List link={location.pathname} />} />
               <Route path='/list/sports/' element={ <List link={location.pathname} />} />
               <Route path='/photo/:id' element={ <Picture link={location.pathname} />} />
             </Routes>
