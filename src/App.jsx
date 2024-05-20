@@ -25,7 +25,7 @@ function App() {
 
   return (
     <>
-        <ScrollToTop /> 
+      <ScrollToTop /> 
         <Header urlCheck={location.pathname} />
           <AnimatePresence mode="wait" >
             <Routes location={location} key={location.pathname} >

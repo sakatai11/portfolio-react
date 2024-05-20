@@ -1,5 +1,6 @@
 import { useRef, useEffect } from "react";
 import { Link , NavLink } from 'react-router-dom';
+import Nav from "./Nav";
 import Ham from "./Ham";
 
 const Header = ( {urlCheck} ) => {
@@ -57,49 +58,7 @@ const Header = ( {urlCheck} ) => {
         </h1>
       </div>
       <div className="Header__nav">
-        <ul>
-          <li>
-            <NavLink 
-              to="/list/" 
-              tabIndex={100}
-              end
-              state={{title: 'PHOTO'}}
-              className={({ isActive }) => (isActive ? 'active' : '')}
-              >
-                すべての写真
-            </NavLink>
-          </li>
-          <li>
-            <NavLink 
-              to="/list/outing/" 
-              tabIndex={100}
-              state={{title: 'おでかけ'}}
-              className={({ isActive }) => (isActive ? 'active' : '')}
-              >
-                おでかけ
-            </NavLink>
-          </li>
-          <li>
-            <NavLink 
-              to="/list/random_note/" 
-              tabIndex={100}
-              state={{title: '雑記'}}
-              className={({ isActive }) => (isActive ? 'active' : '')}
-              >
-              雑記
-            </NavLink>
-          </li>
-          <li>
-            <NavLink 
-              to="/list/sports/" 
-              tabIndex={100}
-              state={{title: 'スポーツ'}}
-              className={({ isActive }) => (isActive ? 'active' : '')}
-              >
-              スポーツ
-            </NavLink>
-          </li>
-        </ul>
+        <Nav />
       </div>
 
       <div id="hamburger" 
@@ -113,10 +72,7 @@ const Header = ( {urlCheck} ) => {
       <div id="container" ref={isMenu}>
         <Ham handleCloseClick={() => {
           toggleMenu()
-        }
-        } 
-          NavRouter={NavLink}
-        />
+        }} />
       </div>
     </header>
   );

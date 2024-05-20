@@ -1,55 +1,11 @@
-const Ham = ({ handleCloseClick, NavRouter,  }) => {
+import Nav from "./Nav";
+
+const Ham = ({ handleCloseClick }) => {
   return (
     <nav className="headerHambugerArea">
       <div className="closeBtn" onClick={handleCloseClick}>
       </div>
-      <ul className="headerNavHumburerInner">
-      <li>
-            <NavRouter 
-              to="/list/" 
-              tabIndex={100}
-              end
-              state={{title: 'PHOTO'}}
-              className={({ isActive }) => (isActive ? 'active' : '')}
-              onClick={handleCloseClick}
-              >
-                すべての写真
-            </NavRouter>
-          </li>
-          <li>
-            <NavRouter 
-              to="/list/outing/" 
-              tabIndex={100}
-              state={{title: 'おでかけ'}}
-              className={({ isActive }) => (isActive ? 'active' : '')}
-              onClick={handleCloseClick}
-              >
-                おでかけ
-            </NavRouter>
-          </li>
-          <li>
-            <NavRouter 
-              to="/list/random_note/" 
-              tabIndex={100}
-              state={{title: '雑記'}}
-              className={({ isActive }) => (isActive ? 'active' : '')}
-              onClick={handleCloseClick}
-              >
-                雑記
-            </NavRouter>
-          </li>
-          <li>
-            <NavRouter 
-              to="/list/sports/" 
-              tabIndex={100}
-              state={{title: 'スポーツ'}}
-              className={({ isActive }) => (isActive ? 'active' : '')}
-              onClick={handleCloseClick}
-              >
-                スポーツ
-            </NavRouter>
-          </li>
-      </ul>
+        <Nav handleCloseClick={handleCloseClick} />
     </nav>
   )
 }
