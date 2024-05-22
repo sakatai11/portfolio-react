@@ -41,7 +41,7 @@ const LinkState = ( {name} ) => {
         setContent(<h2>{reloadTitle()}</h2>);
         setIsLoading(false); // ローディング状態をfalseに設定
       } else {
-        setContent(<h2>PHOTO</h2>); // JSXを状態に設定
+        setContent(<h2>PHOTOS</h2>); // JSXを状態に設定
         setIsLoading(false); // ローディング状態をfalseに設定
       }
     } 

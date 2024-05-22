@@ -26,7 +26,7 @@ const Photo = ( {url} ) => {
   return (
     <div className={styles.listArea}>
       <div className="titleArea">
-        <h2>PHOTO</h2>
+        <h2>PHOTOS</h2>
         <div className="sp-none">
           <ArrowRight url={"/list/"} state={{title: 'PHOTO'}} text={"すべての写真を見る"} />
         </div>
