@@ -54,7 +54,7 @@ const Header = ( {urlCheck} ) => {
     <header>
       <div className="Header_text">
         <h1>
-          <Link to="/" tabIndex={100}>TAICHI PHOTO</Link>
+          <Link to="/" tabIndex={100}>TAICHI’s PHOTO</Link>
         </h1>
       </div>
       <div className="Header__nav">

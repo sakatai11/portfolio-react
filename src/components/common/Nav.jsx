@@ -39,7 +39,7 @@ const Nav = ( {handleCloseClick} ) => {
           to="/list/" 
           tabIndex={100}
           end
-          state={{title: 'PHOTO'}}
+          state={{title: 'PHOTOS'}}
           className={({ isActive }) => (isActive ? 'active' : '')}
           onClick={handleCloseClick ? handleCloseClick : undefined }
           >
