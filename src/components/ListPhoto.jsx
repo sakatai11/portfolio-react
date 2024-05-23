@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 // import { useLocation } from "react-router-dom"; 
+import { Link } from 'react-router-dom';
 import getListData from "../api/microCMSClient";
 import PhotoList from "./PhotoList";
 import LoadButton from "./parts/LoadButton";
 import LinkState from "./hocks/LinkState";
 import loadingImg from "../assets/images/loading-img.png";
 import styles from "./layouts/ListArea.module.css";
-import { Link } from 'react-router-dom';
 
 
-const ListPhoto = ( {pageUrl} ) => {
+const ListPhoto = ( {pageUrl,filter} ) => {
   const [photo, setPhoto] = useState([]); ////prevPhotosとuniqueNewPhotosの結合データ
   const [count, setCount] = useState(0); // ロードされた写真セットのカウント
   const [isLoadingImg, setIsLoadingImg] = useState(true); // 写真データの読み込み表示
@@ -18,6 +18,7 @@ const ListPhoto = ( {pageUrl} ) => {
   const [button, setButton] = useState(false); // 画像が読み込まれたら表示
 
   console.log(hasMore);
+  console.log(pageUrl);
   
   // LinkコンポーネントのState読み込み
   // const title = LinkState();
@@ -44,22 +45,21 @@ const ListPhoto = ( {pageUrl} ) => {
   };
 
   // ページURLに基づいてフィルター条件を返すヘルパー関数
-const getFilterForPageUrl = (pageUrl) => {
-  const filters = {
-    '/list/outing/': 'tag[contains]おでかけ',
-    '/list/random_note/': 'tag[contains]雑記',
-    '/list/sports/': 'tag[contains]スポーツ',
-  };
-  console.log(filters[pageUrl]);
-  return filters[pageUrl] || ''; // マッチするフィルターがなければ空文字を返す
-};
+  // const getFilterForPageUrl = (pageUrl) => {
+  //   const filters = {
+  //     '/list/outing/': 'tag[contains]おでかけ',
+  //     '/list/random_note/': 'tag[contains]雑記',
+  //     '/list/sports/': 'tag[contains]スポーツ',
+  //   };
+  //   console.log(filters[pageUrl]);
+  //   return filters[pageUrl] || ''; // マッチするフィルターがなければ空文字を返す
+  // };
 
   useEffect(() => {
     // APIから写真データを取得する
     const fetchData = async () => {
       try {
         let data; // data変数を関数スコープで定義する
-        const filter = getFilterForPageUrl(pageUrl);
         console.log(filter);
         data = await getListData('photo', 10, count * 9, [ 'id', 'date', 'tag', 'title', 'image', 'url' ], filter);
 
@@ -98,7 +98,7 @@ const getFilterForPageUrl = (pageUrl) => {
   return (
     <div className={styles.listArea} >
       <div className="titleArea">
-        <LinkState name={getFilterForPageUrl(pageUrl)} />
+        <LinkState name={filter} />
       </div>
         <ul className={`${styles.photoContents} ${"photoContents"}`}>
         {

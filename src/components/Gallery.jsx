@@ -23,8 +23,12 @@ const Gallery = () => {
 
   console.log(gallery);
 
+  //デバイスサイズごとにthresholdの値を変更
+  const mediaQuery = window.matchMedia('(min-width: 767px)');
+  const rooMargin = mediaQuery.matches ? '950px' : '500px'; //PC:SP
+
   const { ref, inView } = useInView({
-    rootMargin: "600px",
+    rootMargin: rooMargin,
     triggerOnce: true,
     threshold: 0.2,
   });

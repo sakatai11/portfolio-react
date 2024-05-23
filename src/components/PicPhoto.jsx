@@ -3,7 +3,7 @@ import getListData from "../api/microCMSClient";
 import PicPhotoList from "./PicPhotoList";
 import styles from "./layouts/ListArea.module.css";
 
-const PicPhoto = ( {id, onLoading} ) => {
+const PicPhoto = ( {id, onLoading, tagFunction} ) => {
   const [photo, setPhoto] = useState([]); 
   // ローカルステートを追加する
   const [isLoading, setIsLoading] = useState(true);
@@ -12,8 +12,9 @@ const PicPhoto = ( {id, onLoading} ) => {
   useEffect(() => {
     // APIから写真データを取得する
       try {
-        getListData('photo',null, null, [ 'title', 'camera', 'film', 'image_list' ], null, id ).then((data) => {
+        getListData('photo',null, null, [ 'tag','title', 'camera', 'film', 'image_list' ], null, id ).then((data) => {
           console.log(data.props.data);
+          tagFunction(data.props.data.tag);
           setPhoto(data.props.data); // 取得したデータをsetPhotoListでローカルステートに保存する
           setIsLoading(false);
           onLoading();
@@ -24,6 +25,8 @@ const PicPhoto = ( {id, onLoading} ) => {
       }
 
   }, [id,onLoading]); 
+
+  
 
   console.log(photo);
 
