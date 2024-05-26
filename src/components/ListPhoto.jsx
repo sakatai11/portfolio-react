@@ -45,15 +45,15 @@ const ListPhoto = ( {pageUrl,filter} ) => {
   };
 
   // ページURLに基づいてフィルター条件を返すヘルパー関数
-  // const getFilterForPageUrl = (pageUrl) => {
-  //   const filters = {
-  //     '/list/outing/': 'tag[contains]おでかけ',
-  //     '/list/random_note/': 'tag[contains]雑記',
-  //     '/list/sports/': 'tag[contains]スポーツ',
-  //   };
-  //   console.log(filters[pageUrl]);
-  //   return filters[pageUrl] || ''; // マッチするフィルターがなければ空文字を返す
-  // };
+  const getFilterForPageUrl = (pageUrl) => {
+    const filters = {
+      '/list/outing/': 'tag[contains]おでかけ',
+      '/list/random_note/': 'tag[contains]雑記',
+      '/list/sports/': 'tag[contains]スポーツ',
+    };
+    console.log(filters[pageUrl]);
+    return filters[pageUrl] || ''; // マッチするフィルターがなければ空文字を返す
+  };
 
   useEffect(() => {
     // APIから写真データを取得する
@@ -61,7 +61,11 @@ const ListPhoto = ( {pageUrl,filter} ) => {
       try {
         let data; // data変数を関数スコープで定義する
         console.log(filter);
-        data = await getListData('photo', 10, count * 9, [ 'id', 'date', 'tag', 'title', 'image', 'url' ], filter);
+        const staticFilter = getFilterForPageUrl(pageUrl);
+        console.log(staticFilter);
+        const appliedFilter = filter ? `tag[contains]${filter}` : staticFilter ;
+        console.log(appliedFilter);
+        data = await getListData('photo', 10, count * 9, [ 'id', 'date', 'tag', 'title', 'image', 'url' ], appliedFilter);
 
         console.log(count);
         console.log(data.props.data.contents); // ここでは全ての写真が取得される
@@ -84,7 +88,7 @@ const ListPhoto = ( {pageUrl,filter} ) => {
         setIsLoading(false); // 読み込み完了時にisLoadingをfalseに設定
       });
     }
-  }, [count, hasMore, pageUrl]); // count,hasMore,pageUrlが変更されるたびにuseEffectをトリガーする
+  }, [count, hasMore, pageUrl, filter]); // count,hasMore,pageUrlが変更されるたびにuseEffectをトリガーする
 
   const loadMore = () => {
     console.log(hasMore);
@@ -98,7 +102,7 @@ const ListPhoto = ( {pageUrl,filter} ) => {
   return (
     <div className={styles.listArea} >
       <div className="titleArea">
-        <LinkState name={filter} />
+        <LinkState name={filter ? filter : getFilterForPageUrl(pageUrl)} />
       </div>
         <ul className={`${styles.photoContents} ${"photoContents"}`}>
         {

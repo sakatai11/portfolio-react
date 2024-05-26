@@ -9,7 +9,7 @@ const urlFilter = () => {
   console.log(title);
 
   if (title !== 'PHOTOS') {
-    const newfilters = `tag[contains]${title}`;
+    const newfilters = title;
     console.log(newfilters);
     return newfilters;
 

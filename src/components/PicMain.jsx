@@ -2,7 +2,6 @@ import { useState } from 'react';
 import Loading from '../Loading';
 import PicPhoto from "./PicPhoto";
 import Contents from './Contents';
-import urlFilter from './hocks/urlFilter';
 import styles from './layouts/ListMain.module.css';
 
 const PicMain = ( {id, url} ) => {
