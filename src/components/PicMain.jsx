@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Loading from '../Loading';
+import Loading from './modules/Loading'
 import PicPhoto from "./PicPhoto";
 import Contents from './Contents';
 import styles from './layouts/ListMain.module.css';

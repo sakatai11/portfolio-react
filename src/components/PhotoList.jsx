@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Card from 'react-bootstrap/Card';
-import formatImg from '../formatImg';
+import formatImg from "./modules/formatImg";
 
 const PhotoList = ({list, LinkRouter, url, index}) => {
   // console.log("click2");

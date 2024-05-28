@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import getListData from "../api/microCMSClient";
-import formatImg from "../formatImg";
+import formatImg from "./modules/formatImg";
 import styles from "../components/layouts/Contents.module.css";
 
 const Contents = ( {url, tag, id} ) => {

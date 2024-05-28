@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import getListData from "../api/microCMSClient";
 import styles from "./layouts/Kv.module.css";
-import formatImg from "../formatImg";
+import formatImg from "./modules/formatImg";
 
 const Kv = () => {
   const [kv, setKv] = useState([]); 
