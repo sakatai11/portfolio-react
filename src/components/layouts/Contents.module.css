@@ -1,0 +1,17 @@
+@charset 'UTF-8';
+.flexContents {
+  display: flex;
+  align-items: flex-start;
+}
+
+.card {
+  width: 100%;
+  border: none !important;
+  --bs-card-inner-border-radius: inset !important;
+}
+
+@media screen and (max-width: 767px){
+  .flexContents {
+    display: block;
+  }
+}

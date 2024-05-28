@@ -9,7 +9,7 @@
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: auto;
   gap: 1.5vw;
-  margin-top: 7rem;
+  margin-top: 10rem;
 }
 
 .imgBox img {
@@ -38,10 +38,11 @@
 @media screen and (max-width: 767px){
   .gridArea {
     grid-template-columns: repeat(3, 1fr);
+    margin-top: 7rem;
   }
 
   .selectArea {
-    padding-top: 6.5rem;
+    padding-top: 5.5rem;
   }
 }
 

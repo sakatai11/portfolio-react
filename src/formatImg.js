@@ -7,6 +7,7 @@ const formatImg = (img) => {
   const param = '?fm=webp';
   const imgWp = img + param;
 
+
   return imgWp;
 };
 

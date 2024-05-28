@@ -10,7 +10,7 @@ function Picture ( {link} ) {
   return (
     <>
       <Animation>
-        <PicMain id={id} />
+        <PicMain id={id} url={link} />
       </Animation>
     </>
   )
