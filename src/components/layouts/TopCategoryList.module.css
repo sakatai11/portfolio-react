@@ -19,11 +19,13 @@ ul li:nth-of-type(2n) .rowStyle {
 
   .colStyle {
     align-content: normal;
-    justify-content:initial
+    justify-content:initial;
+    padding: 0 !important;
   }
 
   .colStyle p {
     font-size: 1.8em;
+    padding-left: 16px;
   }
 
   .rowStyle .colStyle:first-child {

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import getListData from "../api/microCMSClient";
 import PhotoList from "./PhotoList";
 import LoadButton from "./parts/LoadButton";
-import LinkState from "./hocks/LinkState";
+import LinkState from "./hooks/LinkState";
 import loadingImg from "../assets/images/loading-img.png";
 import styles from "./layouts/ListArea.module.css";
 

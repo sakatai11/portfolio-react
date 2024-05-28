@@ -1,6 +1,5 @@
-import Animation from '../../components/layouts/ Animation';
+import Animation from '../../components/layouts/Animation';
 import ListMain from '../../components/ListMain';
-
 
 function List( {link} ) {
 
