@@ -8,7 +8,7 @@ import ArrowRight from './parts/ArrowRight';
 import { Link } from 'react-router-dom'
 import Topstyles from './layouts/TopCategoryList.module.css';
 import Liststyles from './layouts/ListCategoryList.module.css';
-import formatImg from '../formatImg';
+import formatImg from '../components/modules/formatImg';
 
 
 

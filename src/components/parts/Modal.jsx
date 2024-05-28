@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import clossIcon from "../../assets/images/close-solid.svg";
 import arrowIcon from "../../assets/images/modal-arrowIcon.svg";
 import styles from "../layouts/Modal.module.css";
-import formatImg from "../../formatImg";
+import formatImg from "../modules/formatImg";
 
 
 const Modal = ( {handleCloseClick, nextClick, prevClick, imageUrl, alt, totalImages} ) => {

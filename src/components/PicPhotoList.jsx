@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import { createPortal } from "react-dom"; 
 import Modal from "./parts/Modal";
 import styles from "./layouts/PicArea.module.css";
-import formatImg from '../formatImg';
+import formatImg from "./modules/formatImg";
 
 const ModalPortal = ( {children} ) => {
   // CSS Modulesが生成した実際のクラス名を取得

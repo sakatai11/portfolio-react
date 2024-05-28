@@ -1,4 +1,4 @@
-import styles from "./components/layouts/LoadingDisplay.module.css";
+import styles from "../layouts/LoadingDisplay.module.css";
 import PulseLoader from "react-spinners/PulseLoader"
 
 

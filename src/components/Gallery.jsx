@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 import { Link } from 'react-router-dom';
 import getListData from "../api/microCMSClient";
 import styles from "./layouts/gallery.module.css";
-import formatImg from "../formatImg";
+import formatImg from "./modules/formatImg";
 
 const Gallery = () => {
   const [gallery, setGallery] = useState([]); // ローカルステートを定義する
