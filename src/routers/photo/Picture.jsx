@@ -1,4 +1,4 @@
-import Animation from '../../components/layouts/ Animation';
+import Animation from '../../components/layouts/Animation';
 import { useParams } from 'react-router-dom';
 import PicMain from '../../components/PicMain';
 

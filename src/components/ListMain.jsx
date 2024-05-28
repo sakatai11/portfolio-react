@@ -4,7 +4,7 @@ import ListPhoto from "./ListPhoto";
 import ListCategory from "./ListCategory";
 import styles from './layouts/ListMain.module.css';
 
-import urlFilter from "./hocks/urlFilter";
+import urlFilter from "./hooks/urlFilter";
 
 const ListMain = ( {url} ) => {
 

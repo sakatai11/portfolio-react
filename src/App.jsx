@@ -6,7 +6,8 @@ import Footer from './components/common/Footer';
 import Top from './routers/top/Top';
 import List from './routers/list/List';
 import Picture from './routers/photo/Picture';
-import ScrollToTop from './components/hocks/ScrollToTop'; // スクロールを制御
+// import ScrollToTop from './components/hooks/ScrollToTop'; // スクロールを制御
+import UseScrollRestoration from './components/hooks/UseScrollRestoration';
 import 'bootstrap/dist/css/bootstrap.min.css'; // BootstrapのCSSをインポート
 import './components/layouts/globals.css';
 
@@ -24,19 +25,19 @@ function App() {
 
   return (
     <>
-      <ScrollToTop /> 
-        <Header urlCheck={location.pathname} />
-          <AnimatePresence mode="wait" >
-            <Routes location={location} key={location.pathname} >
-              <Route path='/' element={ <Top link={location.pathname} />} />
-              <Route path='/list' element={ <List link={location.pathname} />} />
-              <Route path='/list/outing/' element={ <List link={location.pathname} />} />
-              <Route path='/list/random_note/' element={ <List link={location.pathname} />} />
-              <Route path='/list/sports/' element={ <List link={location.pathname} />} />
-              <Route path='/photo/:id' element={ <Picture link={location.pathname} />} />
-            </Routes>
-          <Footer />
-          </AnimatePresence>
+    <UseScrollRestoration link={location.pathname} />
+      <Header urlCheck={location.pathname} />
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname} >
+            <Route path='/' element={ <Top link={location.pathname} />} />
+            <Route path='/list' element={ <List link={location.pathname} />} />
+            <Route path='/list/outing/' element={ <List link={location.pathname} />} />
+            <Route path='/list/random_note/' element={ <List link={location.pathname} />} />
+            <Route path='/list/sports/' element={ <List link={location.pathname} />} />
+            <Route path='/photo/:id' element={ <Picture link={location.pathname} />} />
+          </Routes>
+        <Footer />
+        </AnimatePresence>
     </>
   )
 }
