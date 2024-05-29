@@ -1,7 +1,20 @@
 @charset 'UTF-8';
+.h2Contents {
+  font-size: 1.8em !important;
+  text-align: center;
+}
+
 .flexContents {
   display: flex;
   align-items: flex-start;
+  justify-content: center;
+  margin-top: 150px;
+  flex-wrap: wrap;   /* 仮置き */
+  gap: 4.2vw;
+}
+
+.flexContents li {
+  width: 25%;
 }
 
 .card {

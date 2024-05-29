@@ -33,7 +33,7 @@ const Contents = ( {url, tag, id} ) => {
   return (
     isLoading ? null : (
       <div className={'contentsArea'}>
-        <h2>CONTENTS</h2>
+        <h2 className={styles.h2Contents}>CONTENTS</h2>
           <ul className={styles.flexContents}>
             {
               content.filter(contentList => contentList.id !== id).map((contentList) => (// idが同じな場合は表示しない
