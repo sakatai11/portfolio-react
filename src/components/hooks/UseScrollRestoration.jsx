@@ -6,10 +6,12 @@ const UseScrollRestoration = ( {link} ) => {
   const location = useLocation();
 
   useEffect(() => {
-    // ページ遷移時に現在のスクロール位置を保存
-    sessionStorage.setItem(`scrollPosition_${location.pathname}`, window.scrollY);
+    // ページ遷移時に保存したスクロール位置を取得
+    if (location.pathname == link) {
+      const setPosition = sessionStorage.getItem(`scrollPosition_${location.pathname}`);
+      window.scrollTo(0, parseInt(setPosition, 10));
 
-    if (location.pathname === link) {
+      //クリック遷移の場合
       const mainElement = document.querySelector('main');
       if (mainElement) {
         mainElement.style.opacity = "0";
@@ -22,12 +24,8 @@ const UseScrollRestoration = ( {link} ) => {
     }
 
     return () => {
-    // コンポーネントがアンマウントされたときにスクロール位置を復元
-    const savedPosition = sessionStorage.getItem(`scrollPosition_${location.pathname}`);
-      if (savedPosition) {
-        window.scrollTo(0, parseInt(savedPosition, 10));
-      }
-      
+    // コンポーネントがアンマウントされたときにスクロール位置を保存
+    sessionStorage.setItem(`scrollPosition_${location.pathname}`, window.scrollY);
     };
   }, [location.pathname]);
 };
