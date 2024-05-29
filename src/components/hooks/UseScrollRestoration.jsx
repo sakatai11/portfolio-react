@@ -25,6 +25,7 @@ const UseScrollRestoration = ( {link} ) => {
     // コンポーネントがアンマウントされたときにスクロール位置を復元
     const savedPosition = sessionStorage.getItem(`scrollPosition_${location.pathname}`);
       if (savedPosition) {
+        console.log('アンマウント');
         window.scrollTo(0, parseInt(savedPosition, 10));
       }
       
