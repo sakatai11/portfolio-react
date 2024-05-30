@@ -26,7 +26,7 @@ const PicMain = ( {id, url} ) => {
   return (
     <>
       <main className={styles.listMain}>
-        <div className={`mainArticles ${isLoading ? styles.listLoading : ''}`}>
+        <div className={`mainArticles ${isLoading ? styles.listLoading : 'pT0'}`}>
         {isLoading ? <Loading /> : <Loading completed={completed} />}
         <PicPhoto id={id} onLoading={handleLoading} tagFunction={tagData} />
         <Contents url={url} tag={tag} id={id} />

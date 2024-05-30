@@ -4,17 +4,16 @@
   text-align: center;
 }
 
-.flexContents {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  margin-top: 150px;
-  flex-wrap: wrap;   /* 仮置き */
-  gap: 4.2vw;
+.h5Contents {
+  text-align: center;
 }
 
-.flexContents li {
-  width: 25%;
+.sliderContents {
+  margin-top: 150px;
+}
+
+.flexContents {
+  padding: 0 80px !important;
 }
 
 .card {
@@ -23,8 +22,36 @@
   --bs-card-inner-border-radius: inset !important;
 }
 
+.cardTop {
+  margin-top: 18px;
+}
+
+
 @media screen and (max-width: 767px){
-  .flexContents {
+  .h5Contents {
+    text-align: initial;
+  }
+
+  .contentsWrapper {
+    padding: 0 15px;
+  }
+
+  .sliderLeft {
+    padding-left: 30px;
     display: block;
+  }
+
+  .sliderContents {
+    margin-top: 80px;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  .flexContents {
+    padding: 0 !important;
+  }
+
+  .sliderRight {
+    padding-right: 80px !important;
   }
 }
