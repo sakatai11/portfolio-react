@@ -31,7 +31,7 @@ const PicPhoto = ( {id, onLoading, tagFunction} ) => {
   console.log(photo);
 
   return (
-    <div className={styles.listArea} >
+    <div className={styles.picListArea} >
       {/* isLoadingがfalseになってからレンダリング、urlにアクセスする */}
       {
         isLoading ? null : (

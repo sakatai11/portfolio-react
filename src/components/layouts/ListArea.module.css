@@ -69,8 +69,12 @@
 @media screen and (max-width: 767px){
   /**** ListArea ****/
   .listArea {
-    padding: 0 15px;
+    padding: 0;
     margin-bottom: 8.5rem;
+  }
+
+  .picListArea {
+    padding: 0 15px;
   }
 
   .listArea button {
