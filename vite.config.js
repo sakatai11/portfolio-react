@@ -16,7 +16,7 @@ export default defineConfig({
   build: {
     minify: 'esbuild', // esbuildをミニファイアとして使用
     esbuild: {
-      drop: ['console', 'debugger'], // 本番ビルドからconsoleとdebuggerを削除
+      drop: process.env.NODE_ENV  === 'production' ? ['console', 'debugger'] : [], // 本番ビルドからconsoleとdebuggerを削除
     }
   }
 
