@@ -36,6 +36,10 @@
     padding: 0 15px;
   }
 
+  .cardTop {
+    margin-top: 0;
+  }
+
   .sliderLeft {
     padding-left: 30px;
     display: block;

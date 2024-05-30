@@ -80,7 +80,7 @@ const Contents = ( {url, tag, id} ) => {
                             </picture>
                           </div>
                           <Card.Body className={styles.cardTop}>
-                            <Card.Title style={{ fontSize: '1.8vw' }} className={styles.h5Contents}>{contentList.title}</Card.Title>
+                            <Card.Title style={isMobile ? {fontSize: '1.2em'} : {fontSize: '1.8vw'}} className={styles.h5Contents}>{contentList.title}</Card.Title>
                           </Card.Body>
                       </Card>
                     </Link>
