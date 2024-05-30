@@ -268,7 +268,29 @@ footer .text-center {
   border-radius: 0;
 }
 
+
+/* Swiper*/
+.swiper-button-disabled {
+  /* 左右端の時バビゲーションバーを消す */
+  opacity: 0 !important;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  width: calc(var(--swiper-navigation-size) / 33* 27) !important;
+  top: var(--swiper-navigation-top-offset, 40%);
+}
+
+:root {
+  --swiper-navigation-size: 33px !important; /* Swiperのナビゲーションサイズを33pxに設定 */
+  --swiper-theme-color: #000000 !important;
+}
+
+
 @media screen and (max-width: 966px) {
+  .mainArticles.pT0 {
+    padding: 0;
+  }
+
 /**** Header ****/
   header {
     padding: 1.3rem 20px;
@@ -426,19 +448,15 @@ footer .text-center {
     width: 100%;
   }
 
-  .card-body .card-text {
-    font-size: 1em !important; 
-  }
-
-  .card-body .card-title {
-    font-size: 1.7em !important; 
-  }
-
   .topFont {
     font-size: 0.8em !important;
   }
 
   .listFont {
     font-size: initial !important;
+  }
+
+  .swiper-button-prev, .swiper-button-next {
+    display: none;
   }
 }

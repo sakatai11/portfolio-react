@@ -2,10 +2,12 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Card from 'react-bootstrap/Card';
 import formatImg from "./modules/formatImg";
+import useWindowSize from "./hooks/useWindowSize"; // レスポンス対応
 
 const PhotoList = ({list, LinkRouter, url, index}) => {
-  // console.log("click2");
-  // console.log(list);
+
+  const { width } = useWindowSize();
+  const isMobile = width <= 767; // SPサイズのブレークポイントを定義
 
   console.log(url);
   console.log(index);
@@ -52,8 +54,8 @@ const PhotoList = ({list, LinkRouter, url, index}) => {
               <span className={url && index < 2 ? 'topFont' : 'listFont'}>{list.date}</span>
             </div>
             <Card.Body>
-              <Card.Text style={url && index < 2 ? { fontSize: '1.79vw' } : { fontSize: '1.23vw' }}>{list.tag}</Card.Text>
-              <Card.Title style={url && index < 2 ? { fontSize: '2.77vw' } : { fontSize: '2.2vw' }}>{list.title}</Card.Title>
+              <Card.Text style={isMobile ? { fontSize: '1em' } : (url && index < 2 ? { fontSize: '1.79vw' } : { fontSize: '1.23vw' })}>{list.tag}</Card.Text>
+              <Card.Title style={isMobile ? { fontSize: '1.7em' } : (url && index < 2 ? { fontSize: '2.77vw' } : { fontSize: '2.2vw' })}>{list.title}</Card.Title>
             </Card.Body>
         </Card>
       </LinkRouter>
