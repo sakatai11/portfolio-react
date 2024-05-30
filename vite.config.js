@@ -9,7 +9,15 @@ export default defineConfig({
       rewrites: [{ from: /^\/*/, to: '/index.html' }],
     },
   },
+  // 本番環境では環境変数を含まないようにする
   define: {
-    'import.meta.env': process.env.NODE_ENV === 'production' ? import.meta.env : {},
+    'import.meta.env': process.env.NODE_ENV === 'production' ? {} : import.meta.env
+  },
+  build: {
+    minify: 'esbuild', // esbuildをミニファイアとして使用
+    esbuild: {
+      drop: ['console', 'debugger'], // 本番ビルドからconsoleとdebuggerを削除
+    }
   }
+
 });
