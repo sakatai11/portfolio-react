@@ -5,6 +5,11 @@
   margin-bottom: 14.5rem;
 }
 
+.picListArea {
+  padding: 0 15px;
+  margin-bottom: 12.5rem;
+}
+
 .photoContents {
   flex-wrap: wrap;
   row-gap: 3.2rem;
@@ -75,6 +80,7 @@
 
   .picListArea {
     padding: 0 15px;
+    margin-bottom: 8.5rem;
   }
 
   .listArea button {
