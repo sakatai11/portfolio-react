@@ -14,9 +14,10 @@ export default defineConfig({
     'import.meta.env': process.env.NODE_ENV === 'production' ? {} : import.meta.env
   },
   build: {
-    minify: 'esbuild', // esbuildをミニファイアとして使用
+    minify: 'esbuild', // esbuildを使用してminifyする
     esbuild: {
-      drop: process.env.NODE_ENV  === 'production' ? ['console', 'debugger'] : [], // 本番ビルドからconsoleとdebuggerを削除
+      minify: process.env.NODE_ENV === 'production',
+      drop: ['console', 'debugger'], // 本番ビルドからconsoleとdebuggerを削除
     }
   }
 
