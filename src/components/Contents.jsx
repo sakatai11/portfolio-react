@@ -14,7 +14,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-const Contents = ( {url, tag, id} ) => {
+const Contents = ( {url, onLoading, tag, id} ) => {
   const [content, setContent] = useState([]); // ローカルステートを定義する
   const [isLoading, setIsLoading] = useState(true);
 
@@ -34,6 +34,7 @@ const Contents = ( {url, tag, id} ) => {
             setContent(data.props.data.contents); // 取得したデータのcontents配列をsetContentListでローカルステートに保存する
             console.log(content);
             setIsLoading(false)
+            onLoading();
           });
         }
       } catch (error) {
