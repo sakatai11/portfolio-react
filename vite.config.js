@@ -9,8 +9,7 @@ export default defineConfig({
     // 本番環境でのみterserを適用する
     process.env.NODE_ENV === 'production' && terser({
       compress: {
-        drop_console: true, // 本番ビルドからconsoleを削除
-        drop_debugger: true // 本番ビルドからdebuggerを削除
+        pure_funcs: ['console.debug', 'console.log'] // 本番環境からconsole.debugとconsole.logを削除
       }
     })
   ],
