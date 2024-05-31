@@ -1,30 +1,29 @@
 @charset 'UTF-8';
 /**** contents ****/
 .contentsArea {
-  padding-top: 12.5rem;
+	padding-top: 12.5rem;
 }
 
 .eachContents {
-  margin-top: 10rem;
+	margin-top: 10rem;
 }
 
 .eachContents li + li {
-  margin-top: 15rem;
+	margin-top: 15rem;
 }
 
+@media screen and (max-width: 767px) {
+	/**** contents ****/
+	.eachContents {
+		display: block;
+		margin-top: 7rem;
+	}
 
-@media screen and (max-width: 767px){
-  /**** contents ****/
-  .eachContents {
-    display: block;
-    margin-top: 7rem;
-  }
+	.contentsArea {
+		padding: 6.5rem 0;
+	}
 
-  .contentsArea {
-    padding: 6.5rem 0;
-  }
-
-  .eachContents li + li {
-    margin-top: 9.2rem;
-  }
+	.eachContents li + li {
+		margin-top: 9.2rem;
+	}
 }

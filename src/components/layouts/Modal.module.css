@@ -1,131 +1,130 @@
 @charset 'UTF-8';
 
 .modalArea {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(255 255 255 / 0.94);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(255 255 255 / 0.94);
 }
 
 .container {
-  margin: auto ;
+	margin: auto;
 }
 
 .container p {
-  position: absolute;
-  z-index: 555;
-  bottom: 0;
-  left: 0;
-  color: #000000 ;
-  margin: 40px;
-  font-size: 1.4em;
+	position: absolute;
+	z-index: 555;
+	bottom: 0;
+	left: 0;
+	color: #000000;
+	margin: 40px;
+	font-size: 1.4em;
 }
 
 .clossBtn {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 999;
-  width: 48px;
-  height: auto;
-  cursor: pointer;
-  margin: 40px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 999;
+	width: 48px;
+	height: auto;
+	cursor: pointer;
+	margin: 40px;
 }
 
 .picture picture {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  height: calc(100vh - 40px);
+	display: flex;
+	justify-content: center;
+	align-items: stretch;
+	height: calc(100vh - 40px);
 }
 
 .picture img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
 }
 
 .arrowArea {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 .picPrev,
 .picNext {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity .6s;
-  cursor: pointer;
-  z-index: 555;
+	display: flex;
+	align-items: center;
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	opacity: 0;
+	transition: opacity 0.6s;
+	cursor: pointer;
+	z-index: 555;
 }
 
 .picPrev:hover,
 .picNext:hover {
-  opacity: 1;
+	opacity: 1;
 }
 
 .picPrev {
-  justify-content: flex-start;
-  left: 0;
+	justify-content: flex-start;
+	left: 0;
 }
 
 .picNext {
-  justify-content: flex-end;
-  right: 0;
+	justify-content: flex-end;
+	right: 0;
 }
 
 .prevIcon,
 .nextIcon {
-  width: 23px !important;
-  height: auto !important;
+	width: 23px !important;
+	height: auto !important;
 }
 
 .nextIcon {
-  margin-right: 15px;
+	margin-right: 15px;
 }
 
 .prevIcon {
-  transform: rotateY( 180deg );
-  margin-left: 15px;
+	transform: rotateY(180deg);
+	margin-left: 15px;
 }
-
 
 @media screen and (max-width: 1024px) {
-  .picPrev:hover,
-  .picNext:hover {
-    opacity: 0;
-  }
+	.picPrev:hover,
+	.picNext:hover {
+		opacity: 0;
+	}
 
-  .clossBtn,
-  .container p {
-    margin: 20px;
-  }
+	.clossBtn,
+	.container p {
+		margin: 20px;
+	}
 
-  .clossBtn {
-    width: 24px;
-  }
+	.clossBtn {
+		width: 24px;
+	}
 
-  .container p {
-    font-size: 0.8em;
-  }
+	.container p {
+		font-size: 0.8em;
+	}
 }
 
-@media screen and (max-width: 767px){
-  .textContent {
-    align-items: end;
-  }
+@media screen and (max-width: 767px) {
+	.textContent {
+		align-items: end;
+	}
 
-  .clossBtn,
-  .container p {
-    margin: 8px;
-  }
+	.clossBtn,
+	.container p {
+		margin: 8px;
+	}
 }

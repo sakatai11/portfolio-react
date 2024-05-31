@@ -1,18 +1,18 @@
 @charset 'UTF-8';
 /**** main ****/
 .listMain {
-  margin: 10rem 0;
+	margin: 10rem 0;
 }
 
 .listLoading {
-  width: 100%;
-  height: 100vh;
+	width: 100%;
+	height: 100vh;
 }
 
-@media screen and (max-width: 767px){
-  /**** main ****/
-  .listMain {
-    margin-top: 10rem;
-    margin-bottom: 6rem;
-  }
+@media screen and (max-width: 767px) {
+	/**** main ****/
+	.listMain {
+		margin-top: 10rem;
+		margin-bottom: 6rem;
+	}
 }
