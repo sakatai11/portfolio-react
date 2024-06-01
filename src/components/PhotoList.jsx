@@ -3,7 +3,7 @@ import { useInView } from "react-intersection-observer";
 import Card from "react-bootstrap/Card";
 import formatImg from "./modules/formatImg";
 import useWindowSize from "./hooks/useWindowSize"; // レスポンス対応
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const PhotoList = ({ list, LinkRouter, url, index }) => {
 	const { width } = useWindowSize();
@@ -91,31 +91,31 @@ const PhotoList = ({ list, LinkRouter, url, index }) => {
 
 // PhotoList コンポーネントのpropsの型を定義します。
 PhotoList.propTypes = {
-  // 'list' propは、以下の形状を持つオブジェクトである必要があります。
-  list: PropTypes.shape({
-    // 'image' propは、以下の形状を持つオブジェクトである必要があります。
-    image: PropTypes.shape({
-      // 'url' propは文字列であり、必須です。
-      url: PropTypes.string.isRequired,
-    }).isRequired,
-    // 'title' propは文字列であり、必須です。
-    title: PropTypes.string.isRequired,
-    // 'id' propは文字列であり、必須です。
-    id: PropTypes.string.isRequired,
-    // 'date' propは文字列であり、必須です。
-    date: PropTypes.string.isRequired,
-    // 'tag' propは文字列であり、必須です。
-    tag: PropTypes.string.isRequired,
-  }).isRequired,
-  // 'LinkRouter' propは関数またはコンポーネントであり、必須です。
-  LinkRouter: PropTypes.oneOfType([
-    PropTypes.func, // 関数型,コールバック関数やイベントハンドラー
-    PropTypes.elementType // React要素の型,関数コンポーネント
-  ]).isRequired,
-  // 'url' propは文字列であり、必須ではありません。
-  url: PropTypes.string,
-  // 'index' propは数値であり、必須ではありません。
-  index: PropTypes.number,
+	// 'list' propは、以下の形状を持つオブジェクトである必要があります。
+	list: PropTypes.shape({
+		// 'image' propは、以下の形状を持つオブジェクトである必要があります。
+		image: PropTypes.shape({
+			// 'url' propは文字列であり、必須です。
+			url: PropTypes.string.isRequired,
+		}).isRequired,
+		// 'title' propは文字列であり、必須です。
+		title: PropTypes.string.isRequired,
+		// 'id' propは文字列であり、必須です。
+		id: PropTypes.string.isRequired,
+		// 'date' propは文字列であり、必須です。
+		date: PropTypes.string.isRequired,
+		// 'tag' propは文字列であり、必須です。
+		tag: PropTypes.string.isRequired,
+	}).isRequired,
+	// 'LinkRouter' propは関数またはコンポーネントであり、必須です。
+	LinkRouter: PropTypes.oneOfType([
+		PropTypes.func, // 関数型,コールバック関数やイベントハンドラー
+		PropTypes.elementType, // React要素の型,関数コンポーネント
+	]).isRequired,
+	// 'url' propは文字列であり、必須ではありません。
+	url: PropTypes.string,
+	// 'index' propは数値であり、必須ではありません。
+	index: PropTypes.number,
 };
 
 export default PhotoList;

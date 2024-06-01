@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import Topstyles from "./layouts/TopCategoryList.module.css";
 import Liststyles from "./layouts/ListCategoryList.module.css";
 import formatImg from "../components/modules/formatImg";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const CategoryList = ({ list, url, index }) => {
 	const styleCategory = url ? Liststyles : Topstyles;
@@ -68,22 +68,22 @@ const CategoryList = ({ list, url, index }) => {
 
 // CategoryList コンポーネントのpropsの型を定義します。
 CategoryList.propTypes = {
-  // 'list' propは、以下の形状を持つオブジェクトである必要があります。
-  list: PropTypes.shape({
-    // 'image' propは、以下の形状を持つオブジェクトである必要があります。
-    image: PropTypes.shape({
-      // 'url' propは文字列であり、必須です。
-      url: PropTypes.string.isRequired,
-    }).isRequired,
-    // 'title' propは文字列であり、必須です。
-    title: PropTypes.string.isRequired,
-    // 'url' propは文字列であり、必須ではありません。
-    url: PropTypes.string,
-  }).isRequired,
-  // 'url' propは文字列であり、必須ではありません。
-  url: PropTypes.string,
-  // 'index' propは数値であり、必須ではありません。
-  index: PropTypes.number,
+	// 'list' propは、以下の形状を持つオブジェクトである必要があります。
+	list: PropTypes.shape({
+		// 'image' propは、以下の形状を持つオブジェクトである必要があります。
+		image: PropTypes.shape({
+			// 'url' propは文字列であり、必須です。
+			url: PropTypes.string.isRequired,
+		}).isRequired,
+		// 'title' propは文字列であり、必須です。
+		title: PropTypes.string.isRequired,
+		// 'url' propは文字列であり、必須ではありません。
+		url: PropTypes.string,
+	}).isRequired,
+	// 'url' propは文字列であり、必須ではありません。
+	url: PropTypes.string,
+	// 'index' propは数値であり、必須ではありません。
+	index: PropTypes.number,
 };
 
 export default CategoryList;

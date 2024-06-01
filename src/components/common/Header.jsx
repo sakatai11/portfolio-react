@@ -2,7 +2,7 @@ import { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Nav from "./Nav";
 import Ham from "./Ham";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const Header = ({ urlCheck }) => {
 	console.log(urlCheck);
@@ -88,6 +88,6 @@ const Header = ({ urlCheck }) => {
 Header.propTypes = {
 	// 'urlCheck' propは文字列であり、必須ではありません。
 	urlCheck: PropTypes.string,
-}
+};
 
 export default Header;

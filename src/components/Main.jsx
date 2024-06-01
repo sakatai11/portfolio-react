@@ -6,8 +6,7 @@ import Photo from "./Photo";
 import Category from "./Category";
 /*----SelectPhoto-----*/
 import Gallery from "./Gallery";
-import PropTypes from 'prop-types';
-
+import PropTypes from "prop-types";
 
 const Main = ({ url }) => {
 	return (
@@ -28,6 +27,6 @@ const Main = ({ url }) => {
 Main.propTypes = {
 	// 'url' propは文字列であり、必須です。
 	url: PropTypes.string.isRequired,
-}
+};
 
 export default Main;

@@ -3,6 +3,7 @@ import clossIcon from "../../assets/images/close-solid.svg";
 import arrowIcon from "../../assets/images/modal-arrowIcon.svg";
 import styles from "../layouts/Modal.module.css";
 import formatImg from "../modules/formatImg";
+import PropTypes from "prop-types";
 
 const Modal = ({
 	handleCloseClick,
@@ -79,4 +80,21 @@ const Modal = ({
 		</div>
 	);
 };
+
+// Modal コンポーネントのpropsの型を定義します。
+Modal.propTypes = {
+	// 'handleCloseClick' propは関数であり、
+	handleCloseClick: PropTypes.func.isRequired,
+	// 'nextClick' propは関数であり、
+	nextClick: PropTypes.func.isRequired,
+	// 'prevClick' propは関数であり、必須です。
+	prevClick: PropTypes.func.isRequired,
+	// 'imageUrl' propは文字列であり、必須です。
+	imageUrl: PropTypes.string.isRequired,
+	// 'alt' propは文字列であり、必須です。
+	alt: PropTypes.number.isRequired,
+	// 'totalImages' propは数値であり、
+	totalImages: PropTypes.number.isRequired,
+};
+
 export default Modal;

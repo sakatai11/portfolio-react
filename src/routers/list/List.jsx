@@ -1,6 +1,6 @@
 import Animation from "../../components/layouts/Animation";
 import ListMain from "../../components/ListMain";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 function List({ link }) {
 	return (
@@ -14,8 +14,8 @@ function List({ link }) {
 
 // List コンポーネントのpropsの型を定義します。
 List.propTypes = {
-  // 'link' propは文字列であり、必須です。
-  link: PropTypes.string.isRequired,
+	// 'link' propは文字列であり、必須です。
+	link: PropTypes.string.isRequired,
 };
 
 export default List;

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import getListData from "../api/microCMSClient";
 import CategoryList from "./CategoryList";
 import styles from "./layouts/ListCategory.module.css";
-import PropTypes from 'prop-types'; // PropTypesをインポートする
+import PropTypes from "prop-types"; // PropTypesをインポートする
 
 const ListCategory = ({ pageUrl }) => {
 	const [content, setContent] = useState([]); // ローカルステートを定義する
@@ -36,8 +36,7 @@ const ListCategory = ({ pageUrl }) => {
 
 // ListCategory コンポーネントのpropsの型を定義します。
 ListCategory.propTypes = {
-  pageUrl: PropTypes.string, // 'pageUrl' propは文字列であり、必須ではありません。
+	pageUrl: PropTypes.string, // 'pageUrl' propは文字列であり、必須ではありません。
 };
-
 
 export default ListCategory;

@@ -1,6 +1,5 @@
 import Nav from "./Nav";
-import PropTypes from 'prop-types';
-
+import PropTypes from "prop-types";
 
 const Ham = ({ handleCloseClick }) => {
 	return (
@@ -13,7 +12,7 @@ const Ham = ({ handleCloseClick }) => {
 
 // 'handleCloseClick' propはイベントハンドラーであり、必須です。
 Ham.propTypes = {
-  handleCloseClick: PropTypes.func.isRequired,
+	handleCloseClick: PropTypes.func.isRequired,
 };
 
 export default Ham;

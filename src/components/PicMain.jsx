@@ -3,7 +3,7 @@ import Loading from "./modules/Loading";
 import PicPhoto from "./PicPhoto";
 import Contents from "./Contents";
 import styles from "./layouts/ListMain.module.css";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const PicMain = ({ id, url }) => {
 	const [isLoading, setIsLoading] = useState(true);
@@ -15,13 +15,13 @@ const PicMain = ({ id, url }) => {
 		setTag(tagContents);
 	};
 
-  const onLoadingComplete = useCallback(() => {
-    setIsLoading(false);
-  }, []);
+	const onLoadingComplete = useCallback(() => {
+		setIsLoading(false);
+	}, []);
 
-  const onContentsComplete = useCallback(() => {
-    setIsContents(false);
-  }, []);
+	const onContentsComplete = useCallback(() => {
+		setIsContents(false);
+	}, []);
 
 	useEffect(() => {
 		if (!isLoading && !isContents) {
@@ -36,7 +36,7 @@ const PicMain = ({ id, url }) => {
 					className={`mainArticles ${isLoading && isContents ? styles.listLoading : "pT0"}`}
 				>
 					{isLoading && isContents ? (
-						<Loading />
+						<Loading completed={completed} />
 					) : (
 						<Loading completed={completed} />
 					)}
@@ -60,10 +60,10 @@ const PicMain = ({ id, url }) => {
 
 // PicMain コンポーネントのpropsの型を定義します。
 PicMain.propTypes = {
-  // 'id' propは文字列であり、必須です。
-  id: PropTypes.string.isRequired,
-  // 'url' propは文字列であり、必須です。
-  url: PropTypes.string.isRequired,
+	// 'id' propは文字列であり、必須です。
+	id: PropTypes.string.isRequired,
+	// 'url' propは文字列であり、必須です。
+	url: PropTypes.string.isRequired,
 };
 
 export default PicMain;

@@ -1,7 +1,7 @@
 import Animation from "../../components/layouts/Animation";
 import { useParams } from "react-router-dom";
 import PicMain from "../../components/PicMain";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 function Picture({ link }) {
 	const { id } = useParams(); // URLからidパラメータを取得
@@ -18,7 +18,7 @@ function Picture({ link }) {
 
 // Picture コンポーネントのpropsの型を定義します。
 Picture.propTypes = {
-  link: PropTypes.string.isRequired, // 'link' propは文字列であり、必須です
+	link: PropTypes.string.isRequired, // 'link' propは文字列であり、必須です
 };
 
 export default Picture;

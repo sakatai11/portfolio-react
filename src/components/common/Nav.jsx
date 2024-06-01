@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import getListData from "../../api/microCMSClient";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const Nav = ({ handleCloseClick }) => {
 	const [content, setContent] = useState([]); // ローカルステートを定義する
@@ -14,7 +14,6 @@ const Nav = ({ handleCloseClick }) => {
 				(data) => {
 					console.log(data.props.data.contents);
 					setContent(data.props.data.contents); // 取得したデータのcontents配列をsetContentListでローカルステートに保存する
-					
 				}
 			);
 		} catch (error) {
@@ -70,9 +69,9 @@ const Nav = ({ handleCloseClick }) => {
 	);
 };
 
-// 'handleCloseClick' propはイベントハンドラーであり、必須です。
+// 'handleCloseClick' propはイベントハンドラーであり、必須ではありません。
 Nav.propTypes = {
-  handleCloseClick: PropTypes.func.isRequired,
+	handleCloseClick: PropTypes.func,
 };
 
 export default Nav;

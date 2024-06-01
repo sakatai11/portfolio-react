@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import getListData from "../api/microCMSClient";
 import PicPhotoList from "./PicPhotoList";
 import styles from "./layouts/ListArea.module.css";
+import PropTypes from "prop-types";
 
 const PicPhoto = ({ id, onLoading, tagFunction }) => {
 	const [photo, setPhoto] = useState([]);
@@ -39,6 +40,16 @@ const PicPhoto = ({ id, onLoading, tagFunction }) => {
 			{isLoading ? null : <PicPhotoList img={photo} />}
 		</div>
 	);
+};
+
+// PicPhoto コンポーネントのpropsの型を定義します。
+PicPhoto.propTypes = {
+	// 'id' propは文字列または数値であり、必須です。
+	id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+	// 'onLoading' propは関数であり、必須です。
+	onLoading: PropTypes.func.isRequired,
+	// 'tagFunction' propは関数であり、必須です。
+	tagFunction: PropTypes.func.isRequired,
 };
 
 export default PicPhoto;

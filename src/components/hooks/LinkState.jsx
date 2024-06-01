@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const LinkState = ({ name }) => {
 	const location = useLocation();
@@ -53,6 +54,12 @@ const LinkState = ({ name }) => {
 
 	// ローディングが完了したらコンテンツを表示
 	return content;
+};
+
+// LinkState コンポーネントの PropTypes
+LinkState.propTypes = {
+	// 'name' propは文字列であり、必須です。
+	name: PropTypes.string.isRequired,
 };
 
 export default LinkState;

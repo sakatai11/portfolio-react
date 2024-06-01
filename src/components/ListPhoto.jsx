@@ -6,8 +6,7 @@ import LoadButton from "./parts/LoadButton";
 import LinkState from "./hooks/LinkState";
 import loadingImg from "../assets/images/loading-img.png";
 import styles from "./layouts/ListArea.module.css";
-import PropTypes from 'prop-types'; // PropTypesをインポートする
-
+import PropTypes from "prop-types"; // PropTypesをインポートする
 
 const ListPhoto = ({ pageUrl, filter }) => {
 	const [photo, setPhoto] = useState([]); ////prevPhotosとuniqueNewPhotosの結合データ
@@ -139,10 +138,10 @@ const ListPhoto = ({ pageUrl, filter }) => {
 
 // ListPhoto コンポーネントのpropsの型を定義します。
 ListPhoto.propTypes = {
-  // 'pageUrl' propは文字列であり、必須です。
-  pageUrl: PropTypes.string.isRequired,
-  // 'filter' propは文字列であり、必須ではありません。
-  filter: PropTypes.string,
+	// 'pageUrl' propは文字列であり、必須です。
+	pageUrl: PropTypes.string.isRequired,
+	// 'filter' propは文字列であり、必須ではありません。
+	filter: PropTypes.string,
 };
 
 export default ListPhoto;

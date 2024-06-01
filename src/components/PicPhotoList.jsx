@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import Modal from "./parts/Modal";
 import styles from "./layouts/PicArea.module.css";
 import formatImg from "./modules/formatImg";
+import PropTypes from "prop-types";
 
 const ModalPortal = ({ children }) => {
 	// CSS Modulesが生成した実際のクラス名を取得
@@ -121,6 +122,36 @@ const PicPhotoList = ({ img }) => {
 			</div>
 		</>
 	);
+};
+
+// ModalPortal コンポーネントの PropTypes
+ModalPortal.propTypes = {
+	// 'children' propはReactノードであり、必須です。
+	children: PropTypes.node.isRequired,
+};
+
+// PicPhotoList コンポーネントの PropTypes
+PicPhotoList.propTypes = {
+	// 'img' propはオブジェクトであり、必須です。
+	img: PropTypes.shape({
+		// 'title' propは文字列であり、必須です。
+		title: PropTypes.string.isRequired,
+		// 'camera' propは文字列であり、必須ではありません。
+		camera: PropTypes.string,
+		// 'film' propは文字列であり、必須ではありません。
+		film: PropTypes.string,
+		// 'image_list' propはオブジェクトの配列であり、各オブジェクトは特定の形状を持ち、配列自体は必須です。
+		image_list: PropTypes.arrayOf(
+			PropTypes.shape({
+				// 'url' propは文字列であり、必須です。
+				url: PropTypes.string.isRequired,
+				// 'width' propは数値であり、必須です。
+				width: PropTypes.number.isRequired,
+			})
+			// 'image_list' 配列自体は必須です。
+		).isRequired,
+		// 'img' オブジェクト自体は必須です。
+	}).isRequired,
 };
 
 export default PicPhotoList;

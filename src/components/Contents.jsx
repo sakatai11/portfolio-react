@@ -13,7 +13,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const Contents = ({ url, onLoading, tag, id }) => {
 	const [content, setContent] = useState([]); // ローカルステートを定義する
@@ -127,14 +127,14 @@ const Contents = ({ url, onLoading, tag, id }) => {
 
 // Contents コンポーネントのpropsの型を定義します。
 Contents.propTypes = {
-  // 'url' propは文字列であり、必須ではありません。
-  url: PropTypes.string,
-  // 'onLoading' propは関数であり、必須です。
-  onLoading: PropTypes.func.isRequired,
-  // 'tag' propは文字列であり、必須ではありません。
-  tag: PropTypes.string,
-  // 'id' propは文字列または数値であり、必須です。
-  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+	// 'url' propは文字列であり、必須ではありません。
+	url: PropTypes.string,
+	// 'onLoading' propは関数であり、必須です。
+	onLoading: PropTypes.func.isRequired,
+	// 'tag' propは文字列であり、必須ではありません。
+	tag: PropTypes.string,
+	// 'id' propは文字列または数値であり、必須です。
+	id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 };
 
 export default Contents;

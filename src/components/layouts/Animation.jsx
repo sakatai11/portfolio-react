@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const Animation = ({ children }) => {
 	return (
@@ -16,8 +16,8 @@ const Animation = ({ children }) => {
 
 // Animation コンポーネントのpropsの型を定義します。
 Animation.propTypes = {
-  // 'children' propはReactノードであり、必須です。
-  children: PropTypes.node.isRequired,
+	// 'children' propはReactノードであり、必須です。
+	children: PropTypes.node.isRequired,
 };
-  
+
 export default Animation;

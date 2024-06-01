@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const LoadButton = ({ id, onClick, style, isLoading }) => {
 	return (
 		<>
@@ -10,6 +12,18 @@ const LoadButton = ({ id, onClick, style, isLoading }) => {
 			</button>
 		</>
 	);
+};
+
+// LoadButton コンポーネントのpropsの型を定義します。
+LoadButton.propTypes = {
+	// 'id' propは文字列であり、必須です。
+	id: PropTypes.string.isRequired,
+	// 'onClick' propは関数であり、必須です。
+	onClick: PropTypes.func.isRequired,
+	// 'style' propはオブジェクトであり、必須です。
+	style: PropTypes.object.isRequired,
+	// 'isLoading' propはブール値であり、必須です。
+	isLoading: PropTypes.bool.isRequired,
 };
 
 export default LoadButton;

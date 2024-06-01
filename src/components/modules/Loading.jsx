@@ -1,7 +1,6 @@
 import styles from "../layouts/LoadingDisplay.module.css";
 import PulseLoader from "react-spinners/PulseLoader";
-import PropTypes from 'prop-types';
-
+import PropTypes from "prop-types";
 
 const Loading = ({ completed }) => {
 	console.log("読み込み");
@@ -16,10 +15,8 @@ const Loading = ({ completed }) => {
 
 // Loading コンポーネントのpropsの型を定義します。
 Loading.propTypes = {
-  // 'completed' propは文字列であり、必須です。
-  completed: PropTypes.string.isRequired,
+	// 'completed' propは文字列であり、必須です。
+	completed: PropTypes.string.isRequired,
 };
-
-
 
 export default Loading;

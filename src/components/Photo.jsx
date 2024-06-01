@@ -4,8 +4,7 @@ import getListData from "../api/microCMSClient";
 import PhotoList from "./PhotoList";
 import ArrowRight from "./parts/ArrowRight";
 import styles from "./layouts/Photo.module.css";
-import PropTypes from 'prop-types'; // PropTypesをインポートする
-
+import PropTypes from "prop-types"; // PropTypesをインポートする
 
 const Photo = ({ url }) => {
 	const [photo, setPhoto] = useState([]);
@@ -68,7 +67,7 @@ const Photo = ({ url }) => {
 
 // Photo コンポーネントのpropsの型を定義します。
 Photo.propTypes = {
-  url: PropTypes.string // 'url' propは文字列であり、必須ではありません。
+	url: PropTypes.string, // 'url' propは文字列であり、必須ではありません。
 };
 
 export default Photo;
