@@ -1,6 +1,7 @@
 import Animation from "../../components/layouts/Animation";
 import { useParams } from "react-router-dom";
 import PicMain from "../../components/PicMain";
+import { Helmet } from "react-helmet-async";
 import PropTypes from "prop-types";
 
 function Picture({ link }) {
@@ -9,6 +10,13 @@ function Picture({ link }) {
 
 	return (
 		<>
+			<Helmet>
+        <title>{id} | TACHI’s PHOTO </title>
+				<meta
+					name="description"
+					content="写真一覧です。"
+				/>
+      </Helmet>
 			<Animation>
 				<PicMain id={id} url={link} />
 			</Animation>
