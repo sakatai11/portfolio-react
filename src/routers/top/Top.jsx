@@ -13,8 +13,14 @@ function Top({ link, componentName }) {
 					name="description"
 					content="TAICHIのポートフォリオ写真集。フィルムカメラを使って撮影するのが好きです。幅広いジャンルで撮影しています。"
 				/>
-				<meta property="og:title" content={`${componentName} | TACHI’s PHOTO `} />
-				<meta property="og:description" content="TAICHIのポートフォリオ写真集。フィルムカメラを使って撮影するのが好きです。幅広いジャンルで撮影しています。" />
+				<meta
+					property="og:title"
+					content={`${componentName} | TACHI’s PHOTO `}
+				/>
+				<meta
+					property="og:description"
+					content="TAICHIのポートフォリオ写真集。フィルムカメラを使って撮影するのが好きです。幅広いジャンルで撮影しています。"
+				/>
 			</Helmet>
 			<Animation>
 				<Main url={link} styles={styles.main} />
