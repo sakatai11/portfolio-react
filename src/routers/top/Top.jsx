@@ -5,16 +5,15 @@ import { Helmet } from "react-helmet-async";
 import PropTypes from "prop-types";
 
 function Top({ link, componentName }) {
-
 	return (
 		<>
-		  <Helmet>
-        <title>{componentName} | TACHI’s PHOTO </title>
+			<Helmet>
+				<title>{componentName} | TACHI’s PHOTO </title>
 				<meta
 					name="description"
 					content="TAICHIのポートフォリオ写真集。フィルムカメラを使って撮影するのが好きです。幅広いジャンルで撮影しています。"
 				/>
-      </Helmet>
+			</Helmet>
 			<Animation>
 				<Main url={link} styles={styles.main} />
 			</Animation>

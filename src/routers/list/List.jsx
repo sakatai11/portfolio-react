@@ -7,12 +7,9 @@ function List({ link, componentName }) {
 	return (
 		<>
 			<Helmet>
-        <title>{componentName} | TACHI’s PHOTO </title>
-				<meta
-					name="description"
-					content={`${componentName}の写真一覧です`}
-				/>
-      </Helmet>
+				<title>{componentName} | TACHI’s PHOTO </title>
+				<meta name="description" content={`${componentName}の写真一覧です`} />
+			</Helmet>
 			<Animation>
 				<ListMain url={link} />
 			</Animation>

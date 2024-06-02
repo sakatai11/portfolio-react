@@ -11,12 +11,9 @@ function Picture({ link }) {
 	return (
 		<>
 			<Helmet>
-        <title>{id} | TACHI’s PHOTO </title>
-				<meta
-					name="description"
-					content="写真一覧です。"
-				/>
-      </Helmet>
+				<title>{id} | TACHI’s PHOTO </title>
+				<meta name="description" content="写真一覧です。" />
+			</Helmet>
 			<Animation>
 				<PicMain id={id} url={link} />
 			</Animation>
