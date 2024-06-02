@@ -1,61 +1,60 @@
 @charset 'UTF-8';
 .h2Contents {
-  font-size: 1.8em !important;
-  text-align: center;
+	font-size: 1.8em !important;
+	text-align: center;
 }
 
 .h5Contents {
-  text-align: center;
+	text-align: center;
 }
 
 .sliderContents {
-  margin-top: 150px;
+	margin-top: 150px;
 }
 
 .flexContents {
-  padding: 0 80px !important;
+	padding: 0 80px !important;
 }
 
 .card {
-  width: 100%;
-  border: none !important;
-  --bs-card-inner-border-radius: inset !important;
+	width: 100%;
+	border: none !important;
+	--bs-card-inner-border-radius: inset !important;
 }
 
 .cardTop {
-  margin-top: 18px;
+	margin-top: 18px;
 }
 
+@media screen and (max-width: 767px) {
+	.h5Contents {
+		text-align: initial;
+	}
 
-@media screen and (max-width: 767px){
-  .h5Contents {
-    text-align: initial;
-  }
+	.contentsWrapper {
+		padding: 0 15px;
+	}
 
-  .contentsWrapper {
-    padding: 0 15px;
-  }
+	.cardTop {
+		margin-top: 0;
+	}
 
-  .cardTop {
-    margin-top: 0;
-  }
+	.sliderLeft {
+		padding-left: 30px;
+		display: block;
+	}
 
-  .sliderLeft {
-    padding-left: 30px;
-    display: block;
-  }
+	.sliderContents {
+		margin-top: 80px;
+		margin-left: -15px;
+		margin-right: -15px;
+	}
 
-  .sliderContents {
-    margin-top: 80px;
-    margin-left: -15px;
-    margin-right: -15px;
-  }
+	.flexContents {
+		padding: 0 !important;
+	}
 
-  .flexContents {
-    padding: 0 !important;
-  }
-
-  .sliderRight {
-    padding-right: 80px !important;
-  }
+	.sliderRight {
+		padding-right: 80px !important;
+	}
 }

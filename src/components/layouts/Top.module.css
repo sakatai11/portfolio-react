@@ -12,19 +12,19 @@
 
 /**** main ****/
 main section {
-  background-color: #fff;
-  position: relative;
-  z-index: 2;
-  margin-bottom: 11.5rem;
+	background-color: #fff;
+	position: relative;
+	z-index: 2;
+	margin-bottom: 11.5rem;
 }
 
 /**** footer ****/
-  footer {
-    margin-top: 0 !important;
-  }
+footer {
+	margin-top: 0 !important;
+}
 
-@media screen and (max-width: 767px){
-  main section {
-    margin-bottom: 6.5rem;
-  }
+@media screen and (max-width: 767px) {
+	main section {
+		margin-bottom: 6.5rem;
+	}
 }
