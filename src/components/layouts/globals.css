@@ -332,6 +332,10 @@ footer .text-center {
 		color: #000000;
 	}
 
+	.headerHambugerArea li + li {
+		margin-top: 20px;
+	}
+
 	/* ハンバーガーボタンの切り替え */
 	#hamburger {
 		display: block;

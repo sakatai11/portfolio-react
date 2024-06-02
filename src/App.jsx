@@ -17,6 +17,7 @@ function App() {
 	// useEffect(() => { // ページの読み込みが完了したら実行されるイベントリスナーを追加
 	//     setOpacity('l-container display');
 	// }, []);
+
 	const location = useLocation();
 	console.log(location);
 	console.log(location.pathname);
@@ -27,19 +28,31 @@ function App() {
 			<Header urlCheck={location.pathname} />
 			<AnimatePresence mode="wait">
 				<Routes location={location} key={location.pathname}>
-					<Route path="/" element={<Top link={location.pathname} />} />
-					<Route path="/list" element={<List link={location.pathname} />} />
+					<Route
+						path="/"
+						element={
+							<Top link={location.pathname} componentName={"トップページ"} />
+						}
+					/>
+					<Route
+						path="/list"
+						element={<List link={location.pathname} componentName={"PHOTOS"} />}
+					/>
 					<Route
 						path="/list/outing/"
-						element={<List link={location.pathname} />}
+						element={
+							<List link={location.pathname} componentName={"おでかけ"} />
+						}
 					/>
 					<Route
 						path="/list/random_note/"
-						element={<List link={location.pathname} />}
+						element={<List link={location.pathname} componentName={"雑記"} />}
 					/>
 					<Route
 						path="/list/sports/"
-						element={<List link={location.pathname} />}
+						element={
+							<List link={location.pathname} componentName={"スポーツ"} />
+						}
 					/>
 					<Route
 						path="/photo/:id"
