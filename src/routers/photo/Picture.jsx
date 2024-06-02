@@ -13,6 +13,8 @@ function Picture({ link }) {
 			<Helmet>
 				<title>{id} | TACHI’s PHOTO </title>
 				<meta name="description" content="写真一覧です。" />
+				<meta property="og:title" content={`${id} | TACHI’s PHOTO `} />
+				<meta property="og:description" content="写真一覧です。" />
 			</Helmet>
 			<Animation>
 				<PicMain id={id} url={link} />

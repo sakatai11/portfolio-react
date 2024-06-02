@@ -9,6 +9,14 @@ function List({ link, componentName }) {
 			<Helmet>
 				<title>{componentName} | TACHI’s PHOTO </title>
 				<meta name="description" content={`${componentName}の写真一覧です`} />
+				<meta
+					property="og:title"
+					content={`${componentName} | TACHI’s PHOTO `}
+				/>
+				<meta
+					property="og:description"
+					content={`${componentName}の写真一覧です`}
+				/>
 			</Helmet>
 			<Animation>
 				<ListMain url={link} />
