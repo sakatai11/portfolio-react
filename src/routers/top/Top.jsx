@@ -11,7 +11,7 @@ function Top({ link, componentName }) {
 				<title>{componentName} | TACHI’s PHOTO </title>
 				<meta
 					name="description"
-					content="TAICHIのポートフォリオ写真集。フィルムカメラを使って撮影するのが好きです。幅広いジャンルで撮影しています。"
+					content="TAICHIのポートフォリオサイトです。主にフィルムカメラを使って撮影するのが好きです。幅広いジャンルで撮影しています。"
 				/>
 				<meta
 					property="og:title"
@@ -19,7 +19,7 @@ function Top({ link, componentName }) {
 				/>
 				<meta
 					property="og:description"
-					content="TAICHIのポートフォリオ写真集。フィルムカメラを使って撮影するのが好きです。幅広いジャンルで撮影しています。"
+					content="TAICHIのポートフォリオサイトです。主にフィルムカメラを使って撮影するのが好きです。幅広いジャンルで撮影しています。"
 				/>
 			</Helmet>
 			<Animation>
