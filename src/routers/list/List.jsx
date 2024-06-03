@@ -20,10 +20,6 @@ function List({ link, componentName }) {
 					property="og:description"
 					content={`${componentName}の写真一覧です`}
 				/>
-				<meta
-					name="google-site-verification"
-					content="vTwx4WhB59EIrxE0WLjqCeIu3qL3T65umn0UnsTj6Vo"
-				/>
 			</Helmet>
 			<Animation>
 				<ListMain url={link} />

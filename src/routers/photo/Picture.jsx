@@ -19,10 +19,6 @@ function Picture({ link }) {
 				<meta name="description" content="写真一覧です。" />
 				<meta property="og:title" content={`${id} | TAICHI’s PHOTO `} />
 				<meta property="og:description" content="写真一覧です。" />
-				<meta
-					name="google-site-verification"
-					content="vTwx4WhB59EIrxE0WLjqCeIu3qL3T65umn0UnsTj6Vo"
-				/>
 			</Helmet>
 			<Animation>
 				<PicMain id={id} url={link} />
