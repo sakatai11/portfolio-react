@@ -1,7 +1,7 @@
 import Animation from "../../components/layouts/Animation";
 import Main from "../../components/Main";
 import styles from "../../components/layouts/Top.module.css";
-import { useTracking } from "../../components/hooks/useTracking";
+import useTracking from "../../components/hooks/useTracking";
 import { Helmet } from "react-helmet-async";
 import PropTypes from "prop-types";
 
@@ -12,7 +12,7 @@ function Top({ link, componentName }) {
 	return (
 		<>
 			<Helmet>
-				<title>{componentName} | TAICHI’s PHOTO </title>
+				<title>{`${componentName} | TAICHI’s PHOTO`}</title>
 				<meta
 					name="description"
 					content="TAICHIのポートフォリオサイトです。主にフィルムカメラを使って撮影するのが好きです。幅広いジャンルで撮影しています。"

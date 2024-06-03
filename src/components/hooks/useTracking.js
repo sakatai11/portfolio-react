@@ -1,52 +1,35 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import TagManager from "react-gtm-module";
 
 const useTracking = () => {
 	const location = useLocation();
-	const [pageTitle, setPageTitle] = useState(document.title);
+	const tagManagerArgs = {
+		gtmId: "GTM-PMHX874W",
+	};
 
+	TagManager.initialize(tagManagerArgs);
+
+	// [INFO] ページ遷移時にGTMで測定
 	useEffect(() => {
-		const tagManagerArgs = {
-			gtmId: "GTM-PMHX874W",
-		};
-		TagManager.initialize(tagManagerArgs);
-	}, []);
-
-	useEffect(() => {
-		// タイトルが変更されたことを検出するための関数
-		const handleTitleChange = () => {
-			setPageTitle(document.title);
-		};
-
-		// タイトルの変更を監視するMutationObserverを設定
-		const titleObserver = new MutationObserver(handleTitleChange);
-		const titleElement = document.querySelector("title");
-		if (titleElement) {
-			titleObserver.observe(titleElement, { childList: true });
-		}
-
-		// クリーンアップ関数
-		return () => {
-			titleObserver.disconnect();
-		};
-	}, []);
-
-	useEffect(() => {
-		// タイトルが更新された後にGTMで測定
-		console.log(
-			`[INFO][useTracking] page=${location.pathname}${location.search}, title=${pageTitle}`
-		);
-		TagManager.dataLayer({
-			dataLayer: {
-				event: "pageview",
-				page: {
-					url: `${location.pathname}${location.search}`,
-					title: pageTitle,
+		// [INFO] react-helmetで設定したtitleタグ情報はレンダリング直後には反映されない
+		//        そのためsetTimeoutを使用してhelmetの処理終了を待つ
+		window.setTimeout(() => {
+			console.log(
+				`[INFO][useTracking] page=${location.pathname}${location.search}, title=${document.title}`
+			);
+			// [INFO] カスタムイベントを設定する場合は以下のdataLayerに値を設定する
+			TagManager.dataLayer({
+				dataLayer: {
+					event: "pageview",
+					page: {
+						url: `${location.pathname}${location.search}`,
+						title: document.title,
+					},
 				},
-			},
-		});
-	}, [location, pageTitle]);
+			});
+		}, 200);
+	}, [location]);
 };
 
 export default useTracking;
