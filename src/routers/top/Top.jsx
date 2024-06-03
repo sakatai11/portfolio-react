@@ -25,6 +25,10 @@ function Top({ link, componentName }) {
 					property="og:description"
 					content="TAICHIのポートフォリオサイトです。主にフィルムカメラを使って撮影するのが好きです。幅広いジャンルで撮影しています。"
 				/>
+				<meta
+					name="google-site-verification"
+					content="vTwx4WhB59EIrxE0WLjqCeIu3qL3T65umn0UnsTj6Vo"
+				/>
 			</Helmet>
 			<Animation>
 				<Main url={link} styles={styles.main} />
