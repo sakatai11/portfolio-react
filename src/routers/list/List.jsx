@@ -1,9 +1,12 @@
 import Animation from "../../components/layouts/Animation";
 import ListMain from "../../components/ListMain";
+import { useTracking } from "../../components/hooks/useTracking";
 import { Helmet } from "react-helmet-async";
 import PropTypes from "prop-types";
 
 function List({ link, componentName }) {
+	//イベントフック
+	useTracking();
 	return (
 		<>
 			<Helmet>

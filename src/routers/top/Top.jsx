@@ -1,10 +1,14 @@
 import Animation from "../../components/layouts/Animation";
 import Main from "../../components/Main";
 import styles from "../../components/layouts/Top.module.css";
+import { useTracking } from "../../components/hooks/useTracking";
 import { Helmet } from "react-helmet-async";
 import PropTypes from "prop-types";
 
 function Top({ link, componentName }) {
+	//イベントフック
+	useTracking();
+
 	return (
 		<>
 			<Helmet>
