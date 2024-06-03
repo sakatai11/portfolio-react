@@ -26,6 +26,10 @@
 	margin-top: 18px;
 }
 
+.sliderLeft:hover {
+	opacity: 0.7;
+}
+
 @media screen and (max-width: 767px) {
 	.h5Contents {
 		text-align: initial;
@@ -42,6 +46,10 @@
 	.sliderLeft {
 		padding-left: 30px;
 		display: block;
+	}
+
+	.sliderLeft:hover {
+		opacity: initial;
 	}
 
 	.sliderContents {
