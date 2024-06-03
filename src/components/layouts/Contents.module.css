@@ -55,6 +55,7 @@
 	}
 
 	.sliderRight {
-		padding-right: 80px !important;
+		padding-right: 60px !important;
+		padding-left: 30px !important;
 	}
 }
