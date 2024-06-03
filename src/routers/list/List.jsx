@@ -7,11 +7,11 @@ function List({ link, componentName }) {
 	return (
 		<>
 			<Helmet>
-				<title>{componentName} | TACHI’s PHOTO </title>
+				<title>{componentName} | TAICHI’s PHOTO </title>
 				<meta name="description" content={`${componentName}の写真一覧です`} />
 				<meta
 					property="og:title"
-					content={`${componentName} | TACHI’s PHOTO `}
+					content={`${componentName} | TAICHI’s PHOTO `}
 				/>
 				<meta
 					property="og:description"

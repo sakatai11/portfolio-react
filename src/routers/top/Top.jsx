@@ -8,14 +8,14 @@ function Top({ link, componentName }) {
 	return (
 		<>
 			<Helmet>
-				<title>{componentName} | TACHI’s PHOTO </title>
+				<title>{componentName} | TAICHI’s PHOTO </title>
 				<meta
 					name="description"
 					content="TAICHIのポートフォリオサイトです。主にフィルムカメラを使って撮影するのが好きです。幅広いジャンルで撮影しています。"
 				/>
 				<meta
 					property="og:title"
-					content={`${componentName} | TACHI’s PHOTO `}
+					content={`${componentName} | TAICHI’s PHOTO `}
 				/>
 				<meta
 					property="og:description"

@@ -11,9 +11,9 @@ function Picture({ link }) {
 	return (
 		<>
 			<Helmet>
-				<title>{id} | TACHI’s PHOTO </title>
+				<title>{id} | TAICHI’s PHOTO </title>
 				<meta name="description" content="写真一覧です。" />
-				<meta property="og:title" content={`${id} | TACHI’s PHOTO `} />
+				<meta property="og:title" content={`${id} | TAICHI’s PHOTO `} />
 				<meta property="og:description" content="写真一覧です。" />
 			</Helmet>
 			<Animation>
