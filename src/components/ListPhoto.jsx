@@ -44,6 +44,7 @@ const ListPhoto = ({ pageUrl, filter }) => {
 	};
 
 	// ページURLに基づいてフィルター条件を返すヘルパー関数
+	// カテゴリー増やしたらこちらも追加
 	const getFilterForPageUrl = (pageUrl) => {
 		const filters = {
 			"/list/outing/": "tag[contains]おでかけ",
