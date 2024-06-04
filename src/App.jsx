@@ -63,7 +63,7 @@ function App() {
 					/>
 					<Route
 						path="＊"
-						element={<NotFound link={location.pathname} />}
+						element={<NotFound componentName={"お探しのページが見つかりませんでした。"} />}
 					/>
 				</Routes>
 				<Footer />

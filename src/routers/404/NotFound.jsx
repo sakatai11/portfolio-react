@@ -3,9 +3,8 @@ import useTracking from "../../components/hooks/useTracking";
 import { Helmet } from "react-helmet-async";
 import PropTypes from "prop-types";
 
-function List({ link, componentName }) {
+function NotFound({ componentName }) {
 	//イベントフック
-	//お探しのページが見つかりませんでした。
 	useTracking();
 	return (
 		<>
@@ -40,4 +39,4 @@ List.propTypes = {
 	componentName: PropTypes.string.isRequired,
 };
 
-export default List;
+export default NotFound;
