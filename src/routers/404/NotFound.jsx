@@ -10,14 +10,14 @@ function NotFound({ componentName }) {
 		<>
 			<Helmet>
 				<title>{`${componentName} | TAICHI’s PHOTO`}</title>
-				<meta name="description" content={`${componentName}の写真一覧です`} />
+				<meta name="description" content={componentName} />
 				<meta
 					property="og:title"
 					content={`${componentName} | TAICHI’s PHOTO `}
 				/>
 				<meta
 					property="og:description"
-					content={`${componentName}の写真一覧です`}
+					content={componentName}
 				/>
 			</Helmet>
 			<Animation>

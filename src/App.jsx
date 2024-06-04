@@ -62,7 +62,7 @@ function App() {
 						element={<Picture link={location.pathname} />}
 					/>
 					<Route
-						path="＊"
+						path="*"
 						element={<NotFound componentName={"お探しのページが見つかりませんでした。"} />}
 					/>
 				</Routes>
