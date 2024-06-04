@@ -5,7 +5,7 @@ import Footer from "./components/common/Footer";
 import Top from "./routers/top/Top";
 import List from "./routers/list/List";
 import Picture from "./routers/photo/Picture";
-import NotFound from "./routers/404/NotFound"
+import NotFound from "./routers/404/NotFound";
 import UseScrollRestoration from "./components/hooks/UseScrollRestoration";
 import "bootstrap/dist/css/bootstrap.min.css"; // BootstrapのCSSをインポート
 import "./components/layouts/globals.css";
