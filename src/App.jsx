@@ -63,7 +63,11 @@ function App() {
 					/>
 					<Route
 						path="*"
-						element={<NotFound componentName={"お探しのページが見つかりませんでした。"} />}
+						element={
+							<NotFound
+								componentName={"お探しのページが見つかりませんでした。"}
+							/>
+						}
 					/>
 				</Routes>
 				<Footer />
