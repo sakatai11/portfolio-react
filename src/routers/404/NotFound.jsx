@@ -1,6 +1,8 @@
 import Animation from "../../components/layouts/Animation";
 import useTracking from "../../components/hooks/useTracking";
+import BackTopButton from "../../components/parts/BackTopButton";
 import { Helmet } from "react-helmet-async";
+import styles from "../../components/layouts/parts/NotFound.module.css"
 import PropTypes from "prop-types";
 
 function NotFound({ componentName }) {
@@ -21,9 +23,13 @@ function NotFound({ componentName }) {
 				/>
 			</Helmet>
 			<Animation>
-				<main class="mainArticles">
-					<div>
-						test
+				<main className={`mainArticles ${styles.contents}`}>
+					<div className={styles.mainWrapper}>
+						<h2>404
+							<span className={styles.spBlock}>&ensp;Not Found</span>
+						</h2>
+						<p>{componentName}</p>
+						<BackTopButton />
 					</div>
 				</main>
 			</Animation>
@@ -32,9 +38,7 @@ function NotFound({ componentName }) {
 }
 
 // List コンポーネントのpropsの型を定義します。
-List.propTypes = {
-	// 'link' propは文字列であり、必須です。
-	link: PropTypes.string.isRequired,
+NotFound.propTypes = {
 	// 'componentName' propは文字列であり、必須です
 	componentName: PropTypes.string.isRequired,
 };
