@@ -5,6 +5,7 @@ import Footer from "./components/common/Footer";
 import Top from "./routers/top/Top";
 import List from "./routers/list/List";
 import Picture from "./routers/photo/Picture";
+import NotFound from "./routers/404/NotFound"
 import UseScrollRestoration from "./components/hooks/UseScrollRestoration";
 import "bootstrap/dist/css/bootstrap.min.css"; // BootstrapのCSSをインポート
 import "./components/layouts/globals.css";
@@ -38,26 +39,31 @@ function App() {
 					<Route
 						path="/list"
 						element={<List link={location.pathname} componentName={"PHOTOS"} />}
-					/>
-					<Route
-						path="/list/outing/"
-						element={
-							<List link={location.pathname} componentName={"おでかけ"} />
-						}
-					/>
-					<Route
-						path="/list/random_note/"
-						element={<List link={location.pathname} componentName={"雑記"} />}
-					/>
-					<Route
-						path="/list/sports/"
-						element={
-							<List link={location.pathname} componentName={"スポーツ"} />
-						}
-					/>
+					>
+						<Route
+							path="outing"
+							element={
+								<List link={location.pathname} componentName={"おでかけ"} />
+							}
+						/>
+						<Route
+							path="random_note"
+							element={<List link={location.pathname} componentName={"雑記"} />}
+						/>
+						<Route
+							path="sports"
+							element={
+								<List link={location.pathname} componentName={"スポーツ"} />
+							}
+						/>
+					</Route>
 					<Route
 						path="/photo/:id"
 						element={<Picture link={location.pathname} />}
+					/>
+					<Route
+						path="＊"
+						element={<NotFound link={location.pathname} />}
 					/>
 				</Routes>
 				<Footer />
