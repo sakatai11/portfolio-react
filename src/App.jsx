@@ -27,6 +27,7 @@ function App() {
 			<UseScrollRestoration link={location.pathname} />
 			<Header urlCheck={location.pathname} />
 			<AnimatePresence mode="wait">
+				{/* カテゴリー増やす際に<Route>を追加 */}
 				<Routes location={location} key={location.pathname}>
 					<Route
 						path="/"
