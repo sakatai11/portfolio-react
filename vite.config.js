@@ -1,11 +1,23 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
+import Sitemap from "vite-plugin-sitemap";
 import { terser } from "rollup-plugin-terser";
 
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [
 		react(),
+		Sitemap({
+      hostname: 'https://www.taichi-portfolio.com',
+			routes: [
+        { url: '/'},
+        { url: '/list/'},
+        { url: '/list/outing/'},
+        { url: '/list/sports/'},
+        { url: '/list/random_note/'},
+        // 他の動的なページも同様に追加
+      ],
+    }),
 		// 本番環境でのみterserを適用する
 		process.env.NODE_ENV === "production" &&
 			terser({
