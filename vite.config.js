@@ -8,16 +8,16 @@ export default defineConfig({
 	plugins: [
 		react(),
 		Sitemap({
-      hostname: 'https://www.taichi-portfolio.com',
+			hostname: "https://www.taichi-portfolio.com",
 			routes: [
-        { url: '/'},
-        { url: '/list/'},
-        { url: '/list/outing/'},
-        { url: '/list/sports/'},
-        { url: '/list/random_note/'},
-        // 他の動的なページも同様に追加
-      ],
-    }),
+				{ url: "/" },
+				{ url: "/list/" },
+				{ url: "/list/outing/" },
+				{ url: "/list/sports/" },
+				{ url: "/list/random_note/" },
+				// 他の動的なページも同様に追加
+			],
+		}),
 		// 本番環境でのみterserを適用する
 		process.env.NODE_ENV === "production" &&
 			terser({
