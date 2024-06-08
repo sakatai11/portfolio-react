@@ -33,7 +33,7 @@ function App() {
 					<Route
 						path="/"
 						element={
-							<Top link={location.pathname} componentName={"トップページ"} />
+							<Top link={location.pathname} componentName={"TAICHI"} />
 						}
 					/>
 					<Route
