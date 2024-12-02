@@ -19,7 +19,7 @@
     "react-gtm-module": "^2.0.11",
     "react-helmet-async": "^2.0.5",
     "react-intersection-observer": "^9.8.0",
-    "react-router-dom": "^6.22.3",
+    "react-router-dom": "^6.28.0",
     "react-spinners": "^0.13.8",
     "sitemap-generator": "^7.5.2",
     "swiper": "^11.1.3",
